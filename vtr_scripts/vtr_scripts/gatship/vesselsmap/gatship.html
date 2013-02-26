@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Position</title>
+	<script type="text/javascript" src="http://tiles.vesseltracker.com/OpenLayers-2.10/OpenLayers.js"></script>
+	<script type="text/javascript" src="http://tiles.vesseltracker.com/osm/OpenStreetMap.js"></script>
+	<script type="text/javascript" src="http://www.vesseltracker.com/images/js/vtApi/gatshipVesselMap.js"></script>
+	<script type="text/javascript" src="gatship.js"></script>
+<style type="text/css">
+body, table
+{
+  font-size:12px;
+  font-family:Helvetica, Arial, Sans-Serif;
+}
+
+div.olControlAttribution
+{
+bottom:0px;
+}
+
+div.olControlMousePosition
+{
+ left:10px;
+}
+
+</style>
+
+</head>
+<body onload="onLoad()" style="margin:0;padding:0;">
+        <div id="control">
+                <div>
+                        <input type="button" value="Center map" onclick="doCenterZoom();"/>
+                        <input type="button" value="Refresh" onclick="showAllVessels();"/>
+                        <input type="checkbox" id="allVesselsCB" onclick="showAllVessels();">All vessels</input>
+                        <span id="minmaxlatlon" style="padding-left: 100px;"></span>
+                </div>
+        </div>
+        <div id="gatshipMap"></div>
+		<div id= "sidebar" ></div>
+		<div id= "infobox" ></div>
+        <br clear="left"/>
+		<div id="nord" >nord</div>
+        <div id="west">west</div>
+        <div id="south">sued</div>
+        <div id="ost" >ost</div>
+        <div id="noResult" ></div>
+        <br clear="all"/>
+</body>
+</html>

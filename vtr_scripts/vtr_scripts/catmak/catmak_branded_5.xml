@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers created="Thu Jun 04 11:42:00 CEST 2009">
+	<marker status="MOVING" icon="1" name="ABADI 8" t="tugboats" imo="" lat="1.26582" lng="103.783" cog="209.1" speed="7.1" length="28.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="ACE BERJAYA" t="tankships" imo="9047300" lat="1.23487" lng="103.684" cog="270.0" speed="0.0" length="104.0" width="15.0" country="Malaysia" flag="129"/>
+	<marker status="MOORED" icon="5" name="ADLHABCE SPIRIT" t="tankships" imo="9342595" lat="1.21755" lng="103.816" cog="0.1" speed="0.0" length="101.0" width="20.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="ADVANTAGE" t="cargo_ships" imo="7515339" lat="1.26392" lng="103.836" cog="" speed="0.0" length="169.0" width="26.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="AGILE  ST1100Z" t="tugboats" imo="9246243" lat="1.28691" lng="103.787" cog="135.0" speed="0.2" length="30.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="ANJASMORO" t="tankships" imo="9117234" lat="1.29701" lng="103.678" cog="258.8" speed="0.0" length="179.0" width="28.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="ANNETTE S" t="cargo_ships" imo="8908533" lat="1.24767" lng="103.813" cog="250.0" speed="0.2" length="157.0" width="24.0" country="Malta" flag="132" engName="MaK" engModel="MaK 8 M 601C"/>
+	<marker status="MOORED" icon="5" name="ANNIKA" t="cargo_ships" imo="9362566" lat="1.26385" lng="103.826" cog="304.0" speed="0.5" length="148.0" width="21.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="APL ENGLAND" t="cargo_ships" imo="9218650" lat="1.26395" lng="103.831" cog="0.0" speed="0.0" length="278.0" width="40.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="APL LIBERTY" t="cargo_ships" imo="9110389" lat="1.26217" lng="103.838" cog="205.0" speed="0.0" length="275.0" width="40.0" country="United Kingdom" flag="221"/>
+	<marker status="MOVING" icon="1" name="ASIAN ZEPHYR" t="cargo_ships" imo="9245043" lat="1.274" lng="103.779" cog="206.0" speed="0.9" length="161.0" width="25.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="ASTA RICKMERS" t="cargo_ships" imo="9212046" lat="1.26494" lng="103.828" cog="154.0" speed="0.0" length="158.0" width="25.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOVING" icon="4" name="AYER MANCUR" t="others" imo="8325858" lat="1.24598" lng="103.801" cog="289.4" speed="7.7" length="38.0" width="9.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3412"/>
+	<marker status="MOORED" icon="5" name="AYER MAWAR" t="others" imo="8017229" lat="1.2729" lng="103.852" cog="49.2" speed="0.1" length="43.0" width="9.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3412"/>
+	<marker status="MOVING" icon="6" name="AYER MELATI" t="others" imo="8325846" lat="1.24837" lng="103.79" cog="107.3" speed="7.2" length="43.0" width="9.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3412"/>
+	<marker status="MOORED" icon="5" name="AYER MOLEK" t="others" imo="8955392" lat="1.27287" lng="103.852" cog="168.1" speed="0.0" length="43.0" width="9.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3412"/>
+	<marker status="MOORED" icon="5" name="BLISS" t="tankships" imo="9501629" lat="1.20529" lng="103.791" cog="57.0" speed="0.3" length="100.0" width="15.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="3" name="BOHEME" t="cargo_ships" imo="9176565" lat="1.29448" lng="103.73" cog="125.7" speed="6.4" length="228.0" width="32.0" country="Sweden" flag="203"/>
+	<marker status="MOORED" icon="5" name="BRITOIL 12" t="others" imo="9210830" lat="1.21682" lng="103.814" cog="181.6" speed="1.7" length="29.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="BUNGA RAYA TIGA" t="cargo_ships" imo="9278117" lat="1.26726" lng="103.833" cog="0.0" speed="0.0" length="260.0" width="32.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="BUNGA SEMARAK" t="tankships" imo="8818233" lat="1.23762" lng="103.801" cog="230.1" speed="0.1" length="" width="" country="Malaysia" flag="129"/>
+	<marker status="MOORED" icon="5" name="CAPE HOWE" t="cargo_ships" imo="8918071" lat="1.29944" lng="103.719" cog="259.9" speed="0.0" length="155.0" width="23.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOORED" icon="5" name="CF CHRISTCHURCH" t="sailing_vessels" imo="9477751" lat="1.23648" lng="103.793" cog="76.0" speed="0.0" length="103.0" width="18.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="CHEMTRANS OSTE" t="tankships" imo="9435557" lat="1.22483" lng="103.641" cog="303.0" speed="0.1" length="128.0" width="20.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="CLEANSEAS MOKARA" t="tankships" imo="9088146" lat="1.2079" lng="103.792" cog="348.9" speed="0.0" length="64.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="CSC BRAVE" t="tankships" imo="9344124" lat="1.23316" lng="103.81" cog="275.7" speed="0.1" length="184.0" width="32.0" country="Hong Kong" flag="97"/>
+	<marker status="MOORED" icon="5" name="DECRETIVE" t="cargo_ships" imo="9349679" lat="1.26519" lng="103.842" cog="262.0" speed="0.1" length="304.0" width="40.0" country="Malta" flag="132"/>
+	<marker status="MOORED" icon="5" name="DONG JIANG" t="tankships" imo="9468815" lat="1.29478" lng="103.717" cog="221.6" speed="0.3" length="189.0" width="32.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="EASTERN OASIS" t="tankships" imo="9383986" lat="1.23438" lng="103.772" cog="1.0" speed="0.0" length="114.0" width="18.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="ELITE" t="cargo_ships" imo="8926987" lat="1.24358" lng="103.809" cog="141.0" speed="0.1" length="64.0" width="12.0" country="Malaysia" flag="129"/>
+	<marker status="MOORED" icon="5" name="ELIZA" t="tankships" imo="9387578" lat="1.23492" lng="103.689" cog="17.0" speed="0.1" length="333.0" width="60.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="ENDURO" t="tankships" imo="8808513" lat="1.20563" lng="103.799" cog="186.1" speed="0.0" length="175.0" width="32.0" country="Indonesia" flag="101"/>
+	<marker status="MOVING" icon="8" name="ENVOY" t="tankships" imo="8861840" lat="1.23821" lng="103.749" cog="318.0" speed="1.0" length="" width="" country="Singapore" flag="191" engName="Cat" engModel="Cat 8 M 25, Cat 3408"/>
+	<marker status="MOORED" icon="5" name="EPONYMA" t="cargo_ships" imo="9072460" lat="1.29345" lng="103.674" cog="203.2" speed="0.0" length="107.0" width="18.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="ERRINGTON TIDE" t="others" imo="9422976" lat="1.2958" lng="103.752" cog="357.1" speed="0.0" length="50.0" width="16.0" country="Vanuatu" flag="226"/>
+	<marker status="MOORED" icon="5" name="EVER GENIUS" t="cargo_ships" imo="8200137" lat="1.27513" lng="103.759" cog="177.0" speed="0.0" length="230.0" width="32.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="FATMAWATI" t="tankships" imo="9140463" lat="1.2325" lng="103.656" cog="272.0" speed="0.3" length="107.0" width="24.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="FEICHI" t="tankships" imo="9322449" lat="1.22444" lng="103.802" cog="253.0" speed="0.1" length="187.0" width="32.0" country="Hong Kong" flag="97"/>
+	<marker status="MOORED" icon="5" name="FELLOWSHIP" t="tankships" imo="9437971" lat="1.23758" lng="103.75" cog="301.4" speed="0.0" length="99.0" width="18.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GAN-SHIELD" t="tankships" imo="9315068" lat="1.22193" lng="103.812" cog="74.0" speed="0.0" length="183.0" width="32.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="GAN-VOYAGER" t="tankships" imo="9314911" lat="1.21758" lng="103.816" cog="110.0" speed="0.1" length="183.0" width="32.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="GAS SHANGHAI" t="tankships" imo="9200469" lat="1.23847" lng="103.76" cog="236.0" speed="0.0" length="95.0" width="16.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOVING" icon="1" name="GEOSEA" t="dredgers" imo="9242431" lat="1.25402" lng="103.805" cog="330.0" speed="0.9" length="" width="" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GLENN ADMIRAL" t="others" imo="9421582" lat="1.2988" lng="103.756" cog="338.7" speed="0.1" length="38.0" width="12.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GLENN HONGKONG" t="tankships" imo="7706407" lat="1.29657" lng="103.757" cog="257.0" speed="0.0" length="60.0" width="10.0" country="Tuvalu" flag="217"/>
+	<marker status="MOORED" icon="5" name="GLENN PATRIOT" t="tugboats" imo="9066899" lat="1.29928" lng="103.756" cog="347.2" speed="0.0" length="35.0" width="22.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GOLDEN MERCURY" t="tankships" imo="9272802" lat="1.23328" lng="103.651" cog="106.0" speed="0.1" length="105.0" width="16.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="GP19A" t="others" imo="8962802" lat="1.29155" lng="103.76" cog="71.9" speed="10.0" length="12.0" width="4.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3406"/>
+	<marker status="MOVING" icon="9" name="GP21" t="others" imo="" lat="1.29141" lng="103.76" cog="60.1" speed="10.3" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GP23" t="others" imo="" lat="1.29126" lng="103.761" cog="265.5" speed="0.6" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="2" name="GP 24A" t="others" imo="" lat="1.26567" lng="103.854" cog="170.9" speed="16.9" length="13.0" width="3.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="9" name="GP25" t="others" imo="" lat="1.21601" lng="103.797" cog="56.8" speed="19.5" length="10.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GP26" t="passenger_ships" imo="" lat="1.27348" lng="103.851" cog="134.7" speed="0.2" length="15.0" width="5.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GP36" t="others" imo="" lat="1.2914" lng="103.76" cog="134.5" speed="0.0" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="WAITING" icon="5" name="GP37" t="others" imo="" lat="1.27364" lng="103.851" cog="134.4" speed="0.3" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="8" name="GP 39" t="others" imo="" lat="1.26347" lng="103.852" cog="1.7" speed="19.2" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GP4" t="others" imo="" lat="1.29121" lng="103.761" cog="308.7" speed="0.3" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GP41" t="others" imo="" lat="1.27347" lng="103.851" cog="238.7" speed="0.2" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GP5" t="others" imo="" lat="1.27372" lng="103.851" cog="116.9" speed="0.2" length="14.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="9" name="GP7" t="others" imo="" lat="1.24563" lng="103.79" cog="26.6" speed="1.1" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GRAND VIEW" t="cargo_ships" imo="9005259" lat="1.26288" lng="103.829" cog="304.3" speed="0.0" length="242.0" width="32.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="GREET" t="cargo_ships" imo="8204523" lat="1.28017" lng="103.766" cog="118.0" speed="0.0" length="231.0" width="32.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOORED" icon="5" name="HAI SOON 16" t="tankships" imo="7903287" lat="1.24602" lng="103.796" cog="80.8" speed="0.1" length="108.0" width="16.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="HANJIN SAO PAULO" t="cargo_ships" imo="9350147" lat="1.27295" lng="103.774" cog="229.0" speed="0.0" length="172.0" width="27.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="HARTAMAS" t="tankships" imo="9015400" lat="1.24538" lng="103.801" cog="72.0" speed="0.0" length="111.0" width="18.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="IMBAK" t="tankships" imo="9390537" lat="1.23973" lng="103.791" cog="204.0" speed="0.1" length="120.0" width="20.0" country="Malaysia" flag="129"/>
+	<marker status="MOORED" icon="5" name="INTAN AHT 1" t="others" imo="9466489" lat="1.29516" lng="103.752" cog="122.3" speed="0.3" length="45.0" width="9.0" country="Singapore" flag="191" engName="Cat" engModel="Cat 3512B"/>
+	<marker status="MOORED" icon="5" name="INTAN T1704" t="tugboats" imo="" lat="1.25632" lng="103.782" cog="160.4" speed="1.6" length="26.0" width="85.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="ITAJUBA" t="tankships" imo="8900036" lat="1.22105" lng="103.807" cog="117.1" speed="0.0" length="182.0" width="32.0" country="Brazil" flag="32"/>
+	<marker status="MOVING" icon="9" name="ITAL FH" t="cargo_ships" imo="9308027" lat="1.23716" lng="103.786" cog="16.0" speed="1.3" length="239.0" width="32.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOORED" icon="5" name="ITAL GARLAND" t="cargo_ships" imo="8511782" lat="1.28842" lng="103.764" cog="158.0" speed="0.0" length="269.0" width="32.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="IVER EXACT" t="tankships" imo="9307982" lat="1.23827" lng="103.767" cog="202.0" speed="0.0" length="183.0" width="32.0" country="Netherlands" flag="149"/>
+	<marker status="MOORED" icon="5" name="JACARANDA ACE" t="cargo_ships" imo="9181821" lat="1.29983" lng="103.721" cog="167.0" speed="0.0" length="101.0" width="19.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="JADE TRADER" t="cargo_ships" imo="9117662" lat="1.26683" lng="103.852" cog="87.0" speed="0.2" length="" width="" country="Antigua and Barbuda" flag="10" engName="MaK" engModel="2x MaK 6 M 20"/>
+	<marker status="MOORED" icon="5" name="JAG LYALL" t="tankships" imo="9308443" lat="1.23617" lng="103.77" cog="194.0" speed="0.0" length="244.0" width="42.0" country="India" flag="100"/>
+	<marker status="WAITING" icon="5" name="JAN STEEN" t="others" imo="8505707" lat="1.2592" lng="103.74" cog="130.1" speed="0.1" length="125.0" width="19.0" country="Netherlands" flag="149"/>
+	<marker status="MOORED" icon="5" name="JANUS" t="tugboats" imo="9367504" lat="1.25057" lng="103.808" cog="169.0" speed="0.0" length="65.0" width="18.0" country="Antigua and Barbuda" flag="10" engName="MaK" engModel="2x MaK 8 M 32 C, 2x MaK 6 M 32 C"/>
+	<marker status="MOORED" icon="5" name="JASA KETIGA" t="tankships" imo="9218703" lat="1.2422" lng="103.804" cog="39.7" speed="0.0" length="102.0" width="15.0" country="Malaysia" flag="129"/>
+	<marker status="WAITING" icon="5" name="JET FLYTE 2 BF 11" t="passenger_ships" imo="9149615" lat="1.26122" lng="103.822" cog="134.7" speed="0.6" length="29.0" width="7.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="JI QING MEN" t="cargo_ships" imo="7927740" lat="1.23356" lng="103.819" cog="119.0" speed="0.1" length="194.0" width="28.0" country="Kiribati" flag="113"/>
+	<marker status="MOORED" icon="5" name="JOSCO STAR" t="cargo_ships" imo="9330757" lat="1.27595" lng="103.775" cog="42.0" speed="0.4" length="139.0" width="23.0" country="Hong Kong" flag="97"/>
+	<marker status="MOVING" icon="1" name="JT 11" t="others" imo="" lat="1.22961" lng="103.822" cog="211.2" speed="16.2" length="12.0" width="4.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="JUDGE" t="tankships" imo="8875619" lat="1.26697" lng="103.836" cog="348.0" speed="0.3" length="49.0" width="16.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="JURONG HERRING" t="tankships" imo="9114842" lat="1.23838" lng="103.807" cog="225.0" speed="0.0" length="102.0" width="20.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KANCHANA RICHNESS" t="tankships" imo="8504662" lat="1.23939" lng="103.644" cog="314.3" speed="0.1" length="107.0" width="16.0" country="Thailand" flag="208"/>
+	<marker status="MOORED" icon="5" name="KIMTRANS  EMPEROR" t="cargo_ships" imo="9355927" lat="1.29896" lng="103.729" cog="55.0" speed="2.1" length="54.0" width="18.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KIRIN" t="tankships" imo="9066239" lat="1.236" lng="103.796" cog="114.0" speed="0.0" length="105.0" width="15.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KNIGHT" t="tankships" imo="8891235" lat="1.27061" lng="103.773" cog="219.3" speed="0.2" length="42.0" width="16.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KORSOER" t="cargo_ships" imo="9159933" lat="1.23802" lng="103.82" cog="8.0" speed="0.2" length="101.0" width="18.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="KOTA LAMBAI" t="cargo_ships" imo="9351024" lat="1.28548" lng="103.769" cog="119.0" speed="0.0" length="260.0" width="32.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KOTA PERMAI" t="cargo_ships" imo="9315848" lat="1.28656" lng="103.767" cog="264.4" speed="0.1" length="222.0" width="30.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="KOTA RAKYAT" t="cargo_ships" imo="9296341" lat="1.26552" lng="103.852" cog="271.0" speed="0.0" length="145.0" width="22.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KOTA RATNA" t="cargo_ships" imo="9167447" lat="1.28447" lng="103.771" cog="0.0" speed="0.0" length="145.0" width="24.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KOTA TABAH" t="cargo_ships" imo="9281358" lat="1.26518" lng="103.845" cog="210.0" speed="0.0" length="132.0" width="19.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KST KANCIL" t="towing_vessels" imo="9189172" lat="1.24085" lng="103.765" cog="12.2" speed="1.2" length="30.0" width="9.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="KYOEI 18" t="dredgers" imo="" lat="1.25803" lng="103.781" cog="319.4" speed="0.0" length="56.0" width="21.0" country="Honduras" flag="96"/>
+	<marker status="MOORED" icon="5" name="LANTANA" t="tankships" imo="9110444" lat="1.24187" lng="103.794" cog="217.0" speed="0.1" length="102.0" width="19.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="7" name="LEADERSHIP" t="others" imo="9338228" lat="1.22851" lng="103.791" cog="318.5" speed="9.0" length="110.0" width="19.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="6" name="LIA" t="tankships" imo="9417751" lat="1.24592" lng="103.747" cog="85.0" speed="6.5" length="228.0" width="32.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="LIBERTY" t="cargo_ships" imo="9423542" lat="1.20794" lng="103.674" cog="326.1" speed="6.6" length="190.0" width="32.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="LONG JIE" t="passenger_ships" imo="7125861" lat="1.26219" lng="103.819" cog="112.6" speed="0.0" length="171.0" width="24.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MAERSK REACHER" t="others" imo="8768256" lat="1.29183" lng="103.671" cog="309.1" speed="0.0" length="" width="" country="Denmark" flag="62"/>
+	<marker status="MOORED" icon="5" name="MAERSK SEMAKAU" t="cargo_ships" imo="9315252" lat="1.28313" lng="103.762" cog="300.7" speed="0.0" length="319.0" width="40.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="MAKASSAR  CJN III 39" t="cargo_ships" imo="9189263" lat="1.25138" lng="103.8" cog="261.5" speed="0.1" length="98.0" width="16.0" country="Indonesia" flag="101"/>
+	<marker status="MOORED" icon="5" name="MARINA SWIFT" t="others" imo="8844191" lat="1.27541" lng="103.742" cog="163.0" speed="0.0" length="33.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="7" name="MARINE JEWEL" t="tankships" imo="9496068" lat="1.23031" lng="103.789" cog="319.5" speed="11.0" length="102.0" width="18.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="MARITIMERATU" t="towing_vessels" imo="9342592" lat="1.30441" lng="103.755" cog="" speed="0.0" length="36.0" width="11.0" country="Singapore" flag="191" engName="Cat" engModel="Cat "/>
+	<marker status="MOORED" icon="5" name="MATHU BHUM0" t="cargo_ships" imo="8813647" lat="1.26748" lng="103.837" cog="0.1" speed="0.0" length="145.0" width="25.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="MENARA SATU" t="tankships" imo="9495832" lat="1.24259" lng="103.797" cog="108.6" speed="0.1" length="118.0" width="18.0" country="Malaysia" flag="129"/>
+	<marker status="WAITING" icon="5" name="MERBAU ERA" t="passenger_ships" imo="9133680" lat="1.22995" lng="103.75" cog="103.0" speed="0.0" length="35.0" width="7.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="MIRAC" t="others" imo="9083366" lat="1.28594" lng="103.755" cog="27.3" speed="0.0" length="" width="" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="MOL ACCORD" t="cargo_ships" imo="9256406" lat="1.2668" lng="103.831" cog="203.6" speed="0.0" length="172.0" width="25.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="MOL COSMOS" t="cargo_ships" imo="9388340" lat="1.25877" lng="103.842" cog="249.4" speed="0.0" length="320.0" width="46.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="MOL EMERALD" t="cargo_ships" imo="9407134" lat="1.26748" lng="103.835" cog="198.2" speed="0.0" length="294.0" width="32.0" country="Hong Kong" flag="97"/>
+	<marker status="MOORED" icon="5" name="MOL UILITY" t="cargo_ships" imo="218505000" lat="1.2655" lng="103.847" cog="4.0" speed="0.0" length="184.0" width="25.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="MONTE TAMARO" t="cargo_ships" imo="9357949" lat="1.28714" lng="103.757" cog="87.4" speed="0.5" length="272.0" width="40.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="MPA3U" t="others" imo="" lat="1.29275" lng="103.761" cog="260.2" speed="0.1" length="" width="" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="MSC JADE" t="cargo_ships" imo="8419726" lat="1.26938" lng="103.769" cog="0.1" speed="0.0" length="241.0" width="32.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MSC KRITTIKA" t="cargo_ships" imo="9051507" lat="1.28213" lng="103.772" cog="129.0" speed="0.4" length="202.0" width="32.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="MSC MADELEINE" t="cargo_ships" imo="9305702" lat="1.271" lng="103.766" cog="316.0" speed="0.0" length="348.0" width="43.0" country="Panama" flag="163"/>
+	<marker status="WAITING" icon="5" name="MSC RITA" t="others" imo="9289116" lat="1.30484" lng="103.71" cog="0.0" speed="0.1" length="324.0" width="43.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MSC SEOUL" t="cargo_ships" imo="212532000" lat="1.26871" lng="103.771" cog="0.1" speed="0.0" length="201.0" width="24.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="MSC SIH" t="cargo_ships" imo="9336048" lat="1.27164" lng="103.764" cog="277.7" speed="0.0" length="337.0" width="46.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MT.DASA SAMUDRA" t="tankships" imo="9183544" lat="1.24754" lng="103.789" cog="302.1" speed="0.0" length="90.0" width="15.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MT GLOBAL BISLET" t="tankships" imo="8705591" lat="1.21933" lng="103.805" cog="65.0" speed="0.1" length="175.0" width="26.0" country="Norway" flag="158"/>
+	<marker status="MOORED" icon="5" name="M.T LAUREN" t="tankships" imo="9266229" lat="1.29078" lng="103.7" cog="38.0" speed="0.1" length="130.0" width="20.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="M.T OCEAN CONCORD" t="tankships" imo="9052874" lat="1.20938" lng="103.796" cog="153.2" speed="0.0" length="247.0" width="42.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="M.T.ORIENTAL GLORY" t="tankships" imo="9072587" lat="1.23837" lng="103.795" cog="218.0" speed="0.1" length="85.0" width="13.0" country="Malaysia" flag="129"/>
+	<marker status="MOORED" icon="5" name="MV FEI YING" t="passenger_ships" imo="" lat="1.25464" lng="103.791" cog="245.8" speed="0.0" length="23.0" width="5.0" country="Dominica" flag="64"/>
+	<marker status="MOORED" icon="5" name="MV.MUSTIKAWATI" t="cargo_ships" imo="8006921" lat="1.29734" lng="103.679" cog="227.8" speed="0.0" length="244.0" width="32.0" country="Indonesia" flag="101"/>
+	<marker status="MOORED" icon="5" name="MV. PARADISE" t="others" imo="7400754" lat="1.27689" lng="103.782" cog="21.8" speed="0.0" length="92.0" width="14.0" country="Mongolia" flag="141"/>
+	<marker status="MOORED" icon="5" name="MV.URANUS 7" t="cargo_ships" imo="8994714" lat="1.2383" lng="103.815" cog="73.1" speed="0.1" length="72.0" width="10.0" country="Indonesia" flag="101"/>
+	<marker status="MOORED" icon="5" name="MV VENTURER" t="cargo_ships" imo="7917850" lat="1.29938" lng="103.676" cog="109.0" speed="0.1" length="264.0" width="40.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="NEE DIAK 1" t="cargo_ships" imo="7394905" lat="1.24509" lng="103.811" cog="163.6" speed="0.1" length="66.0" width="12.0" country="Indonesia" flag="101"/>
+	<marker status="WAITING" icon="5" name="NEW AMBITION" t="tankships" imo="8312538" lat="1.23253" lng="103.686" cog="104.0" speed="0.0" length="244.0" width="40.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="NEW FAITH" t="tankships" imo="9176412" lat="1.22817" lng="103.807" cog="183.0" speed="0.0" length="158.0" width="27.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="NEW GRACE" t="tankships" imo="9045431" lat="1.22972" lng="103.8" cog="159.0" speed="0.0" length="160.0" width="26.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="NEW MOTION" t="cargo_ships" imo="7930589" lat="1.24567" lng="103.809" cog="135.0" speed="0.1" length="65.0" width="11.0" country="Cambodia" flag="38"/>
+	<marker status="WAITING" icon="5" name="NGOS ONE" t="tankships" imo="9066423" lat="1.2971" lng="103.7" cog="41.7" speed="0.6" length="54.0" width="9.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="NIAN CHI" t="tankships" imo="9342085" lat="1.23245" lng="103.792" cog="34.0" speed="0.1" length="188.0" width="32.0" country="China" flag="46"/>
+	<marker status="MOORED" icon="5" name="NOBLE ACE" t="others" imo="9386067" lat="1.28376" lng="103.764" cog="312.2" speed="9.2" length="" width="" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="9" name="NOBLE ATLAS" t="others" imo="9386081" lat="1.28776" lng="103.739" cog="53.4" speed="3.5" length="30.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="3" name="NOBLE JADE" t="others" imo="9386055" lat="1.26663" lng="103.854" cog="155.3" speed="5.2" length="28.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="1" name="NOBLE ORION" t="others" imo="9386110" lat="1.28766" lng="103.757" cog="66.9" speed="0.7" length="30.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="7" name="NOBLE RELIANCE" t="others" imo="9456513" lat="1.26221" lng="103.847" cog="315.0" speed="7.3" length="" width="" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="NOBLE VEGA" t="others" imo="9386093" lat="1.27594" lng="103.758" cog="294.1" speed="0.1" length="30.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="NORCA" t="tankships" imo="9259264" lat="1.23093" lng="103.816" cog="273.0" speed="0.1" length="183.0" width="32.0" country="Hong Kong" flag="97"/>
+	<marker status="MOORED" icon="5" name="NORD STREAM" t="tankships" imo="9265689" lat="1.19962" lng="103.798" cog="17.0" speed="0.0" length="181.0" width="32.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="NYK VEGA" t="cargo_ships" imo="9312781" lat="1.26223" lng="103.845" cog="258.3" speed="0.0" length="333.0" width="44.0" country="Panama" flag="163"/>
+	<marker status="MOVING" icon="6" name="OCEAN FLYTE" t="passenger_ships" imo="9122162" lat="1.29178" lng="103.76" cog="103.6" speed="4.9" length="31.0" width="6.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="OCEAN LOVELY" t="cargo_ships" imo="8217520" lat="1.24817" lng="103.805" cog="359.0" speed="0.1" length="188.0" width="31.0" country="Panama" flag="163"/>
+	<marker status="WAITING" icon="5" name="OCEAN RAIDER OK" t="others" imo="9060651" lat="1.22982" lng="103.75" cog="262.9" speed="0.5" length="37.0" width="8.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="OOCL AMBITION" t="cargo_ships" imo="9159866" lat="1.26397" lng="103.848" cog="44.4" speed="0.0" length="184.0" width="28.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="OOCL ROTTERDAM" t="cargo_ships" imo="9251999" lat="1.26128" lng="103.851" cog="127.0" speed="0.1" length="323.0" width="43.0" country="Hong Kong" flag="97"/>
+	<marker status="MOORED" icon="5" name="ORACLE" t="tankships" imo="962581900" lat="1.23772" lng="103.803" cog="52.9" speed="0.3" length="110.0" width="17.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="PACIFIC CHALLENGER" t="others" imo="8209274" lat="1.29846" lng="103.758" cog="310.2" speed="0.0" length="64.0" width="14.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="3" name="PARTNER" t="tankships" imo="9407237" lat="1.24336" lng="103.769" cog="124.1" speed="5.9" length="47.0" width="14.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="9" name="PENGUIN 1" t="passenger_ships" imo="9043964" lat="1.26127" lng="103.818" cog="56.5" speed="2.3" length="26.0" width="5.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="PENGUIN 5" t="passenger_ships" imo="8888159" lat="1.26219" lng="103.818" cog="89.0" speed="0.0" length="30.0" width="6.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="PENGUIN PRIDE" t="passenger_ships" imo="8960751" lat="1.25438" lng="103.807" cog="316.0" speed="0.2" length="23.0" width="6.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="PENGUIN SELETAR" t="passenger_ships" imo="9209415" lat="1.26227" lng="103.818" cog="78.0" speed="0.2" length="23.0" width="7.0" country="Panama" flag="163"/>
+	<marker status="MOVING" icon="3" name="PIONEER" t="cargo_ships" imo="9111436" lat="1.21115" lng="103.802" cog="131.3" speed="5.0" length="169.0" width="23.0" country="Australia" flag="15"/>
+	<marker status="MOORED" icon="5" name="PRINCESS OPAL" t="tankships" imo="9276315" lat="1.25593" lng="103.713" cog="227.0" speed="0.1" length="108.0" width="18.0" country="" flag=""/>
+	<marker status="WAITING" icon="5" name="PSAB FIXED AIS B" t="others" imo="" lat="1.27359" lng="103.801" cog="0.0" speed="0.0" length="" width="" country="Singapore" flag="191"/>
+	<marker status="WAITING" icon="5" name="PSAB MOBILE" t="others" imo="6934" lat="1.28317" lng="103.779" cog="19.1" speed="0.0" length="" width="" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="RUBY EXPRESS" t="others" imo="9004841" lat="1.28613" lng="103.73" cog="144.6" speed="0.1" length="" width="" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="SAKURA EXPRESS" t="tankships" imo="9302865" lat="1.22788" lng="103.795" cog="221.8" speed="0.1" length="180.0" width="32.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="SALAMAH" t="tankships" imo="8204494" lat="1.27021" lng="103.742" cog="223.7" speed="0.3" length="53.0" width="10.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="SALVIA ACE" t="cargo_ships" imo="9338876" lat="1.28587" lng="103.756" cog="177.0" speed="0.0" length="186.0" width="28.0" country="Cayman Islands" flag="42"/>
+	<marker status="MOORED" icon="5" name="SAN LORENZO" t="cargo_ships" imo="9046215" lat="1.27405" lng="103.761" cog="156.3" speed="0.1" length="182.0" width="30.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="SEA QUEST" t="tankships" imo="8817681" lat="1.27277" lng="103.774" cog="41.0" speed="0.0" length="84.0" width="13.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="9" name="SEA SWIFT" t="tankships" imo="9306859" lat="1.21917" lng="103.797" cog="30.4" speed="5.7" length="107.0" width="15.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="SEMUA BAHAGIA" t="tankships" imo="9396880" lat="1.2331" lng="103.773" cog="152.0" speed="0.0" length="106.0" width="19.0" country="Malaysia" flag="129"/>
+	<marker status="MOORED" icon="5" name="SEMUA GEMILANG" t="tankships" imo="9494929" lat="1.24167" lng="103.801" cog="128.9" speed="0.1" length="105.0" width="19.0" country="Malaysia" flag="129"/>
+	<marker status="MOORED" icon="5" name="SENTRY" t="towing_vessels" imo="" lat="1.22212" lng="103.815" cog="67.8" speed="0.3" length="" width="" country="Saint Vincent and the Grenadines" flag="183"/>
+	<marker status="MOORED" icon="5" name="SINAR BANDUNG" t="cargo_ships" imo="9352432" lat="1.26371" lng="103.846" cog="150.1" speed="0.1" length="149.0" width="25.0" country="Panama" flag="163"/>
+	<marker status="MOVING" icon="3" name="SINAR SABANG" t="cargo_ships" imo="9435234" lat="1.2662" lng="103.853" cog="154.0" speed="4.9" length="175.0" width="27.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="SOUTHERN YORK" t="tankships" imo="9288564" lat="1.26747" lng="103.735" cog="16.0" speed="0.3" length="107.0" width="17.0" country="Panama" flag="163"/>
+	<marker status="WAITING" icon="5" name="STAR ARIES" t="others" imo="9382554" lat="1.23047" lng="103.684" cog="225.6" speed="0.3" length="26.0" width="14.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3516B"/>
+	<marker status="MOVING" icon="2" name="STAR DIAMOND" t="others" imo="9382542" lat="1.27538" lng="103.778" cog="103.1" speed="7.9" length="27.0" width="12.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3516B"/>
+	<marker status="MOVING" icon="6" name="STAR DISCOVERY" t="others" imo="" lat="1.29611" lng="103.724" cog="108.1" speed="2.2" length="27.0" width="12.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="6" name="STAR ENDEAVOUR" t="others" imo="9382528" lat="1.29608" lng="103.727" cog="129.8" speed="2.3" length="27.0" width="12.0" country="Singapore" flag="191" engName="Cat" engModel="Cat 9 M 32 C, Cat 3516B"/>
+	<marker status="MOORED" icon="5" name="STAR VOYAGER" t="tugboats" imo="9343297" lat="1.26217" lng="103.847" cog="162.4" speed="0.1" length="27.0" width="7.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3516B"/>
+	<marker status="MOORED" icon="5" name="STENA VICTORY" t="tankships" imo="9205093" lat="1.24378" lng="103.691" cog="83.0" speed="0.1" length="330.0" width="70.0" country="Bermuda" flag="27"/>
+	<marker status="MOORED" icon="5" name="STERLING" t="others" imo="9329136" lat="1.2788" lng="103.751" cog="142.8" speed="10.8" length="28.0" width="12.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3516B"/>
+	<marker status="MOVING" icon="1" name="STRAITS LEADER" t="cargo_ships" imo="8110136" lat="1.22979" lng="103.699" cog="228.4" speed="12.5" length="165.0" width="28.0" country="Malaysia" flag="129"/>
+	<marker status="MOORED" icon="5" name="SUNBRIGHT" t="tankships" imo="8410847" lat="1.24999" lng="103.795" cog="133.8" speed="0.0" length="114.0" width="18.0" country="Panama" flag="163" engName="MaK" engModel="MaK 8 MU 453 B"/>
+	<marker status="MOORED" icon="5" name="SUSAN MAERSK" t="cargo_ships" imo="9120853" lat="1.28146" lng="103.764" cog="123.0" speed="0.0" length="347.0" width="42.0" country="Denmark" flag="62"/>
+	<marker status="MOORED" icon="5" name="SWISSCO STAR" t="tugboats" imo="9348235" lat="1.30317" lng="103.754" cog="53.0" speed="0.0" length="45.0" width="15.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3512B"/>
+	<marker status="MOORED" icon="5" name="SWISSCO SUPPLIER" t="tugboats" imo="9397078" lat="1.30312" lng="103.754" cog="113.0" speed="0.0" length="48.0" width="15.0" country="Singapore" flag="191" engName="Cat" engModel="2x Cat 3516B"/>
+	<marker status="MOORED" icon="5" name="TAY DO 06" t="cargo_ships" imo="7916076" lat="1.24152" lng="103.818" cog="249.7" speed="0.1" length="77.0" width="12.0" country="Viet Nam" flag="229"/>
+	<marker status="MOORED" icon="5" name="TEMBUSU" t="tankships" imo="7809431" lat="1.24484" lng="103.794" cog="284.2" speed="0.1" length="79.0" width="33.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="THOR HARMON" t="cargo_ships" imo="8920270" lat="1.24227" lng="103.815" cog="314.0" speed="0.1" length="88.0" width="14.0" country="Norway" flag="158"/>
+	<marker status="MOORED" icon="5" name="TIGER JADE" t="cargo_ships" imo="9236236" lat="1.26185" lng="103.827" cog="228.6" speed="0.0" length="175.0" width="27.0" country="Liberia" flag="121"/>
+	<marker status="WAITING" icon="5" name="TOISA LION" t="others" imo="8124450" lat="1.2175" lng="103.743" cog="160.9" speed="0.0" length="62.0" width="12.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="TOLAK DUA" t="tugboats" imo="" lat="1.25725" lng="103.787" cog="352.6" speed="0.4" length="29.0" width="8.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="TORM NECHES" t="tankships" imo="922167100" lat="1.22419" lng="103.815" cog="77.2" speed="0.1" length="176.0" width="32.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="VIBEKE" t="cargo_ships" imo="9065182" lat="1.30033" lng="103.727" cog="8.0" speed="0.0" length="170.0" width="24.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="VIOLET" t="others" imo="9474292" lat="1.24828" lng="103.794" cog="210.0" speed="0.1" length="109.0" width="17.0" country="Malta" flag="132"/>
+	<marker status="MOORED" icon="5" name="VST 2" t="tugboats" imo="7631664" lat="1.2078" lng="103.797" cog="271.1" speed="0.2" length="28.0" width="8.0" country="Singapore" flag="191"/>
+	<marker status="WAITING" icon="5" name="WAN HAI 603" t="cargo_ships" imo="9327803" lat="1.26995" lng="103.853" cog="326.0" speed="0.6" length="277.0" width="40.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="WAN HAI 605" t="cargo_ships" imo="9331165" lat="1.26404" lng="103.848" cog="238.0" speed="0.0" length="277.0" width="40.0" country="Singapore" flag="191"/>
+	<marker status="MOVING" icon="2" name="YM MERSIN" t="cargo_ships" imo="8908715" lat="1.27102" lng="103.775" cog="183.0" speed="6.1" length="151.0" width="25.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="YM ORCHID" t="cargo_ships" imo="9198276" lat="1.27087" lng="103.773" cog="130.0" speed="0.0" length="275.0" width="40.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="YUGUHE" t="cargo_ships" imo="9139050" lat="1.2896" lng="103.762" cog="153.8" speed="0.0" length="243.0" width="32.0" country="Panama" flag="163"/>
+	<marker status="" icon="" name="" t="" imo="" lat="" lng="" cog="" speed="" length="" width="" country="" flag=""/>
+</markers>

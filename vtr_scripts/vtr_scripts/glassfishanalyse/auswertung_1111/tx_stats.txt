@@ -1,0 +1,1256 @@
+> tx_tx <- read.table("tx_tx.csv", header=TRUE, sep=';')
+> nrow(tx_tx)
+[1] 102859
+> length(levels(tx_tx$component))
+[1] 58
+
+> tx_tx_cum <- sort(tapply(tx_tx$elapsed, tx_tx$component, sum), decreasing=TRUE)
+
+# Top 20 aggregate elapsed time at samples
+> tx_tx_cum[1:20]
+                 com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                          309055096 
+                       com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                           92664905 
+                    com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                           74276306 
+                      com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                           20492449 
+com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                            4307085 
+                  com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                            4232053 
+                         com.vesseltracker.ejb.webservice.AISExport 
+                                                            3297833 
+                      com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                            2994194 
+                   com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                            2762429 
+                       com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                            2471068 
+                        com.vesseltracker.ejb.stateless.HistoryBean 
+                                                            1907247 
+                    com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                            1519225 
+                       com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                            1418037 
+                com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                             866812 
+          com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                             851413 
+                        com.vesseltracker.ejb.stateless.SatDataBean 
+                                                             851241 
+                com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                             763011 
+                 com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                             636930 
+                   com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                             541538 
+                  com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                             460723 
+
+# Number of times found active at sample
+> sort(summary(tx_tx$component), decreasing=TRUE)
+                                com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                                       65779 
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                                        7233 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                        4739 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                        4433 
+                             com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                                        4299 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                        3060 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                        2580 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                        1660 
+                            com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                                        1121 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                         989 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                         879 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                         743 
+                               com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                                         593 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                         528 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                         469 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                         439 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                         436 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                         400 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                         376 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                         244 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                         218 
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                         210 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                         187 
+                                     com.vesseltracker.ejb.dao.ReportDAOImpl 
+                                                                         179 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                         161 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                         151 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                         111 
+                                      com.vesseltracker.ejb.dao.AlertDAOImpl 
+                                                                          80 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                          68 
+                            com.vesseltracker.ejb.stateless.ContactsUtilBean 
+                                                                          55 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                          50 
+                                    com.vesseltracker.ejb.dao.CountryDAOImpl 
+                                                                          48 
+                                     com.vesseltracker.ejb.dao.RegionDAOImpl 
+                                                                          42 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                          37 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                          36 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                          34 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                          31 
+         com.vesseltracker.ejb.facade.vtr_tracking.TrackingSessionFacadeImpl 
+                                                                          20 
+                  com.vesseltracker.ejb.sms._SMSServiceBeanImpl_Serializable 
+                                                                          20 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                          17 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                          16 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                          16 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                          15 
+                             com.vesseltracker.ejb.stateless.RoutingUtilBean 
+                                                                          14 
+                             com.vesseltracker.ejb.jobs.RankingUpdateJobImpl 
+                                                                          11 
+                                      com.vesseltracker.ejb.dao.EventDAOImpl 
+                                                                           5 
+                            com.vesseltracker.ejb.stateless.CategoryUtilBean 
+                                                                           4 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                           3 
+                            com.vesseltracker.ejb.dao.VtConfigurationDAOImpl 
+                                                                           3 
+                          com.vesseltracker.ejb.jobs.AdvertisingEmailJobImpl 
+                                                                           3 
+                              com.vesseltracker.ejb.stateless.BannerUtilBean 
+                                                                           3 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                           2 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                           2 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                           2 
+                              com.vesseltracker.ejb.stateless.CreditUtilBean 
+                                                                           2 
+                                  com.vesseltracker.ejb.dao.AISClientDAOImpl 
+                                                                           1 
+                             com.vesseltracker.ejb.dao.UserExportRuleDAOImpl 
+                                                                           1 
+                       com.vesseltracker.ejb.jobs.CustomerMaintenanceJobImpl 
+                                                                           1 
+
+> tx_tx_mean <- sort(tapply(tx_tx$elapsed, tx_tx$component, mean), decreasing=TRUE)
+> tx_tx_mean
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                                 42728.48002 
+                               com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                                 34557.24958 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                 17344.47951 
+                             com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                                 17277.57758 
+                          com.vesseltracker.ejb.jobs.AdvertisingEmailJobImpl 
+                                                                  9786.66667 
+         com.vesseltracker.ejb.facade.vtr_tracking.TrackingSessionFacadeImpl 
+                                                                  9457.00000 
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                  9082.12857 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                  7512.14806 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                  5903.00000 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                  4150.65766 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                  3239.28571 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                  2128.53250 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                  2011.86486 
+                                      com.vesseltracker.ejb.dao.EventDAOImpl 
+                                                                  1833.60000 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                  1669.41279 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                  1660.58824 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                  1657.73853 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                  1612.19886 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                  1460.84862 
+                                    com.vesseltracker.ejb.dao.CountryDAOImpl 
+                                                                  1424.47917 
+                                com.vesseltracker.ejb.stateless.DBUpdateBean # 21
+                                                                  1408.73083 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                  1404.06452 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                  1355.44371 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                  1346.50000 
+                             com.vesseltracker.ejb.stateless.RoutingUtilBean 
+                                                                  1195.00000 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                  1166.63795 
+                  com.vesseltracker.ejb.sms._SMSServiceBeanImpl_Serializable 
+                                                                  1097.00000 
+                            com.vesseltracker.ejb.stateless.ContactsUtilBean 
+                                                                  1091.40000 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                   978.49477 
+                                      com.vesseltracker.ejb.dao.AlertDAOImpl 
+                                                                   942.80000 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                   917.24599 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                   854.23916 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                   847.70588 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                   841.75000 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                   804.25798 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                   771.49747 
+                             com.vesseltracker.ejb.dao.UserExportRuleDAOImpl 
+                                                                   717.00000 
+                                     com.vesseltracker.ejb.dao.RegionDAOImpl 
+                                                                   602.64286 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                   595.50000 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                   582.91391 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                   574.75000 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                   557.42567 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                   544.56522 
+                            com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                                   483.08475 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                   481.76471 
+                                     com.vesseltracker.ejb.dao.ReportDAOImpl 
+                                                                   471.71508 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                   423.26000 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                   406.60000 
+                             com.vesseltracker.ejb.jobs.RankingUpdateJobImpl 
+                                                                   285.18182 
+                              com.vesseltracker.ejb.stateless.CreditUtilBean 
+                                                                   223.00000 
+                                  com.vesseltracker.ejb.dao.AISClientDAOImpl 
+                                                                   218.00000 
+                            com.vesseltracker.ejb.dao.VtConfigurationDAOImpl 
+                                                                   189.33333 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                   174.78157 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                   100.66667 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                    76.68750 
+                              com.vesseltracker.ejb.stateless.BannerUtilBean 
+                                                                    12.66667 
+                       com.vesseltracker.ejb.jobs.CustomerMaintenanceJobImpl 
+                                                                     7.00000 
+                            com.vesseltracker.ejb.stateless.CategoryUtilBean 
+                                                                     4.00000 
+
+> tx_tx_median <- sort(tapply(tx_tx$elapsed, tx_tx$component, median), decreasing=TRUE)
+> tx_tx_median
+                               com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                                     35050.0 
+                          com.vesseltracker.ejb.jobs.AdvertisingEmailJobImpl 
+                                                                      9728.0 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                      6974.0 
+         com.vesseltracker.ejb.facade.vtr_tracking.TrackingSessionFacadeImpl 
+                                                                      6352.0 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                      6079.5 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                      5903.0 
+                             com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                                      3991.0 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                      2435.0 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                      1660.0 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                      1422.0 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                      1346.5 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                      1024.0 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                       904.5 
+                                      com.vesseltracker.ejb.dao.EventDAOImpl 
+                                                                       870.0 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                       868.0 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                       807.5 
+                             com.vesseltracker.ejb.dao.UserExportRuleDAOImpl 
+                                                                       717.0 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                       658.5 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                       602.0 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                       595.5 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                       570.0 
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                       542.0 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                       450.0 
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean # 24
+                                                                       356.0 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                       296.0 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                       289.0 
+                  com.vesseltracker.ejb.sms._SMSServiceBeanImpl_Serializable 
+                                                                       246.0 
+                             com.vesseltracker.ejb.stateless.RoutingUtilBean 
+                                                                       241.5 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                       234.0 
+                              com.vesseltracker.ejb.stateless.CreditUtilBean 
+                                                                       223.0 
+                                  com.vesseltracker.ejb.dao.AISClientDAOImpl 
+                                                                       218.0 
+                            com.vesseltracker.ejb.stateless.ContactsUtilBean 
+                                                                       169.0 
+                            com.vesseltracker.ejb.dao.VtConfigurationDAOImpl 
+                                                                       157.0 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                       110.0 
+                            com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                                       105.0 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                       101.0 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                        97.5 
+                                com.vesseltracker.ejb.stateless.DBUpdateBean # 38
+                                                                        82.0 
+                                     com.vesseltracker.ejb.dao.RegionDAOImpl 
+                                                                        70.5 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                        67.5 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                        62.0 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                        48.0 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                        48.0 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                        39.0 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                        33.0 
+                                    com.vesseltracker.ejb.dao.CountryDAOImpl 
+                                                                        28.5 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                        27.0 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                        24.0 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                        16.0 
+                                     com.vesseltracker.ejb.dao.ReportDAOImpl 
+                                                                        15.0 
+                                      com.vesseltracker.ejb.dao.AlertDAOImpl 
+                                                                        12.0 
+                              com.vesseltracker.ejb.stateless.BannerUtilBean 
+                                                                        12.0 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                         9.5 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                         9.0 
+                       com.vesseltracker.ejb.jobs.CustomerMaintenanceJobImpl 
+                                                                         7.0 
+                             com.vesseltracker.ejb.jobs.RankingUpdateJobImpl 
+                                                                         7.0 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                         7.0 
+                            com.vesseltracker.ejb.stateless.CategoryUtilBean 
+                                                                         4.5 
+
+> dbupdate <- subset(tx_tx, component == "com.vesseltracker.ejb.stateless.DBUpdateBean")
+> summary(dbupdate[["elapsed"]])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0       6      82    1409    1197  151600 
+> quantile(dbupdate[["elapsed"]], probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+ 3394.00  5499.00 17796.44 
+
+> shipaction <- subset(tx_tx, component == "com.vesseltracker.ejb.stateless.ShipactionUtilBean")
+> summary(shipaction$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0      34     356   42730    3601  917700 
+> quantile(shipaction$elapsed, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+135653.4 353648.6 626880.9 
+
+> shipplotter <- subset(tx_tx, component == "com.vesseltracker.ejb.stateless.ShipplotterBean")
+> summary(shipplotter$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0     981    3991   17280   14970  258100 
+> quantile(shipplotter$elapsed, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+ 54323.6  86861.9 168356.0 
+
+> checkclient <- subset(tx_tx, component == "com.vesseltracker.ejb.jobs.CheckClientJobImpl")
+> summary(checkclient$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+     13   17090   35050   34560   51970   72380 
+> quantile(checkclient$elapsed, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+61608.20 65496.20 67726.56 
+
+> googleearth <- subset(tx_tx, component == "com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl")
+> summary(googleearth$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0      42     868    1669    2753   20760 
+> quantile(googleearth$elapsed, probs=c(0.9,0.95,0.99))
+    90%     95%     99% 
+4468.00 5285.75 9190.37 
+
+##
+## Peak hours
+##
+> tx_tx.peak <- subset(tx_tx, getHour(t) %in% seq(9,17))
+> nrow(tx_tx.peak)
+[1] 49001
+
+> tx_tx.peak_cum <- sort(tapply(tx_tx.peak$elapsed, tx_tx.peak$component, sum), decreasing=TRUE)
+> tx_tx.peak_cum[1:20]
+                    com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                           29673324 
+                       com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                           23448865 
+                      com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                           13175893 
+                 com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                            9783399 
+com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                            2254575 
+                         com.vesseltracker.ejb.webservice.AISExport 
+                                                            1906690 
+                        com.vesseltracker.ejb.stateless.HistoryBean 
+                                                            1835756 
+                      com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                            1469477 
+                       com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                            1325715 
+                  com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                            1263169 
+                   com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                            1255890 
+                    com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                             842836 
+                       com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                             746275 
+                 com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                             558439 
+                com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                             411182 
+                  com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                             349473 
+                   com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                             338626 
+          com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                             310141 
+                com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                             300755 
+                        com.vesseltracker.ejb.stateless.SatDataBean 
+                                                             295219 
+
+> sort(summary(tx_tx.peak$component), decreasing=TRUE)
+                                com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                                       29160 
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                                        3568 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                        2695 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                        2502 
+                             com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                                        1972 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                        1589 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                        1323 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                         934 
+                            com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                                         790 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                         597 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                         459 
+                               com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                                         382 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                         308 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                         292 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                         274 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                         257 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                         247 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                         241 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                         205 
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                         151 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                         121 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                         119 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                         101 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                          97 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                          92 
+                                     com.vesseltracker.ejb.dao.ReportDAOImpl 
+                                                                          88 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                          60 
+                                      com.vesseltracker.ejb.dao.AlertDAOImpl 
+                                                                          57 
+                            com.vesseltracker.ejb.stateless.ContactsUtilBean 
+                                                                          40 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                          39 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                          31 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                          30 
+         com.vesseltracker.ejb.facade.vtr_tracking.TrackingSessionFacadeImpl 
+                                                                          20 
+                                    com.vesseltracker.ejb.dao.CountryDAOImpl 
+                                                                          19 
+                                     com.vesseltracker.ejb.dao.RegionDAOImpl 
+                                                                          19 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                          18 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                          17 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                          16 
+                  com.vesseltracker.ejb.sms._SMSServiceBeanImpl_Serializable 
+                                                                          12 
+                             com.vesseltracker.ejb.stateless.RoutingUtilBean 
+                                                                          11 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                           8 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                           8 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                           8 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                           5 
+                                      com.vesseltracker.ejb.dao.EventDAOImpl 
+                                                                           4 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                           2 
+                            com.vesseltracker.ejb.dao.VtConfigurationDAOImpl 
+                                                                           2 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                           2 
+                              com.vesseltracker.ejb.stateless.BannerUtilBean 
+                                                                           2 
+                              com.vesseltracker.ejb.stateless.CreditUtilBean 
+                                                                           2 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                           1 
+                                  com.vesseltracker.ejb.dao.AISClientDAOImpl 
+                                                                           1 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                           1 
+                             com.vesseltracker.ejb.dao.UserExportRuleDAOImpl 
+                                                                           1 
+                       com.vesseltracker.ejb.jobs.CustomerMaintenanceJobImpl 
+                                                                           1 
+                          com.vesseltracker.ejb.jobs.AdvertisingEmailJobImpl 
+                                                                           0 
+                             com.vesseltracker.ejb.jobs.RankingUpdateJobImpl 
+                                                                           0 
+                            com.vesseltracker.ejb.stateless.CategoryUtilBean 
+                                                                           0 
+
+> tx_tx.peak_mean <- sort(tapply(tx_tx.peak$elapsed, tx_tx.peak$component, mean), decreasing=TRUE)
+> tx_tx.peak_mean
+                               com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                                  34491.8665 
+                             com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                                  15047.3245 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                  13022.3608 
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                  12157.3245 
+         com.vesseltracker.ejb.facade.vtr_tracking.TrackingSessionFacadeImpl 
+                                                                   9457.0000 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                   7911.5768 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                   5903.0000 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                   5824.5500 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                   3279.5175 
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                                   2741.9840 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                   2038.0985 
+                                      com.vesseltracker.ejb.dao.EventDAOImpl 
+                                                                   1959.7500 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                   1861.9375 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                   1737.3667 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                   1704.1383 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                   1598.0248 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                   1512.8829 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                   1388.4257 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                   1346.5000 
+                            com.vesseltracker.ejb.stateless.ContactsUtilBean 
+                                                                   1342.5000 
+                             com.vesseltracker.ejb.stateless.RoutingUtilBean 
+                                                                   1228.5455 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                   1049.0000 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                   1029.9829 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                   1008.4615 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                    958.5032 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                    924.7810 
+                                      com.vesseltracker.ejb.dao.AlertDAOImpl 
+                                                                    883.2982 
+                                com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                                    804.1449 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                    801.6883 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                    799.0096 
+                  com.vesseltracker.ejb.sms._SMSServiceBeanImpl_Serializable 
+                                                                    782.0833 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                    731.2500 
+                             com.vesseltracker.ejb.dao.UserExportRuleDAOImpl 
+                                                                    717.0000 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                    688.7471 
+                                     com.vesseltracker.ejb.dao.RegionDAOImpl 
+                                                                    685.6316 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                    672.0000 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                    610.5000 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                    574.5806 
+                                     com.vesseltracker.ejb.dao.ReportDAOImpl 
+                                                                    534.8068 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                    501.9544 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                    491.9165 
+                            com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                                    428.6405 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                    412.9130 
+                                    com.vesseltracker.ejb.dao.CountryDAOImpl 
+                                                                    361.9474 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                    334.0000 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                    324.5378 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                    244.3750 
+                              com.vesseltracker.ejb.stateless.CreditUtilBean 
+                                                                    223.0000 
+                                  com.vesseltracker.ejb.dao.AISClientDAOImpl 
+                                                                    218.0000 
+                            com.vesseltracker.ejb.dao.VtConfigurationDAOImpl 
+                                                                    205.5000 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                    193.5381 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                     90.6000 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                     62.0000 
+                              com.vesseltracker.ejb.stateless.BannerUtilBean 
+                                                                     13.0000 
+                       com.vesseltracker.ejb.jobs.CustomerMaintenanceJobImpl 
+                                                                      7.0000 
+
+> tx_tx.peak_median <- sort(tapply(tx_tx.peak$elapsed, tx_tx.peak$component, median), decreasing=TRUE)
+> tx_tx.peak_median
+                               com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                                     34595.5 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                      7299.0 
+         com.vesseltracker.ejb.facade.vtr_tracking.TrackingSessionFacadeImpl 
+                                                                      6352.0 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                      5903.0 
+                             com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                                      2797.5 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                      2750.0 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                      2552.0 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                      1719.5 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                      1346.5 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                       994.0 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                       883.0 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                       866.0 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                       848.5 
+                                      com.vesseltracker.ejb.dao.EventDAOImpl 
+                                                                       817.5 
+                             com.vesseltracker.ejb.dao.UserExportRuleDAOImpl 
+                                                                       717.0 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                       672.0 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                       663.5 
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                       602.0 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                       589.0 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                       580.5 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                       576.5 
+                            com.vesseltracker.ejb.stateless.ContactsUtilBean 
+                                                                       542.0 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                       450.0 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                       303.0 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                       271.0 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                       245.5 
+                  com.vesseltracker.ejb.sms._SMSServiceBeanImpl_Serializable 
+                                                                       238.5 
+                              com.vesseltracker.ejb.stateless.CreditUtilBean 
+                                                                       223.0 
+                                  com.vesseltracker.ejb.dao.AISClientDAOImpl 
+                                                                       218.0 
+                            com.vesseltracker.ejb.dao.VtConfigurationDAOImpl 
+                                                                       205.5 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                       146.0 
+                             com.vesseltracker.ejb.stateless.RoutingUtilBean 
+                                                                       137.0 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                       130.5 
+                            com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                                       104.5 
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                                       103.0 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                        97.0 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                        95.0 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                        77.0 
+                                     com.vesseltracker.ejb.dao.RegionDAOImpl 
+                                                                        71.0 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                        62.0 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                        46.5 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                        36.5 
+                                com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                                        21.0 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                        19.0 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                        15.0 
+                                     com.vesseltracker.ejb.dao.ReportDAOImpl 
+                                                                        15.0 
+                                    com.vesseltracker.ejb.dao.CountryDAOImpl 
+                                                                        13.0 
+                              com.vesseltracker.ejb.stateless.BannerUtilBean 
+                                                                        13.0 
+                                      com.vesseltracker.ejb.dao.AlertDAOImpl 
+                                                                        12.0 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                        12.0 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                        12.0 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                         9.0 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                         8.0 
+                       com.vesseltracker.ejb.jobs.CustomerMaintenanceJobImpl 
+                                                                         7.0 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                         7.0 
+
+> shipplotter.peak <- subset(tx_tx.peak, component == "com.vesseltracker.ejb.stateless.ShipplotterBean")
+> summary(shipplotter.peak$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      1     670    2798   15050    8547  224400 
+> quantile(shipplotter.peak$elapsed, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+ 44856.3  89140.4 175319.0 
+
+> dbupdate.peak <- subset(tx_tx.peak, component == "com.vesseltracker.ejb.stateless.DBUpdateBean")
+> summary(dbupdate.peak$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0     5.0    21.0   804.1   839.0 34800.0 
+> quantile(dbupdate.peak$elapsed, probs=c(0.9,0.95,0.99))
+    90%     95%     99% 
+2726.20 4138.05 6939.82 
+
+> clientcheck.peak <- subset(tx_tx.peak, component == "com.vesseltracker.ejb.jobs.CheckClientJobImpl")
+> summary(clientcheck.peak$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    259   17050   34600   34490   51590   68840 
+> quantile(clientcheck.peak$elapsed, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+61465.20 65132.70 67680.18 
+
+> shipaction.peak <- subset(tx_tx.peak, component == "com.vesseltracker.ejb.stateless.ShipactionUtilBean")
+> summary(shipaction.peak$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0      23     103    2742    1070  166400 
+> quantile(shipaction.peak$elapsed, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+ 5804.80 13025.45 47590.07 
+
+> googleearth.peak <- subset(tx_tx.peak, component == "com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl")
+> summary(googleearth.peak$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0      38     866    1704    2926   13000 
+> quantile(googleearth.peak$elapsed, probs=c(0.9,0.95,0.99))
+    90%     95%     99% 
+4529.40 5310.80 9024.16 
+
+##
+## resource == PM
+##
+> tx_tx.pm <- subset(tx_tx, resource == "jdbc/vesseltracker__pm")
+> nrow(tx_tx.pm)
+[1] 49511
+> summary(tx_tx.pm$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0      22     402    7973    1922  917700 
+> quantile(tx_tx.pm$elapsed, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+  5497.0  11425.5 255970.1 
+> summary(tx_tx$elapsed)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0       7     161    5138    1425  917700 
+> quantile(tx_tx$elapsed, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+ 4652.40  9382.30 99006.62 
+
+> tx_tx.pm_cum <- sort(tapply(tx_tx.pm$elapsed, tx_tx.pm$component, sum), decreasing=TRUE)
+> tx_tx.pm_cum[1:20]
+                 com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                          308174018 
+                       com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                           68850384 
+                         com.vesseltracker.ejb.webservice.AISExport 
+                                                            3297822 
+                   com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                            1846678 
+                      com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                            1573245 
+                    com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                            1512818 
+                        com.vesseltracker.ejb.stateless.HistoryBean 
+                                                            1511544 
+                  com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                            1293062 
+                       com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                            1287222 
+                        com.vesseltracker.ejb.stateless.SatDataBean 
+                                                             850505 
+          com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                             844768 
+com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                             755798 
+                       com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                             666883 
+                com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                             619539 
+                 com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                             567853 
+                        com.vesseltracker.ejb.webservice.VtrService 
+                                                             349717 
+                   com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                             291311 
+                   com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                             112523 
+                com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                              86886 
+                         com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                              62773 
+
+> sort(summary(tx_tx.pm$component), decreasing=TRUE)
+                                com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                                       32707 
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                                        6202 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                        2623 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                        1884 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                         886 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                         704 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                         555 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                         522 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                         443 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                         437 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                         432 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                         396 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                         368 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                         319 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                         271 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                         261 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                         204 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                          92 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                          51 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                          36 
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                          22 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                          20 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                          17 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                          11 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                           8 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                           6 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                           6 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                           5 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                           5 
+                             com.vesseltracker.ejb.jobs.RankingUpdateJobImpl 
+                                                                           4 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                           4 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                           3 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                           2 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                           1 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                           1 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                           1 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                           1 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                           1 
+                                  com.vesseltracker.ejb.dao.AISClientDAOImpl 
+                                                                           0 
+                                      com.vesseltracker.ejb.dao.AlertDAOImpl 
+                                                                           0 
+                                    com.vesseltracker.ejb.dao.CountryDAOImpl 
+                                                                           0 
+                                      com.vesseltracker.ejb.dao.EventDAOImpl 
+                                                                           0 
+                                     com.vesseltracker.ejb.dao.RegionDAOImpl 
+                                                                           0 
+                                     com.vesseltracker.ejb.dao.ReportDAOImpl 
+                                                                           0 
+                             com.vesseltracker.ejb.dao.UserExportRuleDAOImpl 
+                                                                           0 
+                            com.vesseltracker.ejb.dao.VtConfigurationDAOImpl 
+                                                                           0 
+         com.vesseltracker.ejb.facade.vtr_tracking.TrackingSessionFacadeImpl 
+                                                                           0 
+                          com.vesseltracker.ejb.jobs.AdvertisingEmailJobImpl 
+                                                                           0 
+                               com.vesseltracker.ejb.jobs.CheckClientJobImpl 
+                                                                           0 
+                       com.vesseltracker.ejb.jobs.CustomerMaintenanceJobImpl 
+                                                                           0 
+                  com.vesseltracker.ejb.sms._SMSServiceBeanImpl_Serializable 
+                                                                           0 
+                              com.vesseltracker.ejb.stateless.BannerUtilBean 
+                                                                           0 
+                            com.vesseltracker.ejb.stateless.CategoryUtilBean 
+                                                                           0 
+                            com.vesseltracker.ejb.stateless.ContactsUtilBean 
+                                                                           0 
+                              com.vesseltracker.ejb.stateless.CreditUtilBean 
+                                                                           0 
+                            com.vesseltracker.ejb.stateless.RecentEventsBean 
+                                                                           0 
+                             com.vesseltracker.ejb.stateless.RoutingUtilBean 
+                                                                           0 
+                             com.vesseltracker.ejb.stateless.ShipplotterBean 
+                                                                           0 
+
+> tx_tx.pm_mean <- sort(tapply(tx_tx.pm$elapsed, tx_tx.pm$component, mean) ,decreasing=TRUE)
+> tx_tx.pm_mean
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                  68706.5455 
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                                  49689.4579 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                  14055.0217 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                   7546.5034 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                   5903.0000 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                   5793.0000 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                   3414.9391 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                   2548.5882 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                   2206.3333 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                   2133.2525 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                   2119.1818 
+                                com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                                   2105.0657 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                   1775.6716 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                   1714.2990 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                   1664.4000 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                   1629.3199 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                   1586.7500 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                   1557.6000 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                   1543.0788 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                   1434.1181 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                   1201.7500 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                   1201.5910 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                   1073.5767 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                    980.1900 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                    970.3333 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                    913.2006 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                    672.0000 
+                             com.vesseltracker.ejb.jobs.RankingUpdateJobImpl 
+                                                                    647.2500 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                    590.5000 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                    581.6667 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                    566.0000 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                    490.7442 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                    332.8966 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                    231.6347 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                    142.0000 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                     68.6250 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                     27.0000 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                      2.0000 
+
+> sort(tapply(tx_tx.pm$elapsed, tx_tx.pm$component, median) ,decreasing=TRUE)
+                                 com.vesseltracker.ejb.stateless.HistoryBean 
+                                                                     67481.0 
+                                  com.vesseltracker.ejb.webservice.AISExport 
+                                                                      7061.0 
+                      com.vesseltracker.ejb.jobs.CleanUsageStatisticsJobImpl 
+                                                                      5903.0 
+                           com.vesseltracker.ejb.jobs.InmarsatMessageJobImpl 
+                                                                      5793.0 
+                           com.vesseltracker.ejb.jobs.CleanShipactionJobImpl 
+                                                                      4477.0 
+                             com.vesseltracker.ejb.webservice.XmlServiceBean 
+                                                                      2650.0 
+                             com.vesseltracker.ejb.webservice.ShipMasterdata 
+                                                                      1930.0 
+                                com.vesseltracker.ejb.webservice.TaskService 
+                                                                      1735.0 
+                                 com.vesseltracker.ejb.stateless.LoggingBean 
+                                                                      1653.5 
+                            com.vesseltracker.ejb.stateless.CustomerUtilBean 
+                                                                      1251.0 
+                         com.vesseltracker.ejb.stateless.UsageStatisticsBean 
+                                                                      1085.5 
+                                 com.vesseltracker.ejb.webservice.VtrService 
+                                                                      1067.5 
+                          com.vesseltracker.ejb.stateless.NewsletterUtilBean 
+                                                                      1061.5 
+                        com.vesseltracker.ejb.jobs.ImportWateroptInfoJobImpl 
+                                                                      1024.0 
+                   com.vesseltracker.ejb.jobs.UpdateDelayedShipActionJobImpl 
+                                                                       910.0 
+                               com.vesseltracker.ejb.stateless.PhotoUtilBean 
+                                                                       690.0 
+                                     com.vesseltracker.ejb.dao.MyPortDAOImpl 
+                                                                       672.0 
+                                 com.vesseltracker.ejb.stateless.SatDataBean 
+                                                                       669.0 
+                                com.vesseltracker.ejb.stateless.UserUtilBean 
+                                                                       610.0 
+         com.vesseltracker.ejb.facade.vtr_earth.GoogleEarthSessionFacadeImpl 
+                                                                       586.5 
+                      com.vesseltracker.ejb.stateless.FavouritePhotoUtilBean 
+                                                                       566.0 
+                             com.vesseltracker.ejb.stateless.MessageUtilBean 
+                                                                       463.5 
+                                com.vesseltracker.ejb.stateless.DBUpdateBean 
+                                                                       437.0 
+                          com.vesseltracker.ejb.stateless.ShipactionUtilBean 
+                                                                       432.5 
+                            com.vesseltracker.ejb.webservice.TrafficInRegion 
+                                                                       344.0 
+                          com.vesseltracker.ejb.dao.CustomerShipGroupDAOImpl 
+                                                                       209.0 
+                    com.vesseltracker.ejb.webservice.ImportCustomerShipGroup 
+                                                                       180.0 
+                                com.vesseltracker.ejb.stateless.ShipUtilBean 
+                                                                       140.0 
+                          com.vesseltracker.ejb.dao.DelayedShipActionDAOImpl 
+                                                                       108.5 
+                                   com.vesseltracker.ejb.dao.MyVesselDAOImpl 
+                                                                        66.0 
+                                       com.vesseltracker.ejb.dao.TideDAOImpl 
+                                                                        29.5 
+com.sun.enterprise.admin.jmx.remote.server.servlet.RemoteJmxConnectorServlet 
+                                                                        27.0 
+                                  com.vesseltracker.ejb.jobs.AlertingJobImpl 
+                                                                        24.0 
+                         com.vesseltracker.ejb.stateless.BusinessListingBean 
+                                                                        16.0 
+                            com.vesseltracker.ejb.jobs.VesselAlertingJobImpl 
+                                                                        12.0 
+                             com.vesseltracker.ejb.jobs.RankingUpdateJobImpl 
+                                                                         7.0 
+                                       com.vesseltracker.ejb.dao.PortDAOImpl 
+                                                                         5.0 
+                    com.sun.ejb.containers.TimerBean_2100919770_ConcreteImpl 
+                                                                         2.0 
+
+##
+## general tx stats
+##
+
+> tx <- read.table("tx_stats.csv", header=TRUE, sep=',')
+> nrow(tx)
+[1] 9428
+> summary(as.numeric(tx$active))
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00   60.00   82.00   73.99  102.00  141.00 
+> quantile(as.numeric(tx$active), probs=c(0.9,0.95,0.99))
+90% 95% 99% 
+122 131 131 
+
+> tx.peak <- subset(tx, getHour(t) %in% seq(9,17))
+> nrow(tx.peak)
+
+> diff.t <- diff(tx.peak$t)
+> diff.committed <- diff(tx.peak$committed)
+> tx.peak.commitrate <- diff.committed / diff.t
+> summary(tx.peak.commitrate)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    0.0   345.5   422.4   418.6   497.8  1036.0    21.0 
+> quantile(tx.peak.commitrate, probs=c(0.9,0.95,0.99), na.rm=TRUE)
+    90%     95%     99% 
+567.150 615.100 706.815 
+
+> max(diff.rolledback, na.rm=TRUE)
+[1] 388
+> which.max(diff.rolledback)
+[1] 122
+> diff.t[122]
+[1] 6
+> as.POSIXlt(tx.peak$t[122], origin='1970-01-01')
+[1] "2011-12-21 09:44:53 CET"
+
+

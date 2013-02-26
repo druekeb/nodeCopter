@@ -1,0 +1,172 @@
+> jdbcpool <- read.table("jdbcpool-2011-12-18-21.csv", header=TRUE, sep=",")
+> nrow(jdbcpool)
+[1] 261458
+> colnames(jdbcpool)
+ [1] "t"                           "AverageConnWaitTime"        
+ [3] "ConnRequestWaitTime_low"     "ConnRequestWaitTime_hi"     
+ [5] "ConnRequestWaitTime_current" "NumConnAcquired"            
+ [7] "NumConnCreated"              "NumConnDestroyed"           
+ [9] "NumConnFailedValidation"     "NumConnFree_low"            
+[11] "NumConnFree_hi"              "NumConnFree_current"        
+[13] "NumConnRejected"             "NumConnReleased"            
+[15] "NumConnSuccessfullyMatched"  "NumConnTimedOut"            
+[17] "NumConnUsed_low"             "NumConnUsed_hi"             
+[19] "NumConnUsed_current"         "WaitQueueLength"            
+> quantile(jdbcpool[["ConnRequestWaitTime_current"]], probs=c(0.95,0.96))
+95% 96% 
+  0   1 
+> max(jdbcpool[["ConnRequestWaitTime_current"]])
+[1] 54256
+> nrow(jdbcpool) * 0.95
+[1] 248385.1
+
+> max(jdbcpool[["WaitQueueLength"]])
+[1] 110
+> nrow(subset(jdbcpool, WaitQueueLength > 0))
+[1] 17479
+> 17479 / nrow(jdbcpool)
+[1] 0.06685204
+
+> wait.t <- subset(jdbcpool, select = ConnRequestWaitTime_current, subset = (ConnRequestWaitTime_current != 0))
+> nrow(wait.t)
+[1] 10462
+> summary(wait.t[["ConnRequestWaitTime_current"]])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    1.0    12.0   105.0   492.8   496.5 54260.0 
+> quantile(wait.t[["ConnRequestWaitTime_current"]], probs=c(0.9,0.95,0.99))
+    90%     95%     99% 
+1168.00 1846.00 3842.73 
+> sum(wait.t[["ConnRequestWaitTime_current"]])/1000
+[1] 5155.549
+> sum(wait.t[["ConnRequestWaitTime_current"]])/1000/60
+[1] 85.92582
+
+> wait.l <- subset(jdbcpool, select = WaitQueueLength, subset = (WaitQueueLength != 0))
+> summary(wait.l[["WaitQueueLength"]])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00   11.00   32.00   39.42   67.00  110.00 
+> quantile(wait.l[["WaitQueueLength"]], probs=c(0.9,0.95,0.99))
+90% 95% 99% 
+ 86  93 101 
+> nrow(wait.l)
+[1] 17479
+
+> summary(jdbcpool[["NumConnUsed_current"]])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    4.00    6.00   11.16   10.00   48.00 
+> quantile(jdbcpool[["NumConnUsed_current"]], probs=c(0.9,0.95,0.99))
+90% 95% 99% 
+ 35  48  48 
+
+> jdbcpool.peak <- subset(jdbcpool, getWday(t) %in% seq(1,5))
+> jdbcpool.peak <- subset(jdbcpool.peak, getHour(t) %in% seq(9,17))
+> nrow(jdbcpool.peak)
+[1] 60313
+> summary(jdbcpool.peak[["NumConnUsed_current"]])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    6.00    9.00   15.96   19.00   48.00 
+> quantile(jdbcpool.peak[["NumConnUsed_current"]], probs=c(0.87,0.88,0.89))
+87% 88% 89% 
+ 47  47  48 
+> summary(jdbcpool.peak[["ConnRequestWaitTime_current"]])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    0.00    0.00   30.87    0.00 8149.00 
+> quantile(jdbcpool.peak[["ConnRequestWaitTime_current"]], probs=c(0.92,0.93))
+92% 93% 
+  0   1 
+> sum(jdbcpool.peak[["ConnRequestWaitTime_current"]])/1000/60
+[1] 31.03433
+> nrow(subset(jdbcpool.peak, ConnRequestWaitTime_current >= 500))
+[1] 1194
+> nrow(subset(jdbcpool.peak, ConnRequestWaitTime_current >= 500))/nrow(jdbcpool.peak)
+[1] 0.01979673
+
+> summary(jdbcpool.peak[["WaitQueueLength"]])
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   0.000   0.000   5.062   0.000 103.000 
+> quantile(jdbcpool.peak[["WaitQueueLength"]], probs=c(0.9,0.95,0.99))
+90% 95% 99% 
+ 10  49  84 
+> quantile(jdbcpool.peak[["WaitQueueLength"]], probs=c(0.87,0.88))
+87% 88% 
+  0   2 
+
+> min(jdbcpool.peak[["NumConnUsed_current"]] + jdbcpool.peak[["NumConnFree_current"]])
+[1] 39
+> quantile(jdbcpool.peak[["NumConnUsed_current"]] + jdbcpool.peak[["NumConnFree_current"]], probs=c(0.01))
+1% 
+46 
+> quantile(jdbcpool[["NumConnUsed_current"]] + jdbcpool[["NumConnFree_current"]], probs=c(0.01,0.05,0.1))
+ 1%  5% 10% 
+ 43  45  46 
+
+> jdbcpool.nonpeak <- subset(jdbcpool, !(t %in% jdbcpool.peak[["t"]]))
+> max(jdbcpool.nonpeak[["ConnRequestWaitTime_current"]])
+[1] 54256
+> quantile(jdbcpool.nonpeak[["ConnRequestWaitTime_current"]], probs=c(0.96,0.97,0.98,0.99,0.999))
+     96%      97%      98%      99%    99.9% 
+   0.000    0.000   19.000  258.560 2211.984 
+> quantile(jdbcpool.nonpeak[["NumConnUsed_current"]], probs=c(0.9,0.95,0.99))
+90% 95% 99% 
+ 25  47  48 
+> quantile(jdbcpool.nonpeak[["WaitQueueLength"]], probs=c(0.9,0.95,0.99))
+90% 95% 99% 
+  0   0  75 
+
+> jdbcpool.acq <- diff(jdbcpool[["NumConnAcquired"]])
+> summary(jdbcpool.acq)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0    1160    1684    1657    2173    6943 
+> quantile(jdbcpool.acq, probs=c(0.9,0.95,0.99))
+ 90%  95%  99% 
+2655 2979 3649 
+> quantile(jdbcpool.acq, probs=c(0.9,0.95,0.99))
+ 90%  95%  99% 
+2655 2979 3649 
+
+> jdbcpool.peak.acq <- diff(jdbcpool.peak[["NumConnAcquired"]])
+> summary(jdbcpool.peak.acq)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0    1231    1859    1782    2405    5175 
+> quantile(jdbcpool.peak.acq, probs=c(0.9,0.95,0.99))
+    90%     95%     99% 
+2932.90 3265.00 3911.89 
+
+> attach(jdbcpool.peak)
+> wait.peak.rle <- rle(WaitQueueLength)
+> runs.peak <- wait.peak.rle$lengths[wait.peak.rle$values == 0]
+> summary(runs.peak)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    1.0     3.0    44.0    65.8    99.0   712.0 
+> quantile(runs.peak, probs=c(0.9,0.95,0.99))
+90% 95% 99% 
+152 214 363 
+> wait.t.peak.rle <- rle(ConnRequestWaitTime_current)
+> runs.t.peak <- wait.t.peak.rle$lengths[wait.t.peak.rle$values == 0]
+> summary(runs.t.peak)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    1.00    3.00   34.25   35.50  842.00 
+> quantile(runs.t.peak, probs=c(0.9,0.99,0.95))
+  90%   99%   95% 
+111.0 284.5 173.5 
+
+> attach(jdbcpool)
+> wait.l.rle <- rle(WaitQueueLength)
+> runs.l <- wait.l.rle$lengths[wait.l.rle$values == 0]
+> summary(runs.l)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    1.0     4.0    77.0   122.7   137.0  3725.0 
+> quantile(runs.l, probs=c(0.9,0.95,0.99))
+   90%    95%    99% 
+292.40 456.60 952.36 
+
+> wait.t.rle <- rle(ConnRequestWaitTime_current)
+> runs.t <- wait.t.rle$lengths[wait.t.rle$values == 0]
+> summary(runs.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    1.00    4.00   61.38   77.00 1974.00 
+> quantile(runs.t, probs=c(0.9,0.95,0.99))
+   90%    95%    99% 
+187.00 284.60 605.48 
+
+

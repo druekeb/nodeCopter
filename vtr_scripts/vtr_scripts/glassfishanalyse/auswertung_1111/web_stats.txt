@@ -1,0 +1,141 @@
+> servlets <- read.csv("servlet.csv", header=TRUE)
+
+##
+## XMLReceiverServlet
+##
+
+> xmlreceiver <- subset(servlets, servlet == "XMLReceiverServlet")
+# errorcount = 0
+
+## Estimated reqs/s
+> summary(diff.xmlreceiver.req / diff.xmlreceiver.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   3.667   4.333   4.409   5.000  13.000 
+
+## Estimated processing time / req
+> summary(diff.xmlreceiver.proc / diff.xmlreceiver.req)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA's 
+     0.0    662.2    875.1   1727.0   1200.0 129600.0      2.0 
+> quantile(diff.xmlreceiver.proc / diff.xmlreceiver.req, probs=c(0.9,0.95,0.99), na.rm=TRUE)
+      90%       95%       99% 
+ 1963.886  3381.594 25680.706 
+
+##
+## aisweb
+##
+
+## Estimated reqs/s
+> summary(diff.aisweb.req / diff.aisweb.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00    8.50   13.17   13.34   17.33   44.50 
+> quantile(diff.aisweb.req / diff.aisweb.t, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+20.83333 23.00000 27.54143 
+
+## Estimated processing time / req
+> summary(diff.aisweb.proc / diff.aisweb.req)
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max.      NA's 
+     0.00     58.85     86.34    242.10    147.70 121400.00      4.00 
+> quantile(diff.aisweb.proc / diff.aisweb.req, probs=c(0.9,0.95,0.99), na.rm=TRUE)
+      90%       95%       99% 
+ 280.9434  493.8721 3463.1958 
+
+
+# Max war ung. 2011-12-21 04:39:47
+
+# errorcount > 0 but negligible
+
+#################################
+##
+## Peak hours
+##
+
+##
+## XMLReceiverServlet
+##
+
+# errorcount = 0
+
+## Estimated reqs/s
+> summary(diff.xmlreceiver.peak.req / diff.xmlreceiver.peak.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   3.714   4.333   4.442   5.000  13.000 
+
+## Estimated processing time / req
+> summary(diff.xmlreceiver.peak.proc / diff.xmlreceiver.peak.req)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA's 
+     0.0    682.5    894.2   1548.0   1202.0 129600.0      1.0 
+> quantile(diff.xmlreceiver.peak.proc / diff.xmlreceiver.peak.req, probs=c(0.9,0.95,0.99), na.rm=TRUE)
+      90%       95%       99% 
+ 1763.654  2493.009 16757.577 
+
+##
+## aisweb
+##
+
+## Estimated reqs/s
+> summary(diff.aisweb.peak.req / diff.aisweb.peak.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00   13.67   16.50   16.79   19.67   44.50 
+> quantile(diff.aisweb.peak.req / diff.aisweb.peak.t, probs=c(0.9,0.95,0.99))
+     90%      95%      99% 
+22.66667 24.82833 29.00000 
+
+## Estimated processing time / req
+> summary(diff.aisweb.peak.proc / diff.aisweb.peak.req)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA's 
+    0.00    59.67    84.41   185.40   132.20 16650.00     1.00 
+> quantile(diff.aisweb.peak.proc / diff.aisweb.peak.req, probs=c(0.9,0.95,0.99), na.rm=TRUE)
+      90%       95%       99% 
+ 229.1217  354.0112 2589.7476 
+
+# errorcount > 0 but negligible
+
+##
+## aisweb Sessions
+##
+
+# rejectedsessionstotal = 0
+
+> summary(webmodule$activesessionscurrent)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    192    1098    1344    1328    1525    2130 
+> quantile(webmodule$activesessionscurrent, probs=c(0.9,0.95,0.99))
+    90%     95%     99% 
+1758.50 1873.70 2073.43 
+
+> max(webmodule$activesessionshigh)
+[1] 2715
+
+# estimated sessions / s
+> summary(diff.webmodule.sessions / diff.webmodule.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   0.900   1.300   1.352   1.700   3.900 
+
+# estimated expired sessions / s
+> summary(diff.webmodule.expired / diff.webmodule.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.6364  1.1000  1.2540  1.7000  7.8000 
+
+##
+## aisweb Sessions, peak "hours" (ca. 15 Minuten)
+##
+
+> as.POSIXlt(range(webmodule.peak$t), origin='1970-01-01')
+[1] "2011-12-21 09:49:13 CET" "2011-12-21 10:06:33 CET"
+
+> summary(webmodule.peak$activesessionscurrent)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  192.0   543.0   944.0   994.8  1465.0  1853.0 
+> quantile(webmodule.peak$activesessionscurrent, probs=c(0.9,0.95,0.99))
+    90%     95%     99% 
+1710.80 1800.00 1843.28 
+
+> summary(diff.webmodule.peak.sessions / diff.webmodule.peak.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.600   1.383   1.800   1.888   2.400   3.556 
+
+> summary(diff.webmodule.peak.expired / diff.webmodule.peak.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.0000  0.0000  0.2858  0.1028  2.1110 
+

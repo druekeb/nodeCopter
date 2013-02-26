@@ -1,0 +1,142 @@
+#!/bin/bash
+_temp="dialog.$$"
+VER='1.0'
+dialog 2>$_temp
+
+kill_glassfish() {
+        PID=`ps faux | grep glassfish | grep -v grep`
+        KPID=`echo $PID | tr -s ' ' ' '| cut -d' ' -f2`
+        dialog --defaultno --title "Kill Glassfish PID" \
+                --backtitle "Kill Glassfish PID" \
+                --yesno "$PID" 0 0
+        response=$?
+        case $response in
+                0) kill -9 $KPID ; cd /opt/appserver/domains/vesseltracker/ ; find /opt/appserver/domains/vesseltracker/ -name vtr_ear -exec rm -rf {} \;
+                	/opt/appserver/bin/asadmin start-domain vesseltracker ; /opt/appserver/bin/asadmin undeploy vtr_ear ; /opt/appserver/bin/asadmin undeploy vtr_ear ; /opt/appserver/bin/asadmin stop-domain vesseltracker ;;
+                1) ;;
+                255);;
+        esac
+
+}
+
+analyse_apache2_access_log(){
+        DATE_STR=`date +%Y:%H`
+        IPS1=`echo "ips by www\n" && cat /var/log/apache2/www.vesseltracker.com/access.log | grep $DATE_STR |cut -d' ' -f1 |sort| uniq -c | sort -rn | grep -v 83.220.137 | head`
+        IPS2=`echo "ips by webservices\n" && cat /var/log/apache2/webservice.vesseltracker.com/access.log | grep $DATE_STR |cut -d' ' -f1 |sort| uniq -c | sort -rn | grep -v 83.220.137 | head`
+        dialog --msgbox "$IPS1\n\n\n$IPS2"  0 0
+}
+
+
+apache2_set_all_as_maintanence(){
+ 		a2dissite www.vesseltracker.com
+		a2dissite www.vesseltracker.com_allow_access_webservice  
+		a2dissite www.vesseltracker.com_allow_access_xmlreciverservlet  
+		a2ensite www.vesseltracker.com_set_all_as_maintanence
+ 		/etc/init.d/apache2 reload
+}
+
+apache2_allow_access_xmlreciverservlet(){
+ 		a2dissite www.vesseltracker.com
+		a2dissite www.vesseltracker.com_allow_access_webservice  
+		a2ensite www.vesseltracker.com_allow_access_xmlreciverservlet  
+		a2dissite www.vesseltracker.com_set_all_as_maintanence
+ 		/etc/init.d/apache2 reload
+}
+
+apache2_allow_access_webservice(){
+ 		a2dissite www.vesseltracker.com
+		a2ensite www.vesseltracker.com_allow_access_webservice  
+		a2dissite www.vesseltracker.com_allow_access_xmlreciverservlet  
+		a2dissite www.vesseltracker.com_set_all_as_maintanence
+ 		/etc/init.d/apache2 reload
+}
+
+apache2_allow_access_all_page(){
+ 		a2ensite www.vesseltracker.com
+		a2dissite www.vesseltracker.com_allow_access_webservice  
+		a2dissite www.vesseltracker.com_allow_access_xmlreciverservlet  
+		a2dissite www.vesseltracker.com_set_all_as_maintanence
+ 		/etc/init.d/apache2 reload
+}
+
+run_vesseltracker_restart_script(){
+ 		dialog --defaultno --title "Run vesseltracker Restart Script" \
+                --backtitle "Run vesseltracker Restart Script" \
+                --yesno "/scripts/vesseltracker.sh restart" 0 0
+        response=$?
+        case $response in
+                0) /scripts/vesseltracker.sh restart;;
+                1) ;;
+                255);;
+        esac
+}
+
+run_vesseltracker_start_script(){
+                dialog --defaultno --title "Run vesseltracker Start Script" \
+                --backtitle "Run vesseltracker Start Script" \
+                --yesno "/scripts/vesseltracker.sh start" 0 0
+        response=$?
+        case $response in
+                0) /scripts/vesseltracker.sh start;;
+                1) ;;
+                255);;
+        esac
+}
+
+run_vesseltracker_stop_script(){
+                dialog --defaultno --title "Run vesseltracker Stop Script" \
+                --backtitle "Run vesseltracker Stop Script" \
+                --yesno "/scripts/vesseltracker.sh stop" 0 0
+        response=$?
+        case $response in
+                0) /scripts/vesseltracker.sh stop;;
+                1) ;;
+                255);;
+        esac
+}
+
+
+run_check_ws_script(){
+        IPS1=`/scripts/check_webservice_wsdl.sh`
+        dialog --msgbox "$IPS1"  0 0
+}
+
+### create main menu using dialog
+main_menu() {
+    dialog --backtitle "app01.vesseltracker.com SOS " --title " Main Menu - V. $VER "\
+        --cancel-label "Quit" \
+        --menu "Move using [UP] [DOWN], [Enter] to select" 17 60 20\
+        "Analyse Apache2 Accecss Log" ""\
+        "Apache2 set All as Maintanence" ""\
+        "Apache2 Allow access XMLReciverServlet" ""\
+        "Apache2 Allow access Webservice" ""\
+		"Apache2 Allow access All Page" ""\
+        "Kill Glassfish" ""\
+        "Run vesseltracker Restart Script" ""\
+		"Run vesseltracker Start Script" ""\
+		"Run vesseltracker Stop Script" ""\
+        "Check Web Services" ""\
+        "Quit SOS" "" 2>$_temp
+
+    opt=${?}
+    if [ $opt != 0 ]; then rm $_temp; exit; fi
+    menuitem=`cat $_temp`
+    echo "menu=$menuitem"
+    case $menuitem in
+        "Analyse Apache2 Accecss Log") analyse_apache2_access_log;;
+        "Apache2 set All as Maintanence") apache2_set_all_as_maintanence;;
+        "Apache2 Allow access XMLReciverServlet") apache2_allow_access_xmlreciverservlet;;
+        "Apache2 Allow access Webservice") apache2_allow_access_webservice;;
+		"Apache2 Allow access All Page") apache2_allow_access_all_page;;
+        "Kill Glassfish") kill_glassfish;;
+        "Run vesseltracker Restart Script") run_vesseltracker_restart_script;;
+		"Run vesseltracker Start Script") run_vesseltracker_start_script;;
+		"Run vesseltracker Stop Script") run_vesseltracker_stop_script;;
+        "Check Web Services") run_check_ws_script;;
+        "Quit SOS") rm $_temp; exit;;
+    esac
+}
+
+while true; do
+  main_menu
+done

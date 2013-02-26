@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers created="Thu Jun 04 11:42:08 CEST 2009">
+	<marker status="MOORED" icon="5" name="ABAI CROWN" t="cargo_ships" imo="9306117" lat="-29.8664" lng="31.0333" cog="122.0" speed="0.0" length="190.0" width="32.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="AFRICAN ORCHID" t="cargo_ships" imo="9151515" lat="-29.8739" lng="31.0079" cog="0.0" speed="0.0" length="164.0" width="26.0" country="Antigua and Barbuda" flag="10"/>
+	<marker status="MOORED" icon="5" name="AQUAMARINE" t="cargo_ships" imo="7358901" lat="-29.8717" lng="31.0343" cog="210.7" speed="0.0" length="50.0" width="8.0" country="Chile" flag="45"/>
+	<marker status="MOORED" icon="5" name="BORDER" t="cargo_ships" imo="9063988" lat="-29.8872" lng="31.0013" cog="192.7" speed="0.1" length="0.0" width="0.0" country="Antigua and Barbuda" flag="10"/>
+	<marker status="MOORED" icon="5" name="BW HESIOD" t="tankships" imo="9293430" lat="-29.8854" lng="31.032" cog="320.6" speed="0.1" length="205.0" width="32.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="CSCL SANTIAGO" t="cargo_ships" imo="9386017" lat="-29.8777" lng="31.0293" cog="13.0" speed="0.1" length="209.0" width="30.0" country="Hong Kong" flag="97"/>
+	<marker status="MOORED" icon="5" name="DI 68" t="others" imo="7817165" lat="-29.8707" lng="31.0557" cog="97.6" speed="0.0" length="65.0" width="12.0" country="Belgium" flag="24"/>
+	<marker status="MOORED" icon="5" name="DI 69" t="cargo_ships" imo="7817177" lat="-29.8741" lng="31.0491" cog="229.0" speed="0.1" length="67.0" width="12.0" country="Belgium" flag="24"/>
+	<marker status="MOORED" icon="5" name="EMMY SCHULTE" t="tankships" imo="9394519" lat="-29.8871" lng="31.0025" cog="180.7" speed="0.0" length="145.0" width="25.0" country="United Kingdom" flag="221"/>
+	<marker status="MOORED" icon="5" name="FRONTIER" t="cargo_ships" imo="8614194" lat="-29.8844" lng="30.9975" cog="262.0" speed="0.0" length="147.0" width="22.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="GAGARMAYANG" t="tankships" imo="9288916" lat="-29.8844" lng="31.0431" cog="235.0" speed="0.1" length="176.0" width="31.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="GLOBAL PATRIOT" t="cargo_ships" imo="7504627" lat="-29.8871" lng="31.001" cog="10.8" speed="0.0" length="204.0" width="25.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="GREEN MUSIC" t="cargo_ships" imo="8822595" lat="-29.8838" lng="31.0017" cog="357.0" speed="0.1" length="134.0" width="18.0" country="Bahamas" flag="19" engName="MaK" engModel="MaK 6 M 601"/>
+	<marker status="MOORED" icon="5" name="HS BACH" t="cargo_ships" imo="9323015" lat="-29.8804" lng="31.0279" cog="66.4" speed="0.0" length="245.0" width="32.0" country="Liberia" flag="121"/>
+	<marker status="MOVING" icon="2" name="LIBERTY EAGLE" t="cargo_ships" imo="9278753" lat="-29.8834" lng="31.0055" cog="173.0" speed="1.9" length="182.0" width="32.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="MARABOU" t="cargo_ships" imo="8610916" lat="-29.8762" lng="31.0538" cog="202.4" speed="0.1" length="196.0" width="28.0" country="Malta" flag="132"/>
+	<marker status="MOORED" icon="5" name="MOL DOMINANCE" t="cargo_ships" imo="9478494" lat="-29.8781" lng="31.0224" cog="255.4" speed="0.2" length="261.0" width="32.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOORED" icon="5" name="MSC FINLAND" t="cargo_ships" imo="8511184" lat="-29.8793" lng="31.016" cog="55.0" speed="0.0" length="242.0" width="32.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="MSC LEILA" t="cargo_ships" imo="8520408" lat="-29.8781" lng="31.0327" cog="295.1" speed="0.1" length="159.0" width="24.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MSC LEVINA" t="cargo_ships" imo="8608200" lat="-29.8821" lng="31.0228" cog="267.7" speed="0.3" length="241.0" width="32.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MSC MAHIMA" t="cargo_ships" imo="8308707" lat="-29.883" lng="31.0242" cog="218.8" speed="0.0" length="243.0" width="32.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="MSC SELIN" t="cargo_ships" imo="7822548" lat="-29.8803" lng="31.0232" cog="260.0" speed="0.2" length="173.0" width="30.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MT LOULOU" t="tankships" imo="9081241" lat="-29.871" lng="31.0383" cog="354.4" speed="0.0" length="94.0" width="18.0" country="Nigeria" flag="155"/>
+	<marker status="MOORED" icon="5" name="MT OLAMIPOSI" t="tankships" imo="9081253" lat="-29.8742" lng="31.0435" cog="332.1" speed="0.1" length="94.0" width="18.0" country="Nigeria" flag="155"/>
+	<marker status="MOORED" icon="5" name="MV.CENDANA" t="cargo_ships" imo="9263071" lat="-29.8784" lng="31.006" cog="9.9" speed="0.0" length="189.0" width="30.0" country="Hong Kong" flag="97" engName="MaK" engModel="3x MaK 6 M 20"/>
+	<marker status="MOORED" icon="5" name="MV RIDLEY THOMAS" t="others" imo="8112744" lat="-29.8853" lng="30.9935" cog="298.6" speed="0.1" length="60.0" width="12.0" country="Marshall Islands" flag="133" engName="Cat" engModel="2x Cat D399"/>
+	<marker status="MOORED" icon="5" name="MV THOR SWAN" t="cargo_ships" imo="9006215" lat="-29.8742" lng="31.042" cog="355.3" speed="0.1" length="83.0" width="14.0" country="Denmark" flag="62"/>
+	<marker status="MOORED" icon="5" name="NELSON STAR" t="cargo_ships" imo="8917558" lat="-29.8696" lng="31.0324" cog="247.2" speed="0.0" length="150.0" width="20.0" country="Bermuda" flag="27"/>
+	<marker status="MOORED" icon="5" name="NENA C" t="cargo_ships" imo="9087233" lat="-29.876" lng="31.032" cog="144.0" speed="0.0" length="185.0" width="31.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="ORWELL" t="dredgers" imo="8515520" lat="-29.8803" lng="31.0501" cog="301.4" speed="0.1" length="90.0" width="13.0" country="Belgium" flag="24" engName="Cat" engModel="2x Cat 3606"/>
+	<marker status="MOORED" icon="5" name="PANAMAX SUN" t="cargo_ships" imo="8023967" lat="-29.8698" lng="31.037" cog="234.0" speed="0.2" length="224.0" width="32.0" country="Cyprus" flag="58"/>
+	<marker status="MOORED" icon="5" name="PENTOW SERVICE" t="tugboats" imo="831961500" lat="-29.8843" lng="31.0386" cog="232.4" speed="0.2" length="40.0" width="12.0" country="Saint Vincent and the Grenadines" flag="183"/>
+	<marker status="MOORED" icon="5" name="RAYNA" t="cargo_ships" imo="8107311" lat="-29.8736" lng="31.047" cog="198.2" speed="0.1" length="195.0" width="26.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="SANKO MAJESTY" t="cargo_ships" imo="9355525" lat="-29.8692" lng="31.0123" cog="252.0" speed="0.0" length="190.0" width="32.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="SAPPHIRE ACE" t="cargo_ships" imo="9051806" lat="-29.8631" lng="31.0321" cog="353.0" speed="0.1" length="187.0" width="30.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="SIAM JADE" t="cargo_ships" imo="8400555" lat="-29.8784" lng="31.0516" cog="0.1" speed="0.1" length="190.0" width="32.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="SIR HENRY" t="cargo_ships" imo="9151383" lat="-29.8853" lng="31.041" cog="195.2" speed="0.0" length="148.0" width="22.0" country="Philippines" flag="168"/>
+	<marker status="MOORED" icon="5" name="SMIT MADURA" t="tugboats" imo="8714891" lat="-29.8805" lng="31.0358" cog="268.2" speed="0.1" length="50.0" width="14.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="SUBHIKSHA" t="tugboats" imo="9208344" lat="-29.8877" lng="31.0068" cog="349.7" speed="0.0" length="70.0" width="19.0" country="India" flag="100" engName="Cat" engModel="2x Cat 3616"/>
+	<marker status="MOORED" icon="5" name="SUN PRINCESS" t="passenger_ships" imo="9000259" lat="-29.8705" lng="31.0325" cog="317.0" speed="0.0" length="261.0" width="32.0" country="Bermuda" flag="27"/>
+	<marker status="MOORED" icon="5" name="THAI DAWN" t="cargo_ships" imo="8310956" lat="-29.8845" lng="30.9969" cog="330.3" speed="0.1" length="169.0" width="25.0" country="Marshall Islands" flag="133"/>
+	<marker status="" icon="" name="" t="" imo="" lat="" lng="" cog="" speed="" length="" width="" country="" flag=""/>
+</markers>

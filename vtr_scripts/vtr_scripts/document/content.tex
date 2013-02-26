@@ -1,0 +1,73 @@
+\section{Introduction}
+Welcome to the vesseltracker.com API Manual. Here you will find an overview over the various options vesseltracker.com is offering you to integrate our services into your website or application. 
+If you are interested in testing these services and working with the given examples yourself, please contact us for an appropriate username and password with which you will be able to access the different services.
+
+\section{Map integration}
+\subsection{Map integration for one or more vessels}
+You can display one or more vessels on its current position. The sidebar shows the names of the ships displayed in the map. Click on a shipname or move the mouse over a ship icon to show the corresponding shipdetails in the infobox below. The icon with which a ship is displayed on the map depends on its movement status.\\ 
+URL: \url{http://www.vesseltracker.com/en/WLVesselMap.html?u=USERNAME\&p=PASSWORD\&imos=LIST_OF_IMO_NUMBERS}
+
+\begin{itemize}
+  \item String u: The user who calls the service
+  \item String p: Password for the user calling the service
+  \item String imos: IMOs of the requested vessels you want to see on the map seperate by ","
+\end{itemize}
+
+
+\subsection{Map integration for a Region}
+You can also display an entire region and all vessels currently in this region. The sidebar on the left lists the names of the ships displayed in the map. Click on a shipname or move the mouse over a ship icon to show the corresponding shipdetails in the infobox below. The icon with which a ship is displayed on the map depends on its movement status.\\
+URL: \url{http://www.vesseltracker.com/en/WLRegionMap.html?u=USERNAME\&p=PASSWORD\&lat=LATIDUDE\&lon=LONGITUDE\&zoom=ZOOM_LEVEL\&dataUrl=QUERY_URL} 
+
+\begin{itemize}
+  \item String u: The user who calls the service
+  \item String p: Password for the user calling the service
+  \item Integer zoom: Initial zoom factor of the map possible zoomlevels:0 (entire world) up to 17 (extremely close)
+  \item Double lat: Latitude of the initial center position of the map
+  \item Double lon: Longitude of the initial center position of the map
+  \item String dataUrl: An URL where the Ajax update request is forwarded to
+\end{itemize}
+
+
+\section{Terrestrial AIS Position Data}
+\subsection{by Vessel}
+VtrService:
+The VtrService defines a couple of webservice methods that allows you to get vessel position information based on several parameters.
+
+
+
+
+VtrVesselExport:
+Over the VtrVesselExport Service you can get vessel position information for a predefined list of vessels. 
+
+\subsection{by Region or Port}
+AISExport
+With the AISExport Service you can get the actual vessel position information of all vessels in a definded region.
+
+VtrPortService
+With the VtrPortService you can get serveral vessel information for a specific port.
+The actual traffic in the port, the expected vessels of the port, sailed vessels of the port and the incoming vessels.
+
+\section{Satellite AIS Position Data}
+\subsection{by Vessel}
+The SatExportService allows you to get actual position information for a definded list of vessels.
+
+To update the vessel list for the SatExportService you can use the VesselListMaintenance Service.
+With this webservice you can add or remove vessels to or from your vessel list via the IMO.
+And you can list all vessels that are currently in your list. 
+
+
+
+\subsection{by Region or Port}
+AisSatExportService
+Via AisSatExportService you can get all the latest position information of a defined Region.
+
+   
+
+
+\section{Vessel Characteristic Data}
+getMasterdataByIMO
+getMasterdataByMMSI
+
+\section{Routing}
+
+\section{White Label Alerting}

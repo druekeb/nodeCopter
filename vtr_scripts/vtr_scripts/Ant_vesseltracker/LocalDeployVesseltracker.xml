@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<project name="vesseltracker">
+	<property file="LocalDeployVesseltracker.properties" />
+	
+	<target name="clean">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${base.dir}" includes="**/*"/>
+		</delete>
+	</target>
+	
+	<target name="vtr_util_jar" depends="clean">
+		<jar destfile="${base.dir}/vtr_util.jar" manifest="${src.dir}/vtr_util/src/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_util/${classes.dir}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="vtr_entity_jar" depends="vtr_util_jar">
+		<jar destfile="${base.dir}/vtr_entity.jar" manifest="${src.dir}/vtr_entity/src/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_entity/${classes.dir}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="vtr_ejbClient_jar" depends="vtr_entity_jar">
+		<jar destfile="${base.dir}/vtr_ejbClient.jar" manifest="${src.dir}/vtr_ejbClient/ejbModule/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_ejbClient/ejbModule">
+				<exclude name="**/*.java" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="vtr_ejb_jar" depends="vtr_ejbClient_jar">
+		<jar destfile="${base.dir}/vtr_ejb.jar" manifest="${src.dir}/vtr_ejb/ejbModule/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_ejb/${classes.dir}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<target name="vtr_webservices_war" depends="vtr_ejb_jar">
+		<war destfile="${base.dir}/vtr_webservices.war" webxml="${src.dir}/vtr_webservices/WebContent/WEB-INF/web.xml" manifest="${src.dir}/vtr_webservices/WebContent/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_webservices/WebContent" />
+			<classes dir="${src.dir}/vtr_webservices/${classes.dir}" />
+		</war>
+	</target>
+	
+	<target name="vtr_admin_war" depends="vtr_webservices_war">
+			<war destfile="${base.dir}/vtr_admin.war" webxml="${src.dir}/vtr_admin/WebContent/WEB-INF/web.xml" manifest="${src.dir}/vtr_admin/WebContent/META-INF/MANIFEST.MF">
+				<fileset dir="${src.dir}/vtr_admin/WebContent" />
+				<classes dir="${src.dir}/vtr_admin/${classes.dir}" />
+			</war>
+		</target>
+	
+	<target name="aisweb_war" depends="vtr_admin_war">
+		<war destfile="${base.dir}/aisweb.war" webxml="${src.dir}/aisweb/WebContent/WEB-INF/web.xml" manifest="${src.dir}/aisweb/WebContent/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/aisweb/WebContent" />
+			<classes dir="${src.dir}/aisweb/${classes.dir}" />
+		</war>
+	</target>
+	
+	<target name="vtr_ear" depends="aisweb_war">
+		<ear destfile="${base.dir}/vtr_ear.ear" appxml="${src.dir}/vtr_ear/EarContent/META-INF/application.xml">
+			<fileset dir="${base.dir}" />
+			<fileset file="${src.dir}/vtr_ear/EarContent/dependencies.txt" />
+		</ear>
+	</target>
+	
+	<target name="undeploy">
+		<exec executable="/opt/appserver/bin/asadmin">
+			<arg line="undeploy vtr_ear" />
+		</exec> 
+	</target>
+	
+	<target name="stop-domain" depends="undeploy">
+		<exec executable="/opt/appserver/bin/asadmin">
+			<arg line="stop-domain vesseltracker" />
+		</exec> 
+	</target>
+	<target name="start-domain" depends="stop-domain">
+		<exec executable="/opt/appserver/bin/asadmin">
+			<arg line="start-domain vesseltracker" />
+		</exec> 
+	</target>
+	
+	<target name="deploy" depends="vtr_ear">
+		<exec executable="/opt/appserver/bin/asadmin">
+			<arg line="deploy --force=true  ${base.dir}/vtr_ear.ear" />
+		</exec> 
+	</target>
+</project>

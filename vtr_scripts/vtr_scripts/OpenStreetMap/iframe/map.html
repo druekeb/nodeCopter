@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title></title>
+<script type="text/javascript" src="http://tiles.vesseltracker.com/OpenLayers-2.10/OpenLayers.js"></script>
+<script type="text/javascript" src="http://tiles.vesseltracker.com/osm/OpenStreetMap.js"></script>
+<!--  <script type="text/javascript" src="http://www.vesseltracker.com/images/js/vtApi/WLVesselMap.js"></script>  Live -->
+<script type="text/javascript" src="WLVesselMap.js"></script> <!--  Nur zu testen -->
+
+<style type="text/css">
+body, table
+{
+  font-size:12px;
+  font-family:Helvetica, Arial, Sans-Serif;
+}
+
+div.olControlAttribution
+{
+bottom:0px;
+}
+
+div.olControlMousePosition
+{
+ left:10px;
+}
+
+</style>
+
+<script typeimages="text/javascript">
+var vtMap;
+
+function init()
+{
+ vtMap = new VtMap("map","infobox","sidebar", "vtMap");
+ vtMap.init();
+ vtMap.addControl("Navigation");
+ vtMap.addControl("MousePosition");
+ vtMap.addControl("Attribution");
+ vtMap.addControl("ScaleLine");
+ vtMap.setDetailedInfo(false);
+
+ //vtMap.loadVesselXML("http://www.vesseltracker.com/googleMapsServlet/owner_16878_default.xml"); //live
+
+ vtMap.loadVesselXML("vessels.xml",60000); //zum Testen
+
+// var vessels = [{"name":"SANTIAGO EXPRESS", "mmsi":"564129000", "imo":"8208268", "width":"32.0", "length":"206.0", "left":0, "front":0, "call":"S6MJ", "type":"Cargo", "nationality":"Singapore", "flagid":"191", "pic":"430109", "lastlat":9.67697, "lastlon":-79.7242, "lastSeen":"03.04.2010 14:09 UTC", "eta":"Mon Apr 05 16:00:00 CEST 2010", "course":46.9, "destination":"CAUCEDO"},{"name":"SAVANNAH EXPRESS", "mmsi":"211693000", "imo":"9294989", "width":"42.0", "length":"331.0", "left":21, "front":22, "call":"DNDD", "type":"Cargo", "nationality":"Germany", "flagid":"83", "pic":"446758", "lastlat":25.9842, "lastlon":55.5991, "lastSeen":"01.04.2010 17:42 UTC", "eta":"null", "course":46.1},{"name":"SEATTLE EXPRESS", "mmsi":"636091890", "imo":"9450375", "width":"43.0", "length":"334.0", "left":27, "front":244, "call":"A8UE4", "type":"Cargo", "nationality":"Liberia", "flagid":"121", "pic":"460804", "lastlat":1.22744, "lastlon":103.968, "lastSeen":"04.04.2010 23:02 UTC", "eta":"Thu Apr 08 23:00:00 CEST 2010", "course":82.3, "destination":"SHEKOU"},{"name":"SEOUL EXPRESS", "mmsi":"211331640", "imo":"9193305", "width":"32.0", "length":"294.0", "left":16, "front":227, "call":"DHBN", "type":"Cargo", "nationality":"Germany", "flagid":"83", "pic":"2001", "lastlat":31.3903, "lastlon":-116.771, "lastSeen":"05.04.2010 15:20 UTC", "eta":"Wed Apr 07 22:00:00 CEST 2010", "course":166.7, "destination":"Manzanillo"},{"name":"SETUBAL EXPRESS", "mmsi":"215343000", "imo":"8858788", "width":"24.0", "length":"169.0", "left":12, "front":122, "call":"9HLE7", "type":"Cargo", "nationality":"Malta", "flagid":"132", "pic":"316543", "lastlat":40.8351, "lastlon":14.269, "lastSeen":"31.03.2010 14:28 UTC", "eta":"null", "course":104.0},{"name":"SHANGHAI EXPRESS", "mmsi":"211367460", "imo":"9229831", "width":"42.0", "length":"321.0", "left":0, "front":321, "call":"DPCK", "type":"Cargo", "nationality":"Germany", "flagid":"83", "pic":"431400", "lastlat":23.2263, "lastlon":119.844, "lastSeen":"06.04.2010 00:56 UTC", "eta":"Mon Apr 05 02:00:00 CEST 2010", "course":190.2, "destination":"Singapore Port"},{"name":"SINGAPORE EXPRESS", "mmsi":"239730000", "imo":"9200809", "width":"32.0", "length":"294.0", "left":11, "front":222, "call":"SYHB", "type":"Other", "nationality":"Greece", "flagid":"86", "pic":"412115", "lastlat":34.8444, "lastlon":140.019, "lastSeen":"02.04.2010 23:28 UTC", "eta":"null", "course":70.4},{"name":"SITC EXPRESS", "mmsi":"236295000", "imo":"9301081", "width":"21.0", "length":"155.0", "left":10, "front":147, "call":"ZDHB4", "type":"Cargo", "nationality":"Gibraltar", "flagid":"85", "lat":20.8411, "lon":106.772, "speed":0.0, "lastSeen":"06.04.2010 08:44 UTC", "status":"MOORED", "eta":"Fri Apr 09 08:00:00 CEST 2010", "draught":"6.5", "destination":"Xiamen", "course":0.1, "port":"Haiphong", "berth":"Haiphong Port", "time_moored":"05.04.2010 20:43 UTC"},{"name":"STUTTGART EXPRESS", "mmsi":"211208940", "imo":"9038907", "width":"32.0", "length":"294.0", "left":16, "front":15, "call":"DGBE", "type":"Cargo", "nationality":"Germany", "flagid":"83", "pic":"462877", "lat":53.5273, "lon":5.24112, "speed":18.9, "lastSeen":"06.04.2010 08:45 UTC", "status":"MOVING", "eta":"Tue Apr 06 17:00:00 CEST 2010", "draught":"12.0", "destination":"Bremerhaven", "course":71.5},{"name":"SYLT EXPRESS", "mmsi":"211775000", "imo":"9321823", "width":"16.0", "length":"88.0", "left":8, "front":44, "call":"DJBF", "type":"Passenger", "nationality":"Germany", "flagid":"83", "pic":"413636", "lat":55.0141, "lon":8.43938, "speed":3.4, "lastSeen":"06.04.2010 08:45 UTC", "status":"MOVING", "eta":"Mon Mar 22 23:00:00 CET 2010", "draught":"3.4", "destination":"Havneby", "course":23.3},{"name":"TOKYO EXPRESS", "mmsi":"211327410", "imo":"9193290", "width":"32.0", "length":"294.0", "left":6, "front":223, "call":"DGTX", "type":"Cargo", "nationality":"Germany", "flagid":"83", "pic":"378038", "lat":53.5841, "lon":8.52627, "speed":0.0, "lastSeen":"06.04.2010 06:56 UTC", "status":"MOORED", "eta":"Mon Apr 12 13:00:00 CEST 2010", "draught":"11.6", "destination":"Halifax", "course":0.0, "port":"Bremerhaven", "berth":"Stromkaje", "time_moored":"03.04.2010 22:27 UTC"},{"name":"TSINGTAO EXPRESS", "mmsi":"218063000", "imo":"9320702", "width":"42.0", "length":"335.0", "left":21, "front":20, "call":"DDYL2", "type":"Cargo", "nationality":"Germany", "flagid":"83", "pic":"437342", "lastlat":1.24913, "lastlon":103.861, "lastSeen":"05.04.2010 20:13 UTC", "eta":"Fri Apr 16 23:00:00 CEST 2010", "course":133.2, "destination":"SUEZ"},{"name":"UAFL EXPRESS", "mmsi":"304010572", "imo":"8317978", "width":"17.0", "length":"86.0", "left":8, "front":76, "call":"V2VP", "type":"Cargo", "nationality":"Antigua and Barbuda", "flagid":"10", "lastlat":-29.2433, "lastlon":31.8152, "lastSeen":"21.08.2009 18:34 UTC", "eta":"Tue Aug 25 19:00:00 CEST 2009", "course":45.8, "destination":"MUTSAMUDU"},{"name":"VANCOUVER EXPRESS", "mmsi":"636091891", "imo":"9450387", "width":"43.0", "length":"334.0", "left":27, "front":244, "call":"A8UE5", "type":"Cargo", "nationality":"Liberia", "flagid":"121", "pic":"447071", "lat":37.6243, "lon":122.877, "speed":0.2, "lastSeen":"06.04.2010 03:21 UTC", "status":"WAITING", "eta":"Wed Apr 07 09:00:00 CEST 2010", "draught":"9.3", "destination":"PUSAN", "course":150.6},{"name":"VERACRUZ EXPRESS", "mmsi":"310417000", "imo":"8406298", "width":"32.0", "length":"269.0", "left":8, "front":186, "call":"ZCDJ2", "type":"Cargo", "nationality":"Bermuda", "flagid":"27", "pic":"305872", "lastlat":29.682, "lastlon":-94.9815, "lastSeen":"05.04.2010 18:27 UTC", "eta":"null", "course":342.2},{"name":"VIENNA EXPRESS", "mmsi":"218355000", "imo":"9450416", "width":"42.0", "length":"335.0", "left":14, "front":249, "call":"DGWF2", "type":"Cargo", "nationality":"Germany", "flagid":"83", "pic":"486506", "lat":29.689275, "lon":122.424522, "speed":0.1, "lastSeen":"06.04.2010 08:35 UTC", "status":"WAITING", "eta":"Wed Apr 14 12:30:00 CEST 2010", "draught":"11.8", "destination":"Ningbo", "course":355.1},{"name":"WELLINGTON EXPRESS", "mmsi":"218087000", "imo":"9224051", "width":"30.0", "length":"188.0", "left":22, "front":166, "call":"DFCX2", "type":"Cargo", "nationality":"Germany", "flagid":"83", "pic":"477317", "lastlat":-32.6055, "lastlon":-71.8727, "lastSeen":"04.04.2010 09:34 UTC", "eta":"Mon Apr 12 01:00:00 CEST 2010", "course":321.0, "destination":"LAZARO CARDENAS"},{"name":"WEST EXPRESS", "mmsi":"339300360", "imo":"7724253", "width":"21.0", "length":"132.0", "left":8, "front":100, "call":"6YRH4", "type":"Cargo", "nationality":"Jamaica", "flagid":"107", "pic":"415279", "lastlat":36.1265, "lastlon":-5.35679, "lastSeen":"22.03.2010 22:42 UTC", "eta":"Wed Jul 28 10:00:00 CEST 2010", "course":333.3, "destination":"Gibraltar"},{"name":"WESTPAC EXPRESS", "mmsi":"369323000", "imo":"9243227", "width":"27.0", "length":"101.0", "left":10, "front":32, "call":"WDB5285", "type":"Other", "nationality":"United States of America", "flagid":"222", "lat":35.469, "lon":139.645, "speed":0.0, "lastSeen":"06.04.2010 08:43 UTC", "status":"MOORED", "eta":"Sun Apr 04 20:00:00 CEST 2010", "draught":"4.0", "destination":"YOKOHAMA", "course":232.0, "port":"Tokyo", "berth":"Tokyo Port", "time_moored":"04.04.2010 06:10 UTC"},{"name":"ZEEZAND EXPRESS", "mmsi":"246384000", "imo":"8302739", "width":"9.0", "length":"80.0", "left":8, "front":65, "call":"PIWR", "type":"Dredger", "nationality":"Netherlands", "flagid":"149", "pic":"403200", "lastlat":54.1553, "lastlon":12.093, "lastSeen":"17.03.2010 15:15 UTC", "eta":"Tue Mar 09 21:30:00 CET 2010", "course":271.0, "destination":"Rostock"},{"name":"LOWLANDS BEILUN", "mmsi":"256507000", "imo":"9172208", "width":"45.0", "length":"289.0", "left":15, "front":259, "call":"9HWB8", "type":"Cargo", "nationality":"Malta", "flagid":"132", "pic":"100046", "lastlat":-31.8278, "lastlon":114.094, "lastSeen":"03.04.2010 05:40 UTC", "eta":"null", "course":168.2}];
+//vtMap.addVesselsCustomer(vessels);
+}
+
+</script>
+</head>
+<body onload="init()">
+<div id= "map" style="width:800px;height:600px;float:left;z-index:1;">
+<img src="http://images.vesseltracker.com/images/zoom_in.png" style="position:absolute;top:10px;left:10px;z-index:2000" onclick="vtMap.zoomIn()"/> 
+<img src="http://images.vesseltracker.com/images/zoom_out.png" style="position:absolute;top:10px;left:50px;z-index:2000"  onclick="vtMap.zoomOut()" /> 
+</div>
+<div id= "sidebar" style="width:200px;height:600px;border:1px solid grey;float:left;overflow:scroll;font-size:10px;font-family:Verdana, Helvetica, Sans-Serif;padding:3px;"></div><br clear="left"/>
+<div id= "infobox" style="width:1006px;height:100px;border:1px solid grey;"></div>
+
+
+</body>
+</html>

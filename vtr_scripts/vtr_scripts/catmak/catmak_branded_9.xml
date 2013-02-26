@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers created="Thu Jun 04 11:42:09 CEST 2009">
+	<marker status="MOORED" icon="5" name="ANTARCTICA" t="ekranoplans" imo="1001570" lat="44.3947" lng="8.93224" cog="315.0" speed="0.1" length="44.0" width="8.0" country="United Kingdom" flag="221"/>
+	<marker status="MOORED" icon="5" name="ANTIGONI" t="tankships" imo="8013297" lat="44.4019" lng="8.89754" cog="172.7" speed="0.0" length="92.0" width="16.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="AQUARIUS W" t="pleasure_crafts" imo="" lat="44.417" lng="8.83818" cog="131.2" speed="0.1" length="19.0" width="29.0" country="United Kingdom" flag="221"/>
+	<marker status="MOVING" icon="7" name="ARIEL" t="pilot_vessels" imo="" lat="44.393" lng="8.93309" cog="306.0" speed="18.6" length="12.0" width="4.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="ATHARA" t="passenger_ships" imo="9263655" lat="44.4017" lng="8.92368" cog="223.5" speed="0.0" length="216.0" width="26.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="ATLANTIC GOOSE" t="pleasure_crafts" imo="1000617" lat="44.4089" lng="8.92142" cog="164.6" speed="0.1" length="0.0" width="0.0" country="Belize" flag="25"/>
+	<marker status="MOORED" icon="5" name="AZAHAR" t="tankships" imo="9259915" lat="44.4224" lng="8.83229" cog="41.5" speed="0.0" length="180.0" width="28.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="BERZINC" t="pleasure_crafts" imo="" lat="44.4159" lng="8.83628" cog="183.1" speed="0.1" length="35.0" width="12.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOORED" icon="5" name="BONASSOLA" t="anti-pollution_vessels" imo="7396769" lat="44.4116" lng="8.92183" cog="181.2" speed="0.1" length="60.0" width="13.0" country="Italy" flag="106" engName="Cat" engModel="2x Cat 3512 C"/>
+	<marker status="MOORED" icon="5" name="CAPOROSA" t="tankships" imo="8034239" lat="44.4071" lng="8.91137" cog="0.0" speed="0.1" length="45.0" width="9.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="CHARISMA" t="passenger_ships" imo="1007342" lat="44.4087" lng="8.92083" cog="162.0" speed="0.0" length="47.0" width="8.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="CMA CGM PUCCINI" t="cargo_ships" imo="9280627" lat="44.4178" lng="8.7905" cog="353.0" speed="0.0" length="277.0" width="40.0" country="France" flag="78"/>
+	<marker status="MOORED" icon="5" name="COMMITMENT" t="pleasure_crafts" imo="1000241" lat="44.4159" lng="8.83612" cog="206.1" speed="0.1" length="" width="" country="United Kingdom" flag="221" engName="Cat" engModel="2x Cat 3508"/>
+	<marker status="MOVING" icon="7" name="COSTA PACIFICA" t="passenger_ships" imo="9378498" lat="44.3891" lng="8.94087" cog="306.4" speed="9.9" length="288.0" width="42.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="CP 276" t="rescue_vessels" imo="" lat="44.4089" lng="8.92513" cog="247.8" speed="0.2" length="25.0" width="6.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="DEEP BLUE OF" t="others" imo="8736174" lat="44.4109" lng="8.92215" cog="0.0" speed="0.0" length="44.0" width="9.0" country="Cayman Islands" flag="42"/>
+	<marker status="MOORED" icon="5" name="EXCELSIOR" t="passenger_ships" imo="9184419" lat="44.4066" lng="8.91217" cog="91.2" speed="0.0" length="202.0" width="28.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="FRANCIA" t="towing_vessels" imo="9163740" lat="44.4205" lng="8.82717" cog="42.0" speed="0.1" length="30.0" width="10.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="FT ODIN" t="tankships" imo="9297149" lat="44.4004" lng="8.9236" cog="40.0" speed="0.4" length="102.0" width="14.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="HELIOS" t="pleasure_crafts" imo="1006805" lat="44.3949" lng="8.93219" cog="19.9" speed="0.1" length="60.0" width="10.0" country="Bermuda" flag="27" engName="Cat" engModel="Cat 8 M 25, Cat 3512B"/>
+	<marker status="MOORED" icon="5" name="INGHILTERRA" t="others" imo="" lat="44.4196" lng="8.8275" cog="90.1" speed="0.0" length="" width="" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="JANAS" t="passenger_ships" imo="9222534" lat="44.41" lng="8.91267" cog="164.0" speed="0.0" length="214.0" width="26.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="JOLLY BIANCO" t="cargo_ships" imo="7931765" lat="44.4081" lng="8.88083" cog="161.6" speed="0.0" length="198.0" width="30.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="JOLLY SMERALDO" t="cargo_ships" imo="7722231" lat="44.4066" lng="8.87973" cog="251.5" speed="0.0" length="190.0" width="28.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="MELFI IBERIA" t="cargo_ships" imo="9101508" lat="44.4054" lng="8.87791" cog="0.0" speed="0.0" length="167.0" width="25.0" country="Germany" flag="83" engName="MaK" engModel="3x MaK 6 M 20"/>
+	<marker status="MOORED" icon="5" name="MESSICO" t="others" imo="9421180" lat="44.4113" lng="8.92121" cog="240.7" speed="0.0" length="36.0" width="14.0" country="Italy" flag="106" engName="MaK" engModel="2x MaK 8 M 25"/>
+	<marker status="MOORED" icon="5" name="MILKANDHONEY" t="pleasure_crafts" imo="1007823" lat="44.4088" lng="8.9214" cog="0.0" speed="0.0" length="40.0" width="8.0" country="Cayman Islands" flag="42"/>
+	<marker status="MOORED" icon="5" name="MSC SHANNON" t="cargo_ships" imo="8913423" lat="44.4185" lng="8.78734" cog="0.1" speed="0.0" length="236.0" width="32.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="MTASTON EXPLORER" t="tankships" imo="8943260" lat="44.4063" lng="8.89117" cog="25.0" speed="0.0" length="85.0" width="12.0" country="Russian Federation" flag="176"/>
+	<marker status="MOVING" icon="3" name="NEPTUNUS" t="passenger_ships" imo="" lat="44.3953" lng="8.92656" cog="114.9" speed="8.1" length="20.0" width="4.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="NOMAD" t="pleasure_crafts" imo="1007316" lat="44.4061" lng="8.92053" cog="228.0" speed="0.1" length="69.0" width="14.0" country="Cayman Islands" flag="42" engName="Cat" engModel="2x Cat 3516B"/>
+	<marker status="MOORED" icon="5" name="ONDA AZZURRA" t="passenger_ships" imo="" lat="44.4096" lng="8.92454" cog="96.5" speed="6.0" length="32.0" width="8.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="PACIFIC" t="passenger_ships" imo="7018563" lat="44.4037" lng="8.92833" cog="305.0" speed="0.0" length="167.0" width="38.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="PERLA BLU" t="pleasure_crafts" imo="9364681" lat="44.3952" lng="8.93305" cog="289.6" speed="0.0" length="45.0" width="10.0" country="Cayman Islands" flag="42" engName="Cat" engModel="Cat 3512B"/>
+	<marker status="MOORED" icon="5" name="PERSEUS" t="sailing_vessels" imo="8996803" lat="44.3941" lng="8.9341" cog="133.6" speed="0.1" length="50.0" width="10.0" country="United Kingdom" flag="221"/>
+	<marker status="MOORED" icon="5" name="PONTOPOROS" t="cargo_ships" imo="8318609" lat="44.4014" lng="8.90663" cog="308.0" speed="0.0" length="178.0" width="22.0" country="Greece" flag="86"/>
+	<marker status="MOORED" icon="5" name="PUNTA AZZURRA" t="tankships" imo="8420347" lat="44.4029" lng="8.90664" cog="0.0" speed="0.8" length="" width="" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="PUZE" t="tankships" imo="9323338" lat="44.4227" lng="8.83117" cog="168.6" speed="0.0" length="195.0" width="32.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOORED" icon="5" name="RUSALINA.EXP" t="others" imo="" lat="44.4169" lng="8.83822" cog="9.0" speed="0.1" length="42.0" width="10.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOORED" icon="5" name="SAN FRANCESCO" t="tankships" imo="9448907" lat="44.4035" lng="8.92583" cog="8.0" speed="0.4" length="80.0" width="8.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="SANTA GIULIA" t="tankships" imo="8830669" lat="44.4029" lng="8.9072" cog="0.0" speed="0.0" length="60.0" width="10.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="SANTA RITA" t="tankships" imo="9448906" lat="44.4101" lng="8.91132" cog="284.0" speed="0.1" length="75.0" width="13.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="SILVER CRAFT" t="cargo_ships" imo="9209350" lat="44.4192" lng="8.78288" cog="304.0" speed="0.0" length="240.0" width="32.0" country="Malta" flag="132"/>
+	<marker status="MOORED" icon="5" name="SIRONA III" t="pleasure_crafts" imo="1007718" lat="44.4087" lng="8.92088" cog="172.0" speed="0.1" length="57.0" width="11.0" country="Marshall Islands" flag="133" engName="Cat" engModel="2x Cat 3512B"/>
+	<marker status="MOORED" icon="5" name="TABA" t="cargo_ships" imo="8318104" lat="44.4054" lng="8.89298" cog="239.0" speed="0.0" length="117.0" width="18.0" country="Egypt" flag="67" engName="MaK" engModel="2x MaK 9 M 453 B"/>
+	<marker status="MOORED" icon="5" name="TECNE" t="tankships" imo="7911131" lat="44.4011" lng="8.91498" cog="185.6" speed="0.0" length="72.0" width="14.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="TELO" t="cargo_ships" imo="8226519" lat="44.406" lng="8.889" cog="229.0" speed="0.0" length="153.0" width="19.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="TJ ESPERANZA" t="others" imo="1006221" lat="44.4087" lng="8.92133" cog="241.0" speed="0.0" length="0.0" width="0.0" country="Cayman Islands" flag="42"/>
+	<marker status="MOORED" icon="5" name="TORQUATO" t="tankships" imo="8916499" lat="44.4024" lng="8.91887" cog="347.0" speed="0.0" length="104.0" width="16.0" country="United Kingdom" flag="221"/>
+	<marker status="MOORED" icon="5" name="ULYSSE" t="passenger_ships" imo="9142459" lat="44.4007" lng="8.89917" cog="73.0" speed="0.1" length="162.0" width="26.0" country="Tunisia" flag="213"/>
+	<marker status="MOORED" icon="5" name="V DIONEA" t="pleasure_crafts" imo="38644846" lat="44.396" lng="8.93147" cog="133.6" speed="0.1" length="52.0" width="8.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="VF 1173" t="others" imo="" lat="44.4063" lng="8.91976" cog="240.7" speed="0.1" length="" width="" country="Italy" flag="106"/>
+	<marker status="" icon="" name="" t="" imo="" lat="" lng="" cog="" speed="" length="" width="" country="" flag=""/>
+</markers>

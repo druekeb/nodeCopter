@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers created="Thu Jun 04 11:41:48 CEST 2009">
+	<marker status="MOORED" icon="5" name="ACCURAT" t="tugboats" imo="9045869" lat="53.5451" lng="9.96136" cog="0.1" speed="0.0" length="31.0" width="10.0" country="Germany" flag="83" engName="MaK" engModel="2x MaK 8 M 332 C"/>
+	<marker status="MOVING" icon="7" name="ALTENWERDER" t="others" imo="" lat="53.5448" lng="9.97098" cog="309.2" speed="1.5" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOVING" icon="1" name="ALTONA" t="others" imo="" lat="53.5381" lng="9.79293" cog="207.7" speed="9.6" length="26.0" width="7.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="ANNEMIEKE" t="cargo_ships" imo="9147681" lat="53.5251" lng="9.97005" cog="84.0" speed="0.0" length="152.0" width="20.0" country="Antigua and Barbuda" flag="10"/>
+	<marker status="MOORED" icon="5" name="ARKLOW SEA" t="cargo_ships" imo="9163623" lat="53.532" lng="9.96053" cog="92.6" speed="0.1" length="91.0" width="13.0" country="Netherlands" flag="149" engName="MaK" engModel="MaK 8 M 20"/>
+	<marker status="MOORED" icon="5" name="ASPEN" t="cargo_ships" imo="9195389" lat="53.4949" lng="9.97893" cog="0.0" speed="0.0" length="83.0" width="13.0" country="Netherlands" flag="149" engName="MaK" engModel="MaK 6 M 25"/>
+	<marker status="MOORED" icon="5" name="ASTRAL EXPRESS" t="tankships" imo="9258363" lat="53.5021" lng="9.95383" cog="356.0" speed="0.0" length="180.0" width="32.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="ATHENA" t="passenger_ships" imo="5383304" lat="53.5387" lng="9.9557" cog="0.1" speed="0.0" length="160.0" width="21.0" country="Portugal" flag="171"/>
+	<marker status="MOVING" icon="4" name="AUE" t="tankships" imo="" lat="53.5415" lng="9.9347" cog="253.1" speed="7.0" length="39.0" width="7.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="AUSTRIA" t="cargo_ships" imo="9071272" lat="53.5353" lng="10.0125" cog="190.4" speed="0.1" length="164.0" width="22.0" country="Antigua and Barbuda" flag="10"/>
+	<marker status="MOORED" icon="5" name="BEI HAI" t="cargo_ships" imo="9117698" lat="53.5188" lng="9.94367" cog="104.5" speed="0.1" length="188.0" width="31.0" country="Panama" flag="163"/>
+	<marker status="WAITING" icon="5" name="BERNHARD DETTMER" t="tankships" imo="" lat="53.475" lng="9.9812" cog="0.0" speed="0.0" length="100.0" width="10.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="BUGSIER 19" t="tugboats" imo="9158472" lat="53.543" lng="9.92212" cog="267.0" speed="0.1" length="30.0" width="10.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="BUGSIER 2" t="tugboats" imo="9338993" lat="53.5431" lng="9.92277" cog="330.3" speed="0.1" length="35.0" width="14.0" country="Germany" flag="83"/>
+	<marker status="MOVING" icon="3" name="BUGSIER 5" t="tugboats" imo="9376206" lat="53.5358" lng="9.90449" cog="153.9" speed="10.1" length="28.0" width="12.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="BUGSIER9" t="tugboats" imo="9429558" lat="53.5433" lng="9.9235" cog="201.0" speed="0.1" length="33.0" width="13.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="CAP BISTI" t="cargo_ships" imo="9231470" lat="53.5396" lng="9.91765" cog="158.5" speed="0.1" length="210.0" width="30.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="CAP SAN DIEGO" t="cargo_ships" imo="5060794" lat="53.5432" lng="9.97617" cog="200.2" speed="0.1" length="160.0" width="20.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="CARL W" t="tankships" imo="6412463" lat="53.505" lng="9.96442" cog="293.2" speed="0.1" length="38.0" width="7.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="CHARLES ISLAND" t="cargo_ships" imo="9059626" lat="53.5275" lng="10.0049" cog="139.6" speed="0.1" length="180.0" width="25.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="CIMBRIA" t="cargo_ships" imo="9306328" lat="53.5326" lng="9.96753" cog="242.0" speed="0.0" length="109.0" width="19.0" country="Antigua and Barbuda" flag="10"/>
+	<marker status="MOORED" icon="5" name="CMA CGM DON CARLOS" t="cargo_ships" imo="9305491" lat="53.5331" lng="9.90656" cog="336.1" speed="0.0" length="334.0" width="42.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="CMA CGM PARSIFAL" t="cargo_ships" imo="9318060" lat="53.5277" lng="9.92562" cog="249.4" speed="0.1" length="332.0" width="42.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="CONFIANZA" t="cargo_ships" imo="9246542" lat="53.528" lng="9.96533" cog="307.1" speed="0.0" length="134.0" width="20.0" country="Antigua and Barbuda" flag="10" engName="MaK" engModel="MaK 9 M 43"/>
+	<marker status="MOORED" icon="5" name="CONSTANT" t="tugboats" imo="8701090" lat="53.5452" lng="9.96179" cog="0.1" speed="0.0" length="28.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="COSCO ASIA" t="cargo_ships" imo="9345403" lat="53.5331" lng="9.95144" cog="214.8" speed="0.2" length="349.0" width="46.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="CSCL ZEEBRUGGE" t="cargo_ships" imo="9314234" lat="53.5255" lng="9.92582" cog="66.0" speed="0.4" length="337.0" width="46.0" country="Hong Kong" flag="97"/>
+	<marker status="MOORED" icon="5" name="DAGMAR" t="tankships" imo="8835748" lat="53.4673" lng="9.98333" cog="333.0" speed="0.0" length="50.0" width="7.0" country="Germany" flag="83"/>
+	<marker status="WAITING" icon="5" name="DAGOBERT" t="cargo_ships" imo="" lat="53.525" lng="10.035" cog="250.8" speed="0.0" length="79.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="DETTMER SCHUB 125" t="tankships" imo="" lat="53.5235" lng="9.88903" cog="0.0" speed="0.0" length="18.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="DETTMER TANK 136" t="tankships" imo="" lat="53.5249" lng="9.89007" cog="0.0" speed="0.0" length="100.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="DETTMER TANK 179" t="tankships" imo="" lat="53.4798" lng="9.95919" cog="0.0" speed="0.0" length="100.0" width="12.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="DORNBUSCH" t="cargo_ships" imo="9126211" lat="53.529" lng="9.95733" cog="335.0" speed="0.0" length="101.0" width="18.0" country="Germany" flag="83"/>
+	<marker status="MOVING" icon="6" name="ELBMEILE" t="passenger_ships" imo="" lat="53.5445" lng="9.97184" cog="68.9" speed="6.8" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="ELFRIEDE" t="sailing_vessels" imo="" lat="53.5441" lng="9.91418" cog="61.2" speed="0.0" length="15.0" width="5.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="ELISE" t="others" imo="" lat="53.5447" lng="9.98589" cog="249.1" speed="0.0" length="14.0" width="4.0" country="Germany" flag="83"/>
+	<marker status="MOVING" icon="6" name="ELKE D" t="cargo_ships" imo="8814196" lat="53.5592" lng="9.76668" cog="98.8" speed="8.7" length="75.0" width="11.0" country="Antigua and Barbuda" flag="10"/>
+	<marker status="MOORED" icon="5" name="EURO SNOW" t="cargo_ships" imo="9244207" lat="53.5298" lng="9.91397" cog="0.0" speed="0.0" length="133.0" width="20.0" country="United Kingdom" flag="221" engName="MaK" engModel="MaK 8 M 43"/>
+	<marker status="MOORED" icon="5" name="EVER STRONG" t="cargo_ships" imo="9300441" lat="53.5398" lng="9.90705" cog="300.0" speed="0.1" length="301.0" width="43.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="FAIRCHEM PEGASUS" t="tankships" imo="9286542" lat="53.5364" lng="9.89528" cog="337.0" speed="0.0" length="144.0" width="24.0" country="Marshall Islands" flag="133"/>
+	<marker status="MOORED" icon="5" name="FAIRPLAY I" t="tugboats" imo="9365128" lat="53.5431" lng="9.92105" cog="248.2" speed="0.1" length="25.0" width="11.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="FALKENSTEIN" t="passenger_ships" imo="" lat="53.5446" lng="9.95561" cog="159.2" speed="0.3" length="27.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="FINJA" t="tankships" imo="9212345" lat="53.4757" lng="9.95645" cog="0.1" speed="0.0" length="69.0" width="12.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="GRAND BENELUX" t="cargo_ships" imo="9227900" lat="53.5335" lng="9.99467" cog="81.0" speed="0.1" length="177.0" width="31.0" country="Italy" flag="106"/>
+	<marker status="MOORED" icon="5" name="HAFEN CITY" t="passenger_ships" imo="" lat="53.5351" lng="9.88068" cog="60.8" speed="0.0" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="HANNI" t="cargo_ships" imo="9188506" lat="53.5362" lng="10.0067" cog="141.0" speed="0.1" length="118.0" width="18.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="HANS" t="others" imo="8111922" lat="53.5432" lng="9.92202" cog="285.7" speed="0.1" length="24.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="HANSA MARBURG" t="cargo_ships" imo="9334818" lat="53.5365" lng="10.0057" cog="0.1" speed="0.1" length="175.0" width="27.0" country="Liberia" flag="121"/>
+	<marker status="MOVING" icon="3" name="HARMONIE" t="others" imo="" lat="53.5374" lng="9.87886" cog="135.8" speed="8.7" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="HEIDE" t="tankships" imo="8517542" lat="53.5021" lng="9.9543" cog="0.1" speed="0.1" length="58.0" width="10.0" country="Germany" flag="83"/>
+	<marker status="MOVING" icon="7" name="HEIN" t="dredgers" imo="7911856" lat="53.4894" lng="9.95376" cog="334.4" speed="1.3" length="100.0" width="16.0" country="Netherlands" flag="149"/>
+	<marker status="MOORED" icon="5" name="HEINRICH" t="tankships" imo="9242730" lat="53.5025" lng="9.95135" cog="38.0" speed="0.0" length="114.0" width="16.0" country="Gibraltar" flag="85" engName="MaK" engModel="MaK 8 M 32 C"/>
+	<marker status="MOVING" icon="8" name="IJSSELDELTA" t="dredgers" imo="77376900" lat="53.5251" lng="9.89173" cog="4.2" speed="9.2" length="89.0" width="12.0" country="Netherlands" flag="149"/>
+	<marker status="MOORED" icon="5" name="IRAN HAMADAN" t="cargo_ships" imo="9226956" lat="53.5039" lng="9.96171" cog="147.7" speed="0.0" length="0.0" width="0.0" country="Malta" flag="132"/>
+	<marker status="MOORED" icon="5" name="IRAN KHORASAN" t="cargo_ships" imo="9193214" lat="53.4855" lng="9.98297" cog="240.9" speed="0.1" length="82.0" width="16.0" country="Malta" flag="132"/>
+	<marker status="MOORED" icon="5" name="JACO TRIUMPH" t="cargo_ships" imo="8702082" lat="53.524" lng="9.95429" cog="0.0" speed="0.0" length="176.0" width="22.0" country="Norway" flag="158"/>
+	<marker status="MOVING" icon="6" name="KAJA JOSEPHINE" t="cargo_ships" imo="" lat="53.5335" lng="10.0196" cog="106.8" speed="6.0" length="98.0" width="14.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="KIRCHDORF" t="others" imo="" lat="53.545" lng="9.97033" cog="353.7" speed="0.0" length="33.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="KOESTERBERG" t="tankships" imo="9184677" lat="53.5326" lng="9.95903" cog="0.0" speed="0.0" length="89.0" width="12.0" country="Gibraltar" flag="85"/>
+	<marker status="MOORED" icon="5" name="LAODICEA" t="cargo_ships" imo="9274343" lat="53.5272" lng="9.96167" cog="0.1" speed="0.3" length="138.0" width="21.0" country="Syrian Arab Republic" flag="205" engName="MaK" engModel="MaK 6 M 43"/>
+	<marker status="MOORED" icon="5" name="LAPPLAND" t="cargo_ships" imo="9186388" lat="53.5265" lng="9.95383" cog="305.0" speed="0.2" length="118.0" width="18.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="LIBRA NITEROI" t="cargo_ships" imo="9241451" lat="53.5398" lng="9.91422" cog="170.0" speed="0.3" length="207.0" width="30.0" country="Cyprus" flag="58"/>
+	<marker status="MOORED" icon="5" name="LICHTERFELDE" t="tankships" imo="" lat="53.5364" lng="9.97726" cog="0.0" speed="0.0" length="64.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="LOTSE 1" t="pilot_vessels" imo="" lat="53.5395" lng="9.88033" cog="86.2" speed="0.0" length="23.0" width="6.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="LOTSE 2" t="pilot_vessels" imo="" lat="53.4691" lng="9.98324" cog="1.1" speed="0.0" length="23.0" width="6.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="MAERSK FREEPORT" t="cargo_ships" imo="9252785" lat="53.5367" lng="9.97633" cog="282.0" speed="0.0" length="135.0" width="23.0" country="Antigua and Barbuda" flag="10" engName="MaK" engModel="MaK 9 M 43"/>
+	<marker status="MOORED" icon="5" name="MANATI" t="sailing_vessels" imo="" lat="53.5376" lng="9.85471" cog="81.8" speed="0.0" length="11.0" width="4.0" country="Switzerland" flag="204"/>
+	<marker status="MOORED" icon="5" name="MARE FRISIUM" t="sailing_vessels" imo="5344592" lat="53.5429" lng="9.97988" cog="238.0" speed="0.3" length="39.0" width="6.0" country="Netherlands" flag="149"/>
+	<marker status="MOORED" icon="5" name="MARFEEDER" t="cargo_ships" imo="9123324" lat="53.528" lng="9.893" cog="106.0" speed="0.0" length="116.0" width="19.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="MARS" t="tugboats" imo="8116702" lat="53.5376" lng="9.95534" cog="0.0" speed="0.0" length="26.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="MOIN" t="tugboats" imo="" lat="53.5296" lng="10.0364" cog="87.9" speed="0.0" length="19.0" width="6.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="MOSEL N" t="cargo_ships" imo="9085338" lat="53.5178" lng="9.9354" cog="68.3" speed="0.0" length="266.0" width="40.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="NAJADE" t="pleasure_crafts" imo="" lat="53.5348" lng="9.77831" cog="0.0" speed="0.1" length="" width="" country="" flag=""/>
+	<marker status="MOVING" icon="6" name="NIGEWARK" t="others" imo="" lat="53.5468" lng="9.84006" cog="105.9" speed="11.1" length="28.0" width="6.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="OCEAN BEAUTY" t="others" imo="8025850" lat="53.5375" lng="10.0082" cog="324.0" speed="0.0" length="224.0" width="32.0" country="Egypt" flag="67"/>
+	<marker status="MOORED" icon="5" name="OELAND" t="cargo_ships" imo="9277400" lat="53.5279" lng="9.96512" cog="254.0" speed="0.0" length="137.0" width="21.0" country="Malta" flag="132" engName="MaK" engModel="MaK 9 M 43"/>
+	<marker status="MOVING" icon="6" name="OEVELGOENNE" t="others" imo="" lat="53.5415" lng="9.90128" cog="87.4" speed="14.0" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="OLDENBURG" t="others" imo="" lat="53.5368" lng="9.95546" cog="0.0" speed="0.0" length="89.0" width="13.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="OOCL NEVA" t="cargo_ships" imo="9231846" lat="53.5322" lng="9.95658" cog="306.0" speed="0.0" length="134.0" width="22.0" country="Antigua and Barbuda" flag="10" engName="MaK" engModel="MaK 9 M 43"/>
+	<marker status="MOORED" icon="5" name="OTTENSTREUER" t="others" imo="" lat="53.5437" lng="9.91328" cog="0.0" speed="0.0" length="20.0" width="5.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="OXANA" t="tankships" imo="" lat="53.5164" lng="9.93538" cog="0.0" speed="0.0" length="110.0" width="11.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="PANTONIO" t="others" imo="9440576" lat="53.5281" lng="9.95918" cog="213.3" speed="0.1" length="129.0" width="21.0" country="Cyprus" flag="58" engName="MaK" engModel="MaK 8 M 43 C"/>
+	<marker status="MOORED" icon="5" name="PENGALIA" t="cargo_ships" imo="9440588" lat="53.5281" lng="9.95935" cog="305.7" speed="0.1" length="129.0" width="20.0" country="Cyprus" flag="58" engName="MaK" engModel="MaK 8 M 43 C"/>
+	<marker status="MOORED" icon="5" name="PETER" t="tugboats" imo="9445863" lat="53.5432" lng="9.92117" cog="356.5" speed="0.0" length="24.0" width="11.0" country="Germany" flag="83" engName="Cat" engModel="2x Cat 3516B-HD"/>
+	<marker status="MOORED" icon="5" name="RAGNA" t="cargo_ships" imo="9173329" lat="53.529" lng="9.95717" cog="245.0" speed="0.0" length="100.0" width="19.0" country="Germany" flag="83" engName="MaK" engModel="MaK 9 M 32"/>
+	<marker status="MOVING" icon="2" name="REEPERBAHN" t="others" imo="" lat="53.5415" lng="9.92107" cog="195.3" speed="10.2" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="RIKA" t="cargo_ships" imo="7724564" lat="53.5279" lng="10.0024" cog="47.3" speed="0.1" length="80.0" width="13.0" country="Antigua and Barbuda" flag="10"/>
+	<marker status="MOORED" icon="5" name="ROSSINI" t="tankships" imo="9156981" lat="53.504" lng="9.94833" cog="237.0" speed="0.3" length="94.0" width="12.0" country="Cyprus" flag="58"/>
+	<marker status="MOORED" icon="5" name="RT ZOE" t="tugboats" imo="9333888" lat="53.5273" lng="9.92246" cog="214.7" speed="0.5" length="28.0" width="12.0" country="Malta" flag="132"/>
+	<marker status="MOORED" icon="5" name="SANTA MONICA" t="cargo_ships" imo="8918992" lat="53.5363" lng="10.0056" cog="174.0" speed="0.0" length="182.0" width="28.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="SD JACOBA" t="tugboats" imo="9174567" lat="53.5254" lng="9.92718" cog="102.0" speed="0.2" length="30.0" width="12.0" country="Netherlands" flag="149" engName="Cat" engModel="2x Cat 3516"/>
+	<marker status="MOORED" icon="5" name="SEEVE" t="tankships" imo="" lat="53.5395" lng="9.9554" cog="274.9" speed="0.1" length="50.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="SICHEM HIROSHIMA" t="tankships" imo="9361483" lat="53.5026" lng="9.94982" cog="316.0" speed="0.0" length="128.0" width="20.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="SIRIUS" t="tankships" imo="8124503" lat="53.536" lng="9.97416" cog="272.8" speed="0.0" length="58.0" width="10.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="SPANDAU DT 61" t="tankships" imo="" lat="53.5052" lng="9.96301" cog="0.0" speed="0.5" length="80.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="STEK UT" t="tugboats" imo="" lat="53.5436" lng="9.91356" cog="0.0" speed="0.1" length="9.0" width="4.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="ST PAULI" t="others" imo="" lat="53.5448" lng="9.95717" cog="136.6" speed="0.0" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="WAITING" icon="5" name="SWE BULK" t="cargo_ships" imo="9044932" lat="53.5353" lng="10.0056" cog="156.8" speed="0.1" length="87.0" width="13.0" country="Cyprus" flag="58"/>
+	<marker status="MOORED" icon="5" name="SWE TRADER" t="cargo_ships" imo="6824745" lat="53.535" lng="10.0079" cog="348.8" speed="0.0" length="74.0" width="12.0" country="Sweden" flag="203"/>
+	<marker status="MOORED" icon="5" name="TASMAN MERMAID" t="others" imo="9045950" lat="53.5288" lng="10.0024" cog="120.7" speed="0.0" length="142.0" width="23.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="TETUAN" t="cargo_ships" imo="9276341" lat="53.5361" lng="10.0082" cog="242.5" speed="0.1" length="133.0" width="18.0" country="United Kingdom" flag="221" engName="MaK" engModel="MaK 8 M 43"/>
+	<marker status="MOORED" icon="5" name="TOLLERORT" t="passenger_ships" imo="" lat="53.545" lng="9.96993" cog="271.7" speed="0.0" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="TRANSNJORD" t="cargo_ships" imo="9113719" lat="53.5023" lng="9.93767" cog="240.3" speed="0.2" length="98.0" width="17.0" country="Gibraltar" flag="85" engName="MaK" engModel="MaK 8 M 453 C"/>
+	<marker status="MOORED" icon="5" name="TRANS SUND" t="tankships" imo="8915548" lat="53.5363" lng="9.89795" cog="136.3" speed="0.0" length="94.0" width="16.0" country="Norway" flag="158" engName="MaK" engModel="MaK 9 M 453 C"/>
+	<marker status="MOORED" icon="5" name="TYRRHENIAN WAVE" t="tankships" imo="9428360" lat="53.4746" lng="9.96397" cog="316.0" speed="0.0" length="182.0" width="32.0" country="Portugal" flag="171"/>
+	<marker status="MOORED" icon="5" name="UTE JOHANNA" t="cargo_ships" imo="9118355" lat="53.5343" lng="9.91057" cog="248.4" speed="0.0" length="98.0" width="16.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="WALTERSHOF" t="passenger_ships" imo="" lat="53.543" lng="9.93544" cog="167.3" speed="0.1" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="WASSERBOOT" t="pilot_vessels" imo="" lat="53.5372" lng="9.87641" cog="348.3" speed="0.0" length="20.0" width="5.0" country="Germany" flag="83"/>
+	<marker status="MOVING" icon="7" name="WESTERODE" t="tankships" imo="" lat="53.5013" lng="9.94424" cog="328.5" speed="7.8" length="100.0" width="9.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="WESTEWIND" t="cargo_ships" imo="9201970" lat="53.4893" lng="9.98283" cog="329.0" speed="0.0" length="90.0" width="13.0" country="Netherlands" flag="149"/>
+	<marker status="MOORED" icon="5" name="WILHELMINE" t="tugboats" imo="8007133" lat="53.543" lng="9.92017" cog="104.0" speed="0.0" length="24.0" width="9.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="WILHELMSBURG" t="passenger_ships" imo="" lat="53.5449" lng="9.9565" cog="287.5" speed="0.0" length="30.0" width="8.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="WOTAN" t="cargo_ships" imo="9125059" lat="53.5046" lng="9.95646" cog="217.1" speed="0.0" length="100.0" width="13.0" country="Antigua and Barbuda" flag="10"/>
+	<marker status="MOORED" icon="5" name="YM UTOPIA" t="cargo_ships" imo="9337456" lat="53.5275" lng="9.92108" cog="216.0" speed="0.1" length="333.0" width="42.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="YUKO" t="cargo_ships" imo="8605375" lat="53.4672" lng="9.9878" cog="225.0" speed="0.1" length="64.0" width="10.0" country="Netherlands Antilles" flag="150" engName="Cat" engModel="Cat 3508"/>
+	<marker status="" icon="" name="" t="" imo="" lat="" lng="" cog="" speed="" length="" width="" country="" flag=""/>
+</markers>

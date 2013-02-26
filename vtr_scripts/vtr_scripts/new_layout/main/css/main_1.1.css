@@ -1,0 +1,140 @@
+/***************bootstrap**********************/
+.btn-primary {
+    background-color: #FF9933;
+    background-image: -moz-linear-gradient(top, #FFAA44, #FF8822);
+  	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFAA44), to(#FF8822));
+  	background-image: -webkit-linear-gradient(top, #FFAA44, #FF8822);
+  	background-image: -o-linear-gradient(top, #FFAA44, #FF8822);
+    background-image: linear-gradient(to bottom, #FFAA44, #FF8822);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+    background-color: #FF8822;
+    color: #FFFFFF;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+    border-color: rgba(225, 153, 51, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(225, 153, 51, 0.6);
+    outline: 0 none;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+    background-color: #FF9933;
+    background-image: linear-gradient(to bottom, #FFAA44, #FF8822);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+    background-color: #FF9933;
+    background-image: linear-gradient(to bottom, #FFAA44, #FF8822);
+    background-repeat: repeat-x;
+    color: #333333;
+    outline: 0 none;
+    text-decoration: none;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+    background-color: #FF9933;
+    color: #FFFFFF;
+}
+
+
+/******leaflet map******/
+.leaflet-control-zoom a {
+    height: 40px;
+    width: 40px;
+}
+
+
+
+
+/***********openlayers**************/
+div.olControlZoom a {
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+}
+
+.olMap img { 
+	max-width:none; 
+}
+
+
+.olControlAttribution {
+	bottom:0px;
+}
+
+div .olPopup {
+	margin-top:-15px;
+	margin-left:8px;
+}
+
+.shipname_black{
+	color: #000000;
+	text-shadow: 0 -1px #fff, 1px 0 #fff, 0 1px #fff, -1px 0 #fff;
+}
+
+
+
+/**********application*************/
+.center-text {
+	text-align: center;
+}
+
+.font20{
+	font-size:20px;
+}
+
+.row-fluid .language_icon {
+	width: 11%;
+	float: left;
+    margin-left: 1.6%;
+}
+
+
+.datatable {
+	width:100%;
+}
+
+.datatable th {
+	background-color:#EEEEEE;
+}
+
+.datatable tbody{
+	font-size:12px;
+}
+
+.datatable tbody tr:last-child  {
+	background-image: none;
+}
+
+.datatable tbody tr {
+	background-image: url("http://images.vesseltracker.com/layout/vt_dotted.gif");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+}
+
+
+
+/*******login page******/
+.form-signin {
+    margin: 0 auto 20px;
+    max-width: 300px;
+    padding: 19px 29px 29px;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin input[type="text"], .form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+

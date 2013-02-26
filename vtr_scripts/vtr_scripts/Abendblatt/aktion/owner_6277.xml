@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers created="15.07.08 10:15">
+<marker 
+	status="MOVING" 
+	icon="4" 
+	name="ADLER EXPRESS" 
+	t="passenger_ships" 
+	call="DLXA" 
+	mmsi="211209290" 
+	imo="9073098" 
+	lat="54.5854" 
+	lng="8.58315" 
+	th="252.0" 
+	cog="255.6" 
+	dim="42.0 x 8.0 m" 
+	length="42.0" 
+	width="8.0" 
+	left="1" 
+	front="8"/>
+	
+	
+	
+	<marker status="MOVING" icon="1" name="HAUKE HAIEN" t="passenger_ships" call="DJCN" mmsi="211298490" imo="5015311" lat="54.6238" lng="8.66808" cog="220.0" dim="30.0 x 6.0 m" length="30.0" width="6.0" left="0" front="10"/><marker status="MOVING" icon="1" name="HILLIGENLEI 1" t="passenger_ships" call="DLXI" mmsi="211379770" imo="8411217" lat="54.6624" lng="8.72767" th="227.0" cog="225.0" dim="38.0 x 11.0 m" length="38.0" width="11.0" left="6" front="12"/><marker status="MOORED" icon="5" name="INSEL AMRUM" t="passenger_ships" call="DLYI" mmsi="211298100" imo="7935321" lat="54.6928" lng="8.57623" th="90.0" cog="186.1" dim="56.0 x 13.0 m" length="56.0" width="13.0" left="6" front="26"/><marker status="MOVING" icon="6" name="NORDFRIESLAND" t="passenger_ships" call="DJLK" mmsi="211222960" imo="9102758" lat="54.6749" lng="8.59808" th="80.0" cog="79.5" dim="67.0 x 15.0 m" length="67.0" width="15.0" left="8" front="20"/><marker status="MOVING" icon="2" name="NORDFRIESLAND" t="passenger_ships" call="DJHX" mmsi="211293950" imo="8802105" lat="54.5093" lng="8.69752" cog="160.0" dim="24.0 x 6.0 m" length="24.0" width="6.0" left="2" front="4"/><marker status="MOVING" icon="9" name="PELLWORM 1" t="passenger_ships" call="DJCP" mmsi="211255580" imo="9152791" lat="54.4982" lng="8.80338" cog="59.0" dim="48.0 x 15.0 m" length="48.0" width="15.0" left="6" front="19"/><marker status="MOVING" icon="6" name="RUEM HART" t="passenger_ships" call="DCEC" mmsi="211298150" imo="8137237" lat="54.6989" lng="8.58818" cog="102.3" dim="36.0 x 7.0 m" length="36.0" width="7.0" left="6" front="5"/><marker status="MOVING" icon="1" name="RUNGHOLT" t="passenger_ships" call="DJEY" mmsi="211298120" imo="9038660" lat="54.7015" lng="8.64169" th="226.0" cog="219.6" dim="68.0 x 15.0 m" length="68.0" width="15.0" left="7" front="18"/><marker status="MOVING" icon="1" name="SCHLESWIG HOLSTEIN" t="passenger_ships" call="DJHG" mmsi="211298130" imo="8800975" lat="54.6889" lng="8.62002" th="205.0" cog="227.0" dim="69.0 x 13.0 m" length="69.0" width="13.0" left="7" front="20"/><marker status="MOORED" icon="5" name="STOERTEBEKER" t="passenger_ships" call="DLXN" mmsi="211298140" imo="7935319" lat="54.6937" lng="8.57503" cog="175.7" dim="37.0 x 7.0 m" length="37.0" width="7.0" left="1" front="7"/><marker status="MOORED" icon="5" name="UTHLANDE" t="passenger_ships" call="DJIQ" mmsi="211298110" imo="7909619" lat="54.6292" lng="8.39579" th="279.0" cog="115.5" dim="68.0 x 13.0 m" length="68.0" width="13.0" left="6" front="16"/></markers>

@@ -1,0 +1,135 @@
+> methods <- read.table("methods.csv", header=TRUE, sep=',')
+> nrow(methods)
+[1] 387182
+> sort(tapply(methods$executiontime, methods$bean, sum), decreasing=TRUE)/1000
+ShipactionUtilBean       DBUpdateBean 
+         288294.78           34521.01 
+
+> shipaction <- subset(methods, bean == "ShipactionUtilBean")
+> nrow(shipaction)
+[1] 370348
+
+> sort(tapply(shipaction$executiontime, shipaction$method, sum), decreasing=TRUE)[1:10]
+                                                                                                                       getAisSatExport-java\\.lang\\.Integer-java\\.util\\.Date 
+170619376 
+                                                                                                                     countLeftVessels-int-java\\.util\\.Date-java\\.util\\.Date 
+71825948 
+                                                                                                getShipWithShipactionByCustomerGroup-java\\.lang\\.Integer-java\\.lang\\.String 
+23307558 
+
+findByTimestampAndExportRules-java\\.util\\.Date-com\\.vesseltracker\\.entity\\.User 
+10032733 
+                                                                                                           findIncomingVessels-int-java\\.lang\\.String-boolean-int-int-boolean
+2047210 
+
+findLeftVessels-int-java\\.util\\.Date-java\\.util\\.Date-java\\.lang\\.String-boolean-int-int
+1495890 
+
+findByPolygonAndActionType-org\\.postgis\\.Polygon-com\\.vesseltracker\\.util\\.enums\\.ShipActionType-boolean-int-boolean-boolean-boolean-java\\.lang\\.String-boolean-int-int 
+1052534 
+
+findClusterByBoundingBox-double-double-double-double-int-java\\.lang\\.Integer
+1035230 
+
+findByPolygon-org\\.postgis\\.Polygon-boolean-boolean-boolean-boolean-int-int-java\\.lang\\.String-boolean 
+995725 
+                                                                                                                                             getSatExport-java\\.lang\\.Integer 
+952078 
+
+> dbupdate <- subset(methods, bean == "DBUpdateBean")
+> nrow(dbupdate)
+[1] 16834
+> sort(tapply(dbupdate$executiontime, dbupdate$method, sum), decreasing=TRUE)
+
+importShipInfoList-com\\.vesseltracker\\.entity\\.Customer-int-java\\.lang\\.String-java\\.util\\.Collection-java\\.util\\.Date 
+21133837
+
+parseAndUpdate-java\\.io\\.InputStream-java\\.lang\\.String 
+13387169 
+
+> getAisSatExport <- subset(shipaction, method == "getAisSatExport-java\\.lang\\.Integer-java\\.util\\.Date")
+> summary(getAisSatExport$executiontime)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0   17330   18640   20270   22300   53320 
+> quantile(getAisSatExport$executiontime, probs=c(0.9,0.95,0.99))
+  90%   95%   99% 
+25766 28329 34782 
+
+> countLeftVessels <- subset(shipaction, method == "countLeftVessels-int-java\\.util\\.Date-java\\.util\\.Date")
+> summary(countLeftVessels$executiontime)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0     152     263    8533     964  623200 
+> quantile(countLeftVessels$executiontime, probs=c(0.9,0.95,0.99))
+   90%    95%    99% 
+  6349   7311 149880 
+
+> getShipWithShipactionByCustomerGroup <- subset(shipaction, method == "getShipWithShipactionByCustomerGroup-java\\.lang\\.Integer-java\\.lang\\.String")
+> summary(getShipWithShipactionByCustomerGroup$executiontime)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0      41    2711    2769    3846   10000 
+> quantile(getShipWithShipactionByCustomerGroup$executiontime, probs=c(0.9,0.95,0.99))
+    90%     95%     99% 
+ 4660.8  8420.0 10004.0 
+
+> findByTimestampAndExportRules <- subset(shipaction, method == "findByTimestampAndExportRules-java\\.util\\.Date-com\\.vesseltracker\\.entity\\.User")
+> summary(findByTimestampAndExportRules$executiontime)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0     197     441    1192    1381   25470 
+> hi_quants(findByTimestampAndExportRules$executiontime)
+    90%     95%     99% 
+ 2870.0  3496.8 12183.0 
+
+> findIncomingVessels <- subset(shipaction, method == "findIncomingVessels-int-java\\.lang\\.String-boolean-int-int-boolean")
+> summary(findIncomingVessels$executiontime)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0    41.0    46.0   243.2    78.0  5147.0 
+> hi_quants(findIncomingVessels$executiontime)
+ 90%  95%  99% 
+ 316  398 5147 
+
+> importShipInfoList <- subset(dbupdate, method == "importShipInfoList-com\\.vesseltracker\\.entity\\.Customer-int-java\\.lang\\.String-java\\.util\\.Collection-java\\.util\\.Date")
+> summary(importShipInfoList$executiontime)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0     182     394    2511    2085  261000 
+> hi_quants(importShipInfoList$executiontime)
+    90%     95%     99% 
+ 5568.0  9014.8 25069.0 
+
+> parseAndUpdate <- subset(dbupdate, method == "parseAndUpdate-java\\.io\\.InputStream-java\\.lang\\.String")
+> summary(parseAndUpdate$executiontime)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      0      97     377    1590    1238  206300 
+> hi_quants(parseAndUpdate$executiontime)
+     90%      95%      99% 
+ 3048.00  5166.40 21637.48 
+
+##
+## EJB pools
+##
+
+> pools <- read.table("pools.csv", header=TRUE, sep=',')
+
+> summary(pools$numbeansinpool.current)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   0.00   16.00   25.00   22.88   29.00   32.00 
+> hi_quants(pools$numbeansinpool.current)
+90% 95% 99% 
+ 31  31  31 
+
+## numtheadswaiting == 0
+
+> pools.dbupdate <- subset(pools, bean == "DBUpdateBean")
+> summary(diff.dbupdate.create / diff.dbupdate.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+0.00000 0.00000 0.00000 0.03355 0.00000 5.37500 
+> summary(diff.dbupdate.destroy / diff.dbupdate.t)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+0.00000 0.00000 0.00000 0.03283 0.00000 6.12500 
+> summary(diff.shipaction.create / diff.shipaction.t)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+0.000000 0.000000 0.000000 0.001652 0.000000 0.888900 
+> summary(diff.shipaction.destroy / diff.shipaction.t)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+0.000000 0.000000 0.000000 0.002088 0.000000 1.333000 
+
+

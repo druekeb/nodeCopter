@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers created="Thu Jun 04 11:42:07 CEST 2009">
+	<marker status="MOORED" icon="5" name="ALCATRAZ FLYER" t="passenger_ships" imo="" lat="37.8069" lng="-122.404" cog="292.4" speed="0.2" length="36.0" width="11.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="ALGOL" t="cargo_ships" imo="7303205" lat="37.7745" lng="-122.305" cog="182.5" speed="0.1" length="284.0" width="33.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="AMERICA" t="towing_vessels" imo="" lat="37.922" lng="-122.409" cog="319.7" speed="0.0" length="" width="" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="AMERICAN EAGLE" t="tugboats" imo="7032416" lat="37.90502166748047" lng="-122.36699676513672" cog="0.0" speed="0.0" length="32.0" width="11.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="ANGEL ISLAND" t="passenger_ships" imo="" lat="37.8725" lng="-122.456" cog="275.0" speed="0.0" length="" width="" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="APL SINGAPORE" t="cargo_ships" imo="9074547" lat="37.7933" lng="-122.299" cog="249.1" speed="0.0" length="277.0" width="40.0" country="United States of America" flag="222" engName="MaK" engModel="3x MaK 6 M 453 C"/>
+	<marker status="MOORED" icon="5" name="BARENTS SEA" t="towing_vessels" imo="7417240" lat="37.7748" lng="-122.383" cog="207.2" speed="0.0" length="40.0" width="13.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="BAY MONARCH" t="passenger_ships" imo="" lat="37.8093" lng="-122.412" cog="212.9" speed="0.0" length="43.0" width="11.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="BAY ROCKET" t="others" imo="" lat="37.8091" lng="-122.411" cog="147.0" speed="0.1" length="" width="" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="BETTY L" t="others" imo="" lat="37.7746" lng="-122.386" cog="0.0" speed="0.4" length="18.0" width="7.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="CAPELLA" t="cargo_ships" imo="7223505" lat="37.7748" lng="-122.305" cog="0.0" speed="0.0" length="292.0" width="53.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="CLEAN BAY II" t="anti-pollution_vessels" imo="7923299" lat="37.9049" lng="-122.371" cog="248.0" speed="0.1" length="51.0" width="12.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="DELTALINDA" t="tugboats" imo="0" lat="37.8012" lng="-122.397" cog="231.4" speed="0.1" length="33.0" width="13.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="DREDGE EINAR" t="others" imo="" lat="37.922" lng="-122.367" cog="275.0" speed="0.0" length="36.0" width="16.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="DREDGE NJORD" t="others" imo="" lat="37.7912" lng="-122.301" cog="288.6" speed="0.1" length="50.0" width="25.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="ELAN" t="pleasure_crafts" imo="" lat="37.8672" lng="-122.314" cog="62.3" speed="0.0" length="18.0" width="5.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="ENCINAL" t="passenger_ships" imo="" lat="37.8095" lng="-122.412" cog="330.1" speed="0.0" length="28.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="EVER SUPERB" t="cargo_ships" imo="9300427" lat="37.8089" lng="-122.338" cog="203.0" speed="0.0" length="300.0" width="43.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="GINGA MERLIN" t="tankships" imo="9254252" lat="37.9149" lng="-122.365" cog="145.0" speed="0.0" length="148.0" width="24.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="GOLIAH" t="tugboats" imo="1060909" lat="37.8214" lng="-122.31" cog="132.7" speed="0.4" length="30.0" width="7.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="GULF RELIANCE" t="tugboats" imo="9398474" lat="37.7915" lng="-122.292" cog="270.1" speed="0.0" length="204.0" width="22.0" country="United States of America" flag="222" engName="Cat" engModel="2x Cat 3612"/>
+	<marker status="WAITING" icon="5" name="GULF STREAM" t="tankships" imo="9298662" lat="37.7707" lng="-122.364" cog="331.0" speed="0.1" length="228.0" width="32.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="GWENDOLYN GRACE" t="others" imo="" lat="37.7904" lng="-122.288" cog="243.2" speed="0.0" length="18.0" width="7.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="HARBOR PRINCESS" t="passenger_ships" imo="" lat="37.8092" lng="-122.415" cog="182.5" speed="0.3" length="27.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="HARBOR QUEEN" t="passenger_ships" imo="" lat="37.8095" lng="-122.415" cog="28.7" speed="0.0" length="27.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="HARRY M" t="tugboats" imo="" lat="37.791" lng="-122.301" cog="321.6" speed="0.0" length="32.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="IKAN SEPAT" t="cargo_ships" imo="8300585" lat="37.733" lng="-122.339" cog="222.2" speed="0.0" length="147.0" width="23.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="JEFFREY M" t="tugboats" imo="" lat="37.7913" lng="-122.301" cog="197.6" speed="0.0" length="26.0" width="8.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="JOVIETAL" t="sailing_vessels" imo="" lat="37.7838" lng="-122.267" cog="0.0" speed="0.0" length="14.0" width="5.0" country="Canada" flag="40"/>
+	<marker status="MOORED" icon="5" name="KEEGAN FOSS" t="tugboats" imo="" lat="37.9056" lng="-122.372" cog="4.0" speed="0.0" length="34.0" width="11.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="LIBERTY" t="tugboats" imo="7717626" lat="37.7904" lng="-122.292" cog="273.0" speed="0.0" length="29.0" width="10.0" country="United States of America" flag="222" engName="Cat" engModel="2x Cat 3512B"/>
+	<marker status="MOVING" icon="8" name="LYNN MARIE" t="tugboats" imo="9253583" lat="37.9049" lng="-122.417" cog="351.4" speed="6.2" length="31.0" width="14.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="MAERSK DUISBURG" t="cargo_ships" imo="9105920" lat="37.8176" lng="-122.315" cog="0.1" speed="0.1" length="292.0" width="32.0" country="Germany" flag="83"/>
+	<marker status="MOORED" icon="5" name="MARIN" t="passenger_ships" imo="" lat="37.9453" lng="-122.509" cog="278.4" speed="0.0" length="30.0" width="70.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="MARSHALL FOSS" t="towing_vessels" imo="1120418" lat="37.9223" lng="-122.409" cog="139.7" speed="0.1" length="28.0" width="12.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="MENDOCINO" t="passenger_ships" imo="" lat="37.9442" lng="-122.509" cog="150.4" speed="0.0" length="30.0" width="70.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="MILLENIUM FALCON" t="tugboats" imo="1092296" lat="37.7933" lng="-122.297" cog="242.8" speed="0.1" length="35.0" width="11.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="MINERVA XANTHE" t="tankships" imo="9318010" lat="37.9248" lng="-122.413" cog="240.0" speed="0.1" length="183.0" width="32.0" country="Malta" flag="132"/>
+	<marker status="WAITING" icon="5" name="MISSISSIPPI VOYAGER" t="tankships" imo="9131369" lat="37.7618" lng="-122.358" cog="189.0" speed="0.1" length="190.0" width="32.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="MOKIHANA" t="cargo_ships" imo="7908005" lat="37.7947" lng="-122.284" cog="280.0" speed="0.0" length="262.0" width="32.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="MOL PARADISE" t="cargo_ships" imo="9307047" lat="37.8105" lng="-122.326" cog="175.0" speed="0.0" length="293.0" width="40.0" country="Panama" flag="163"/>
+	<marker status="MOORED" icon="5" name="NAPA" t="passenger_ships" imo="" lat="37.9448" lng="-122.508" cog="246.7" speed="0.0" length="38.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="OLD BLUE" t="others" imo="" lat="37.8089" lng="-122.411" cog="86.1" speed="0.0" length="24.0" width="9.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="ORION VOYAGER" t="tankships" imo="9051600" lat="37.9259" lng="-122.414" cog="198.0" speed="0.0" length="275.0" width="50.0" country="Bahamas" flag="19"/>
+	<marker status="MOORED" icon="5" name="PERALTA" t="passenger_ships" imo="" lat="37.8093" lng="-122.413" cog="210.1" speed="0.0" length="30.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="PILOT BOAT DRAKE" t="pilot_vessels" imo="" lat="37.8008" lng="-122.396" cog="65.0" speed="0.1" length="30.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="PILOT BOAT SAN FRAN" t="pilot_vessels" imo="" lat="37.8009" lng="-122.396" cog="246.6" speed="0.0" length="33.0" width="6.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="POINT FERMIN" t="towing_vessels" imo="" lat="37.8218" lng="-122.314" cog="320.4" speed="0.0" length="32.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="PT VICENTE" t="others" imo="7531840" lat="37.9058" lng="-122.371" cog="323.7" speed="0.0" length="32.0" width="11.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="RESOLUTE" t="tugboats" imo="915332900" lat="37.8216" lng="-122.31" cog="288.0" speed="0.0" length="3.0" width="9.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="REVOLUTION" t="tugboats" imo="9369203" lat="37.8221" lng="-122.312" cog="111.7" speed="0.0" length="24.0" width="12.0" country="United States of America" flag="222" engName="Cat" engModel="2x Cat 3512B-HD"/>
+	<marker status="MOORED" icon="5" name="RIALTO BRIDGE" t="cargo_ships" imo="9125592" lat="37.8111" lng="-122.322" cog="39.0" speed="0.0" length="245.0" width="32.0" country="" flag=""/>
+	<marker status="MOORED" icon="5" name="ROYAL MELBOURNE" t="tugboats" imo="643765" lat="37.7923" lng="-122.286" cog="252.9" speed="0.0" length="30.0" width="9.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="ROYAL PRINCE" t="passenger_ships" imo="" lat="37.8093" lng="-122.415" cog="259.6" speed="0.0" length="29.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="SANDRA HUGH" t="tugboats" imo="9369227" lat="37.822" lng="-122.312" cog="4.4" speed="0.0" length="24.0" width="12.0" country="United States of America" flag="222" engName="Cat" engModel="2x Cat 3512B-HD"/>
+	<marker status="MOORED" icon="5" name="SEALAND COMET" t="cargo_ships" imo="9106182" lat="37.8152" lng="-122.318" cog="222.0" speed="0.0" length="292.0" width="32.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="SIERRA FOX" t="pleasure_crafts" imo="540641809" lat="37.9239" lng="-122.374" cog="283.4" speed="0.0" length="18.0" width="6.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="SOLANA" t="others" imo="" lat="37.815608978271484" lng="-122.35900115966797" cog="0.0" speed="0.0" length="20.0" width="7.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="STFYC LEON D. F" t="pleasure_crafts" imo="" lat="37.8065" lng="-122.447" cog="245.4" speed="0.0" length="20.0" width="9.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="STFYC  S. BARROWS" t="pleasure_crafts" imo="" lat="37.8065" lng="-122.447" cog="0.0" speed="0.0" length="20.0" width="9.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="STFYC WL STEWART" t="pleasure_crafts" imo="" lat="37.8078" lng="-122.442" cog="204.5" speed="0.0" length="32.0" width="13.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="ST.GEORG" t="tankships" imo="9240847" lat="37.7404" lng="-122.331" cog="171.0" speed="0.1" length="180.0" width="32.0" country="Singapore" flag="191"/>
+	<marker status="MOORED" icon="5" name="TERILYN" t="tugboats" imo="" lat="37.7746" lng="-122.385" cog="349.5" speed="0.1" length="25.0" width="7.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="UBC STAVANGER" t="cargo_ships" imo="9287340" lat="37.7707" lng="-122.352" cog="352.0" speed="0.1" length="172.0" width="27.0" country="Cyprus" flag="58"/>
+	<marker status="MOORED" icon="5" name="UNITED BANNER" t="tankships" imo="9307097" lat="37.7484" lng="-122.379" cog="307.0" speed="0.0" length="228.0" width="32.0" country="Greece" flag="86"/>
+	<marker status="WAITING" icon="5" name="USCG87337" t="others" imo="" lat="37.8105" lng="-122.361" cog="314.3" speed="0.0" length="26.0" width="6.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="VALHALLA" t="others" imo="" lat="37.7633" lng="-122.383" cog="209.8" speed="2.8" length="81.0" width="24.0" country="United States of America" flag="222"/>
+	<marker status="WAITING" icon="5" name="WESTERN COMET" t="tugboats" imo="401" lat="37.82991027832031" lng="-122.35189819335938" cog="0.0" speed="0.0" length="37.0" width="11.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="YM EAST" t="cargo_ships" imo="9062087" lat="37.7979" lng="-122.322" cog="153.0" speed="0.0" length="276.0" width="32.0" country="Liberia" flag="121"/>
+	<marker status="MOORED" icon="5" name="Z FIVE" t="towing_vessels" imo="481" lat="37.7923" lng="-122.284" cog="262.9" speed="0.0" length="29.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="Z FOUR" t="tugboats" imo="1072783" lat="37.7923" lng="-122.285" cog="278.5" speed="0.0" length="29.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="MOORED" icon="5" name="Z THREE" t="tugboats" imo="1072784" lat="37.7923" lng="-122.284" cog="252.6" speed="0.1" length="29.0" width="10.0" country="United States of America" flag="222"/>
+	<marker status="" icon="" name="" t="" imo="" lat="" lng="" cog="" speed="" length="" width="" country="" flag=""/>
+</markers>

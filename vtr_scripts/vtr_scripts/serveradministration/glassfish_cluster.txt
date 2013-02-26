@@ -1,0 +1,167 @@
+Einrichten des Clusters:
+
+
+# 1. Auf allen Maschinen Glassfish mit Cluster-Support installieren:
+#-----------------------------------------------------------------------------------
+
+# dateien auspacken
+java -jar glassfish-installer.jar
+
+# danach verzeichnis umbenennen um versionen verwirrung zu vermeiden:
+mv glassfish glassfish_v2ur2
+
+# symbolischen Link erstellen
+ln -s glassfish_v2ur2 appserver
+cd glassfish_v2ur2
+
+# setup starten mit Cluster-Support:
+chmod u+x ./lib/ant/bin/ant
+./lib/ant/bin/ant -f setup-cluster.xml
+
+# asadmin in den Suchpfad holen:
+cd /usr/bin/
+ln -s /opt/appserver/bin/asadmin
+
+# tomcat AJP pakete einspielen:
+cp tomcat-ajp.jar commons-modeler.jar commons-logging.jar /opt/appserver/lib/
+
+# Postgres und Postgis Pakete einspielen:
+cp postgresql-jdbc.jar postgis.jar /opt/appserver/lib/
+
+
+
+# 2. Nur auf dem Admin-Host (app01) folgendes ausführen:
+#------------------------------------------------------------------------------------
+
+# Domain erzeugen (eine Domain fuer das ganze Cluster)
+asadmin create-domain --user admin --savelogin=true --profile cluster --savemasterpassword=true --adminport=4848 --instanceport=8080 wateropt
+
+# eclipselink jar in das verzeichnis kopieren:
+cp eclipselink.jar /opt/appserver/domains/wateropt/lib/
+
+# Domain starten
+asadmin start-domain wateropt
+
+# EclipseLink aktivieren
+asadmin create-system-properties com.sun.persistence.defaultProvider=org.eclipse.persistence.jpa.PersistenceProvider
+
+# Node-Agent erzeugen
+asadmin create-node-agent --host localhost --port 4848 wateropt-man-agent
+
+# Cluster erzeugen
+asadmin create-cluster --host localhost --port 4848 wateropt-cluster
+
+# Instanz erzeugen
+asadmin create-instance --host localhost --port 4848 --nodeagent wateropt-man-agent --cluster wateropt-cluster instance1
+
+# Node-Agent starten
+asadmin start-node-agent --syncinstances=true wateropt-man-agent
+
+
+
+# 3. Auf den anderen Hosts (hier app02) folgendes ausführen:
+#------------------------------------------------------------------------------------
+
+# Node agent erzeugen, der mit dem DAS auf der anderen Maschine spricht
+asadmin create-node-agent --host app01.vesseltracker.com --user admin --port 4848 --savemasterpassword=true wateropt-app02-agent
+
+# Instanz erzeugen
+asadmin create-instance --host app01.vesseltracker.com --port 4848 --nodeagent wateropt-app02-agent --cluster wateropt-cluster instance2
+
+# Node-Agent starten
+asadmin start-node-agent --syncinstances=true wateropt-app02-agent
+
+
+# 4. Glassfish fuer AJP Loadbalancer Konfigurieren
+#------------------------------------------------------------------------------------
+
+# Auf Cluster-Ebene mit Platzhaltern:
+asadmin create-jvm-options --target wateropt-cluster "-DjvmRoute=\${AJP_INSTANCE_NAME}"
+asadmin create-jvm-options --target wateropt-cluster "-Dcom.sun.enterprise.web.connector.enableJK=\${AJP_PORT}"
+
+# Dann auf Instanz-Ebene die Platzhalter mit Leben füllen (Alle Kommandos auf dem Admin-Host ausführen!)
+# Achtung: Die INSTANCE_NAME Dinger müssen genau so in der Apache Balancer Config als jvm-Routes auftauchen!
+asadmin create-system-properties --target instance1 AJP_INSTANCE_NAME=s1
+asadmin create-system-properties --target instance1 AJP_PORT=8009
+
+asadmin create-system-properties --target instance2 AJP_INSTANCE_NAME=s2
+asadmin create-system-properties --target instance2 AJP_PORT=8009
+
+
+# 5. saemtliche resourcesn fuer die Applikation erzeugen
+#------------------------------------------------------------------------------------
+
+
+# Mail-Resource
+asadmin delete-javamail-resource --target=wateropt-cluster WateroptMail
+asadmin create-javamail-resource --target=wateropt-cluster --mailhost post.ynnor.de  --mailuser admin --fromaddress administrator@vesseltracker.com WateroptMail
+
+asadmin delete-jdbc-resource --target=wateropt-cluster jdbc/wateropt
+asadmin delete-jdbc-connection-pool WateroptPool
+
+asadmin create-jdbc-connection-pool \
+--datasourceclassname org.postgresql.ds.PGSimpleDataSource \
+--restype javax.sql.DataSource \
+--steadypoolsize 2 \
+--maxpoolsize 16 \
+--isolationlevel read-committed \
+--isisolationguaranteed=true \
+--property "PortNumber=5432:User=wateropt:Password=fortuna95:DatabaseName=wateropt:ServerName=db02.vesseltracker.com:PrepareThreshold=5" \
+WateroptPool
+
+asadmin create-jdbc-resource --target=wateropt-cluster --connectionpoolid WateroptPool jdbc/wateropt
+
+# Auth Realm erzeugen
+asadmin create-auth-realm \
+--classname com.sun.enterprise.security.auth.realm.jdbc.JDBCRealm \
+--target=wateropt-cluster \
+--property "user-table=login:user-name-column=username:password-column=password:digest-algorithm=MD5:group-name-column=groupname:datasource-jndi=jdbc/wateropt:group-table=logingroup:jaas-context=jdbcRealm" \
+wateropt
+
+# Timer Attribut setzen (Postgresql als Timer-Datenbank fuer das Cluster nutzen!)
+asadmin set wateropt-cluster-config.ejb-container.ejb-timer-service.timer-datasource=jdbc/wateropt
+
+
+# 6. Cluster herunterfahren
+#------------------------------------------------------------------------------------
+
+# 1. Stoppe alle erreichbaren Instanzen im Cluster:
+asadmin stop-cluster wateropt-cluster
+
+# 2. Stoppe die Node-Agents auf allen Hosts:
+asadmin stop-node-agent wateropt-man-agent
+ssh app02 asadmin stop-node-agent wateropt-app02-agent
+
+# 3. Stopp die Domain:
+asadmin stop-domain wateropt
+
+# 7. CA-Zertifikate zum Keystore hinzufuegen
+#------------------------------------------------------------------------------------
+
+keytool -importcert -trustcacerts -keystore /opt/appserver/domains/wateropt/config/cacerts.jks -file ~/brepos3-os.cer -alias brepos3
+#if (( $? )); then error; fi
+
+$KEYTOOL -importcert -trustcacerts -keystore /opt/appserver/domains/wateropt/config/cacerts.jks -file ~/tcclass3-2011.der -alias hpa
+#if (( $? )); then error; fi
+
+
+
+# 8. Cluster wieder hochfahren
+#------------------------------------------------------------------------------------
+
+# 1. Start Domain
+asadmin start-domain wateropt
+
+# 2. Node-Agents auf allen Hosts starten
+asadmin start-node-agent --syncinstances=true --user admin wateropt-man-agent
+ssh app02 asadmin start-node-agent --syncinstances=true --user admin wateropt-app02-agent
+
+# 3. Cluster starten (fährt alle Instanzen hoch)
+asadmin start-cluster wateropt-cluster
+
+
+
+# 9. Applikation starten
+#------------------------------------------------------------------------------------
+
+asadmin deploy --target wateropt-cluster wateropt.ear

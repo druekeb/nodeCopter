@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<project name="vesseltracker" basedir=".">
+	<property file="Vesseltracker.properties" />
+
+	<path id="project.class.path">
+		<fileset dir="${glassfish.lib}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${build.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${src.dir}/vtr_mobile2/WebContent/WEB-INF/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${src.dir}/vtr_admin/WebContent/WEB-INF/lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${src.dir}/aisweb/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean_source_dir">
+		<delete dir="${src.dir}" />
+	</target>
+
+	<target name="checkout" depends="clean_source_dir">
+		<cvs cvsRoot="${cvs.root}" package="aisweb vtr_admin vtr_ear vtr_earth vtr_ejb vtr_ejbClient vtr_entity vtr_mobile2 vtr_tracking vtr_util" tag="${cvs.tag}" dest="${src.dir}" failonerror="true" />
+	</target>
+
+	<target name="clean_build_dir">
+		<delete dir="${src.dir}/aisweb/build" />
+		<delete dir="${src.dir}/vtr_admin/build" />
+		<delete dir="${src.dir}/vtr_ear/build" />
+		<delete dir="${src.dir}/vtr_earth/build" />
+		<delete dir="${src.dir}/vtr_ejb/build" />
+		<delete dir="${src.dir}/vtr_ejbClient/build" />
+		<delete dir="${src.dir}/vtr_entity/build" />
+		<delete dir="${src.dir}/vtr_mobile2/build" />
+		<delete dir="${src.dir}/vtr_tracking/build" />
+		<delete dir="${src.dir}/vtr_util/build" />
+
+		<delete dir="${build.dir}" />
+		<delete file="${base.dir}/vtr_ear.ear" />
+	</target>
+
+	<target name="prepare_build_dir" depends="clean_build_dir">
+		<mkdir dir="${src.dir}/aisweb/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_admin/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_ear/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_earth/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_ejb/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_ejbClient/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_entity/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_mobile2/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_tracking/${classes.dir}" />
+		<mkdir dir="${src.dir}/vtr_util/${classes.dir}" />
+
+		<mkdir dir="${build.lib}" />
+		<copy todir="${build.lib}">
+			<fileset dir="${src.dir}/vtr_ear/EarContent/lib/" />
+		</copy>
+	</target>
+
+	<target name="compile_vtr_util" depends="prepare_build_dir">
+		<javac srcdir="${src.dir}/vtr_util" destdir="${src.dir}/vtr_util/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="vtr_util_jar" depends="compile_vtr_util">
+		<jar destfile="${base.dir}/build/lib/vtr_util.jar" manifest="${src.dir}/vtr_util/src/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_util/${classes.dir}">
+				<exclude name="*.java" />
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="compile_vtr_entity" depends="vtr_util_jar">
+		<javac srcdir="${src.dir}/vtr_entity" destdir="${src.dir}/vtr_entity/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="vtr_entity_jar" depends="compile_vtr_entity">
+		<mkdir dir="${src.dir}/vtr_entity/${classes.dir}/../META-INF/META-INF/" />
+		<copy todir="${src.dir}/vtr_entity/${classes.dir}/../META-INF/META-INF/">
+			<fileset dir="${src.dir}/vtr_entity/src/META-INF" />
+		</copy>
+		<jar destfile="${base.dir}/build/lib/vtr_entity.jar" manifest="${src.dir}/vtr_entity/src/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_entity/${classes.dir}">
+				<exclude name="*.java" />
+			</fileset>
+			<fileset dir="${src.dir}/vtr_entity/${classes.dir}/../META-INF" />
+		</jar>
+	</target>
+
+	<target name="compile_vtr_ejbClient" depends="vtr_entity_jar">
+		<javac srcdir="${src.dir}/vtr_ejbClient/ejbModule" destdir="${src.dir}/vtr_ejbClient/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="vtr_ejbClient_jar" depends="compile_vtr_ejbClient">
+		<jar destfile="${base.dir}/build/vtr_ejbClient.jar" manifest="${src.dir}/vtr_ejbClient/ejbModule/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_ejbClient/${classes.dir}">
+				<exclude name="*.java" />
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="compile_vtr_ejb" depends="vtr_ejbClient_jar">
+		<javac srcdir="${src.dir}/vtr_ejb/ejbModule" destdir="${src.dir}/vtr_ejb/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="vtr_ejb_jar" depends="compile_vtr_ejb">
+		<jar destfile="${base.dir}/build/vtr_ejb.jar" manifest="${src.dir}/vtr_ejb/ejbModule/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/vtr_ejb/${classes.dir}">
+				<exclude name="*.java" />
+			</fileset>
+			<fileset dir="${src.dir}/vtr_ejb/ejbModule">
+				<exclude name="**/*.java" />
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="compile_vtr_tracking" depends="vtr_ejb_jar">
+		<javac srcdir="${src.dir}/vtr_tracking" destdir="${src.dir}/vtr_tracking/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="vtr_tracking_war" depends="compile_vtr_tracking">
+		<war destfile="${base.dir}/build/vtr_tracking.war" webxml="${src.dir}/vtr_tracking/WebContent/WEB-INF/web.xml" manifest="${src.dir}/vtr_tracking/WebContent/META-INF/MANIFEST.MF">
+			<classes dir="${src.dir}/vtr_tracking/${classes.dir}" />
+
+			<fileset dir="${src.dir}/vtr_tracking/WebContent" />
+		</war>
+	</target>
+
+	<target name="compile_vtr_mobile2" depends="vtr_tracking_war">
+		<javac srcdir="${src.dir}/vtr_mobile2" destdir="${src.dir}/vtr_mobile2/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="vtr_mobile2_war" depends="compile_vtr_mobile2">
+		<copy todir="${src.dir}/vtr_mobile2/${classes.dir}">
+			<fileset dir="${src.dir}/vtr_mobile2/src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+
+		<war destfile="${base.dir}/build/vtr_mobile2.war" webxml="${src.dir}/vtr_mobile2/WebContent/WEB-INF/web.xml" manifest="${src.dir}/vtr_mobile2/WebContent/META-INF/MANIFEST.MF">
+			<classes dir="${src.dir}/vtr_mobile2/${classes.dir}" />
+
+			<fileset dir="${src.dir}/vtr_mobile2/WebContent" />
+		</war>
+	</target>
+
+	<target name="compile_vtr_earth" depends="vtr_mobile2_war">
+		<javac srcdir="${src.dir}/vtr_earth" destdir="${src.dir}/vtr_earth/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="vtr_earth_war" depends="compile_vtr_earth">
+		<war destfile="${base.dir}/build/vtr_earth.war" webxml="${src.dir}/vtr_earth/WebContent/WEB-INF/web.xml" manifest="${src.dir}/vtr_earth/WebContent/META-INF/MANIFEST.MF">
+			<classes dir="${src.dir}/vtr_earth/${classes.dir}" />
+
+			<fileset dir="${src.dir}/vtr_earth/WebContent" />
+		</war>
+	</target>
+
+	<target name="compile_vtr_admin" depends="vtr_earth_war">
+		<javac srcdir="${src.dir}/vtr_admin" destdir="${src.dir}/vtr_admin/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="vtr_admin_war" depends="compile_vtr_admin">
+		<war destfile="${base.dir}/build/vtr_admin.war" webxml="${src.dir}/vtr_admin/WebContent/WEB-INF/web.xml" manifest="${src.dir}/vtr_admin/WebContent/META-INF/MANIFEST.MF">
+			<classes dir="${src.dir}/vtr_admin/${classes.dir}" />
+
+			<fileset dir="${src.dir}/vtr_admin/WebContent" />
+		</war>
+	</target>
+
+	<target name="compile_aisweb" depends="vtr_admin_war">
+		<javac srcdir="${src.dir}/aisweb" destdir="${src.dir}/aisweb/${classes.dir}" debug="on" deprecation="on" optimize="off" includes="**">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="aisweb_war" depends="compile_aisweb">
+		<mkdir dir="${src.dir}/aisweb/${classes.dir}/../WEB-INF/WEB-INF/lib" />
+		<copy todir="${src.dir}/aisweb/${classes.dir}/../WEB-INF/WEB-INF/lib">
+			<fileset dir="${src.dir}/aisweb/lib" />
+		</copy>
+		<copy todir="${src.dir}/aisweb/${classes.dir}">
+			<fileset dir="${src.dir}/aisweb/src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+		<mkdir dir="${src.dir}/aisweb/${classes.dir}/META-INF" />
+		<copy todir="${src.dir}/aisweb/${classes.dir}/META-INF">
+			<fileset dir="${src.dir}/aisweb/src/META-INF" />
+		</copy>
+		<war destfile="${base.dir}/build/aisweb.war" webxml="${src.dir}/aisweb/WebContent/WEB-INF/web.xml" manifest="${src.dir}/aisweb/WebContent/META-INF/MANIFEST.MF">
+			<fileset dir="${src.dir}/aisweb/WebContent" />
+
+			<classes dir="${src.dir}/aisweb/${classes.dir}" />
+			<fileset dir="${src.dir}/aisweb/${classes.dir}/../WEB-INF" />
+		</war>
+
+	</target>
+
+	<target name="vtr_ear" depends="aisweb_war">
+		<ear destfile="${base.dir}/vtr_ear.ear" appxml="${src.dir}/vtr_ear/EarContent/META-INF/application.xml">
+			<fileset dir="${build.dir}" />
+			<fileset file="${src.dir}/vtr_ear/EarContent/dependencies.txt" />
+		</ear>
+	</target>
+</project>
