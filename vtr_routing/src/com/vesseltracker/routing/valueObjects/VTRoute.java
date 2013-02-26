@@ -1,6 +1,7 @@
 package com.vesseltracker.routing.valueObjects;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -8,7 +9,7 @@ import java.util.TimeZone;
 //import org.postgis.MultiLineString;
 //import org.postgis.Point;
 
-public class VTRoute implements Comparable {
+public class VTRoute implements Comparable<VTRoute> {
 	
 	private Double distance;
 	private double etaDistance;
@@ -30,12 +31,6 @@ public class VTRoute implements Comparable {
 		this.distance = distance;
 		this.etaDistance = etaDistance;
 		this.points = points;
-	}
-	
-	@Override
-	public int compareTo(Object o)
-	{
-		return Integer.valueOf(distance.compareTo(((VTRoute)o).distance));
 	}
 	
 	public void setEtaTime(double etaDistance , double shipSpeed)
@@ -363,6 +358,12 @@ public class VTRoute implements Comparable {
 		xml.append("</route>");
 		
 		return xml.toString();
+	}
+
+	@Override
+	public int compareTo(VTRoute o)
+	{
+		return Integer.valueOf(distance.compareTo(((VTRoute)o).distance));
 	}	
 	
 
