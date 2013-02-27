@@ -34,7 +34,7 @@ import com.vesseltracker.routing.valueObjects.DirectNeighbourResult;
 import com.vesseltracker.routing.valueObjects.NearestNeighbourResult;
 import com.vesseltracker.routing.valueObjects.RoutingPoint;
 import com.vesseltracker.routing.valueObjects.VTDirectRoute;
-import com.vesseltracker.routing.valueObjects.VTRoute;
+import com.vesseltracker.routing.valueObjects.NewVTRoute;
 
 /**
  * Servlet implementation class RoutingServlet
@@ -193,12 +193,13 @@ public class NewRoutingServlet extends HttpServlet
 			}
 			else
 			{
-				BarrierNodesTreeSet avoidNodes = new BarrierNodesTreeSet();
+				SortedSet<BarrierNodesTreeSet> avoidNodesSet = new TreeSet<BarrierNodesTreeSet>();
 
-				Set<VTRoute> routeSet = new HashSet<VTRoute>();
+				Set<NewVTRoute> routeSet = new HashSet<NewVTRoute>();
 				System.out.println("call getRouteSet from servlet ");
+				Integer alternatives = 8;
 
-				routeSet = VTRouting.getRouteList(
+				routeSet = NewVTRouting.getRouteSet(
 						startNN.getDijkstraNodeId(),				// nahester Punkt auf Graph aus Sicht von Start LonLat
 						endNN.getDijkstraNodeId(),					// nahester Punkt auf Graph aus Sicht von End LonLat
 						shipSpeed,									// Schiffsgeschwindigkeit
@@ -206,14 +207,16 @@ public class NewRoutingServlet extends HttpServlet
 						end,										// End LonLat
 						startNN.getDistance(),						// Distanz von start --> startNN
 						endNN.getDistance(),						// Distanz von end   --> endNN
-						avoidNodes,									// Liste mit zu vermeidenden Nodes
-						avoidList,									// Liste mit zu vermeidenden Strecken (User-Eingabe: avoid=PAN,NOK etc)
+						avoidNodesSet,									// Liste mit zu vermeidenden Nodes
+						routeSet,
+						//avoidList,									// Liste mit zu vermeidenden Strecken (User-Eingabe: avoid=PAN,NOK etc)
 						etaStartTime,								// Start-Zeit (fuer ETA-Berechnung)
-						anzahl										// Anzahl Routen (ONE = nur kuerzeste, ALL = kuerzeste + Alternativrouten)
+						anzahl,										// Anzahl Routen (ONE = nur kuerzeste, ALL = kuerzeste + Alternativrouten)
+						alternatives
 					   );
 				System.out.println("Länge RouteList: "+routeSet.size());
 				StringBuilder result = new StringBuilder();
-				Iterator<VTRoute> routeIter = routeSet.iterator();
+				Iterator<NewVTRoute> routeIter = routeSet.iterator();
 				
 				if(answer.equals("JSON")) // JSON
 				{

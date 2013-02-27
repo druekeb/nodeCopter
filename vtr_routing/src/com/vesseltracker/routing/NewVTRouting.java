@@ -17,7 +17,7 @@ import com.vesseltracker.routing.valueObjects.BarrierNodesTreeSet;
 import com.vesseltracker.routing.valueObjects.Edge;
 import com.vesseltracker.routing.valueObjects.Graph;
 import com.vesseltracker.routing.valueObjects.RoutingPoint;
-import com.vesseltracker.routing.valueObjects.VTRoute;
+import com.vesseltracker.routing.valueObjects.NewVTRoute;
 import com.vesseltracker.routing.valueObjects.Vertex;
 
 public class NewVTRouting
@@ -53,7 +53,7 @@ public class NewVTRouting
     }
     
     
-    public static VTRoute getRoute(
+    public static NewVTRoute getRoute(
     		Integer fromNode,
     		Integer toNode,
     		double shipSpeed,
@@ -78,12 +78,12 @@ public class NewVTRouting
 		}
 		else
 		{
-			VTRoute route = createRoute(v, start, end , startDistance , endDistance , shipSpeed , etaStartTime);			
+			NewVTRoute route = createRoute(v, start, end , startDistance , endDistance , shipSpeed , etaStartTime);			
 			return route;
 		}
     }
     
-      public static Set<VTRoute> getRouteSet (
+      public static Set<NewVTRoute> getRouteSet (
     		Integer fromNode,
     		Integer toNode,
     		double shipSpeed,
@@ -92,17 +92,16 @@ public class NewVTRouting
     		double startDistance,
     		double endDistance,
     		SortedSet<BarrierNodesTreeSet> avoidNodesSet,
-    		Set<VTRoute> routeSet,
+    		Set<NewVTRoute> routeSet,
     		long etaStartTime,
     		String anzahl,
     		Integer alternatives
     		)
     	{
-			//finde das nächste avoidNodeSet der Liste
-			BarrierNodesTreeSet nächstesAvoidSet = null;
-			VTRoute  nächsteRoute = null;
-			
 			System.out.println("avoidNodesSet beim Aufruf= "+printSet(avoidNodesSet));
+			//finde das nächste noch nicht getestete avoidNodeSet in der Liste
+			BarrierNodesTreeSet nächstesAvoidSet = null;
+			NewVTRoute  nächsteRoute = null;
 			if(avoidNodesSet != null)
 			{
 				Iterator<BarrierNodesTreeSet> avoidIterator = avoidNodesSet.iterator();
@@ -113,17 +112,17 @@ public class NewVTRouting
 				}
 				if (nächstesAvoidSet!=null)
 				{
-						if(nächstesAvoidSet.isTested()) 
-						{
-							return routeSet;
-						}
-						else
-						{
-							nächstesAvoidSet.setTested(true);
-						}
+					if(nächstesAvoidSet.isTested()) 
+					{
+						return routeSet;
+					}
+					else
+					{
+						nächstesAvoidSet.setTested(true);
+					}
 				}
 			}
-	    	//erstelle die kürzeste Route
+	    	//erstelle mit dem ermittelten avoidSet die kürzeste Route
 			nächsteRoute = getRoute(fromNode , toNode , shipSpeed , start , end , startDistance , endDistance , nächstesAvoidSet, etaStartTime);
 			System.out.println("nächste Route mit barrierNodes "+ nächstesAvoidSet + " hat dist "+nächsteRoute.getDistance());
 			routeSet.add(nächsteRoute);
@@ -133,37 +132,15 @@ public class NewVTRouting
 			{
 				return routeSet;
 			}
+			BarrierNodesTreeSet crossedBarrierNodes = nächsteRoute.getCrossedBarrierNodes();
+			//erstelle die Potenzmengen der crossedBarrierNodes-Menge
+			SortedSet<BarrierNodesTreeSet> resultSet = new TreeSet<BarrierNodesTreeSet>();
+			resultSet = createPowerSet(crossedBarrierNodes, avoidNodesSet);
+			System.out.print("resultSet ="+ printSet(resultSet));
 			
-			try
-			{
-				BarrierNodesTreeSet crossedBarrierNodes = nächsteRoute.getCrossedBarrierNodes();
-				if (nächstesAvoidSet !=null)
-				{
-					Iterator<BarrierNode> it = nächstesAvoidSet.iterator();
-					while( it.hasNext())
-					{
-						crossedBarrierNodes.add(it.next());
-					}
-				}
-				//erstelle die Potenzmengen der crossedBarrierNodes-Menge
-				SortedSet<BarrierNodesTreeSet> resultSet = new TreeSet<BarrierNodesTreeSet>();
-				resultSet = createPowerSet(crossedBarrierNodes, resultSet);
-				
-				System.out.print("resultSet ="+ printSet(resultSet));
-//			if(!resultSet.isEmpty())
-//			{
-//				Boolean hinzugefügt = avoidNodesSet.addAll(resultSet);
-//				if (hinzugefügt) System.out.print("avoidNodesSet + resultSet ="+printSet(avoidNodesSet));
-//			}
-			}
-			catch (Exception e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			alternatives --;
 			System.out.println((alternatives)+ ".letzter Aufruf von getRouteSet");
-	    	return getRouteSet(fromNode , toNode , shipSpeed , start , end , startDistance , endDistance , avoidNodesSet , routeSet, etaStartTime, anzahl, alternatives);
+	    	return getRouteSet(fromNode , toNode , shipSpeed , start , end , startDistance , endDistance , resultSet , routeSet, etaStartTime, anzahl, alternatives);
     	}
     
 
@@ -399,7 +376,7 @@ public class NewVTRouting
 		
     }
     
-    private static VTRoute createRoute(
+    private static NewVTRoute createRoute(
     		Vertex endNode,
     		RoutingPoint start,
     		RoutingPoint end,
@@ -409,7 +386,7 @@ public class NewVTRouting
     		long etaStartTime)
     {
 
-    	VTRoute vtr	= new VTRoute();
+    	NewVTRoute vtr	= new NewVTRoute();
     	BarrierNodesTreeSet crossedBarrierNodes = new BarrierNodesTreeSet();
     	List<RoutingPoint> points = new ArrayList<RoutingPoint>();
     	List<String> crossedVisitNodes = new ArrayList<String>();

@@ -1,7 +1,6 @@
 package com.vesseltracker.routing.valueObjects;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -363,7 +362,7 @@ public class VTRoute implements Comparable<VTRoute> {
 	@Override
 	public int compareTo(VTRoute o)
 	{
-		return Integer.valueOf(distance.compareTo(((VTRoute)o).distance));
+		return Integer.valueOf(distance.compareTo(o.distance));
 	}	
 	
 

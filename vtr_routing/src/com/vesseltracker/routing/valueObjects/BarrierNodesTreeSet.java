@@ -22,10 +22,10 @@ public class BarrierNodesTreeSet extends TreeSet<BarrierNode> implements Compara
          if (this.size() < o.size()) return  BEFORE;
          if (this.size() > o.size()) return AFTER;
  
-         Iterator<BarrierNode> iter = o.iterator();
-             while (iter.hasNext()) {
-                 if (!this.contains(iter.next())) return BEFORE;
-             }
+         Iterator<BarrierNode> iter = this.iterator();
+         while (iter.hasNext()) {
+        	 if (!(o.contains(iter.next()))) return BEFORE;
+         }
          return 0;
     }
 
@@ -49,7 +49,7 @@ public class BarrierNodesTreeSet extends TreeSet<BarrierNode> implements Compara
 			BarrierNode bn = thisit.next();
 			treeset.append(bn.getBarrierNodeName()+" ");
 		}
-		treeset.append("] "+ (this.isTested()? "(tested) ":""));
+		treeset.append("] "+ (this.isTested()? "(tested) ":"(untested)"));
 		
 		return treeset.toString();
 	}

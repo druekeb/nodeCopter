@@ -10,7 +10,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -22,6 +27,7 @@ import javax.sql.DataSource;
 
 import com.sun.mail.util.BASE64EncoderStream;
 import com.vesseltracker.routing.VTRouting;
+import com.vesseltracker.routing.valueObjects.BarrierNodesTreeSet;
 import com.vesseltracker.routing.valueObjects.DirectNeighbourResult;
 import com.vesseltracker.routing.valueObjects.NearestNeighbourResult;
 import com.vesseltracker.routing.valueObjects.RoutingPoint;
@@ -185,33 +191,49 @@ public class RoutingServlet extends HttpServlet
 			}
 			else
 			{
-				List<String> avoidNodes = new ArrayList<String>();
-				
-				List<VTRoute> routeList = VTRouting.getRouteList(
-						startNN.getDijkstraNodeId(),				// nahester Punkt auf Graph aus Sicht von Start LonLat
-						endNN.getDijkstraNodeId(),					// nahester Punkt auf Graph aus Sicht von End LonLat
-						shipSpeed,									// Schiffsgeschwindigkeit
-						start,										// Start LonLat
-						end,										// End LonLat
-						startNN.getDistance(),						// Distanz von start --> startNN
-						endNN.getDistance(),						// Distanz von end   --> endNN
-						avoidNodes,									// Liste mit zu vermeidenden Nodes
-						avoidList,									// Liste mit zu vermeidenden Strecken (User-Eingabe: avoid=PAN,NOK etc)
-						etaStartTime,								// Start-Zeit (fuer ETA-Berechnung)
-						anzahl										// Anzahl Routen (ONE = nur kuerzeste, ALL = kuerzeste + Alternativrouten)
-					   );
-				
+				SortedSet<BarrierNodesTreeSet> avoidNodesSet = new TreeSet<BarrierNodesTreeSet>();
+
+				SortedSet<VTRoute> routeSet = new TreeSet<VTRoute>();
+				System.out.println("call getRouteSet from servlet ");
+				Integer alternatives = 4;
+
+				try
+				{
+					routeSet = VTRouting.getRouteSet(
+							startNN.getDijkstraNodeId(),				// nahester Punkt auf Graph aus Sicht von Start LonLat
+							endNN.getDijkstraNodeId(),					// nahester Punkt auf Graph aus Sicht von End LonLat
+							shipSpeed,									// Schiffsgeschwindigkeit
+							start,										// Start LonLat
+							end,										// End LonLat
+							startNN.getDistance(),						// Distanz von start --> startNN
+							endNN.getDistance(),						// Distanz von end   --> endNN
+							avoidNodesSet,									// Liste mit zu vermeidenden Nodes
+							routeSet,
+							//avoidList,									// Liste mit zu vermeidenden Strecken (User-Eingabe: avoid=PAN,NOK etc)
+							etaStartTime,								// Start-Zeit (fuer ETA-Berechnung)
+							anzahl,										// Anzahl Routen (ONE = nur kuerzeste, ALL = kuerzeste + Alternativrouten)
+							alternatives
+						   );
+				}
+				catch (Exception e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.out.println("Länge RouteList: "+routeSet.size());
 				StringBuilder result = new StringBuilder();
+				Iterator<VTRoute> routeIter = routeSet.iterator();
 				
 				if(answer.equals("JSON")) // JSON
 				{
 					result.append("{\"getRouteJson\":[");
-					if(routeList.size() > 0)
+					
+					if(routeIter.hasNext())
 					{
-						result.append(routeList.get(0).getRouteJson()).append("\n");						
-						for(int i=1; i<routeList.size(); i++)
+						result.append(routeIter.next().getRouteJson()).append("\n");						
+						while(routeIter.hasNext())
 						{
-							result.append("," + routeList.get(i).getRouteJson()).append("\n");
+							result.append("," + routeIter.next().getRouteJson()).append("\n");
 						}
 					}
 						
@@ -224,9 +246,9 @@ public class RoutingServlet extends HttpServlet
 				else // XML
 				{
 					result.append("<?xml version='1.0' encoding='UTF-8'?>\n").append("<routes>\n");
-					for(int i=0; i<routeList.size(); i++)
+					while(routeIter.hasNext())
 					{
-						result.append(routeList.get(i).getRouteXml()).append("\n");
+						result.append(routeIter.next().getRouteXml()).append("\n");
 					}
 					result.append("</routes>");
 					
